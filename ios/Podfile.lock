@@ -1,0 +1,639 @@
+PODS:
+  - add_2_calendar (0.0.1):
+    - Flutter
+  - Alamofire (5.0.0-rc.2)
+  - AlamofireObjectMapper (6.2.0):
+    - Alamofire (= 5.0.0-rc.2)
+    - ObjectMapper (~> 3.5.1)
+  - AppAuth (1.6.2):
+    - AppAuth/Core (= 1.6.2)
+    - AppAuth/ExternalUserAgent (= 1.6.2)
+  - AppAuth/Core (1.6.2)
+  - AppAuth/ExternalUserAgent (1.6.2):
+    - AppAuth/Core
+  - audio_session (0.0.1):
+    - Flutter
+  - audioplayers_darwin (0.0.1):
+    - Flutter
+  - better_player (0.0.1):
+    - Cache (~> 6.0.0)
+    - Flutter
+    - GCDWebServer
+    - HLSCachingReverseProxyServer
+    - PINCache
+  - Cache (6.0.0)
+  - cashfree_pg (0.0.1):
+    - Flutter
+  - connectivity_plus (0.0.1):
+    - Flutter
+    - ReachabilitySwift
+  - device_info_plus (0.0.1):
+    - Flutter
+  - DKImagePickerController/Core (4.3.4):
+    - DKImagePickerController/ImageDataManager
+    - DKImagePickerController/Resource
+  - DKImagePickerController/ImageDataManager (4.3.4)
+  - DKImagePickerController/PhotoGallery (4.3.4):
+    - DKImagePickerController/Core
+    - DKPhotoGallery
+  - DKImagePickerController/Resource (4.3.4)
+  - DKPhotoGallery (0.0.17):
+    - DKPhotoGallery/Core (= 0.0.17)
+    - DKPhotoGallery/Model (= 0.0.17)
+    - DKPhotoGallery/Preview (= 0.0.17)
+    - DKPhotoGallery/Resource (= 0.0.17)
+    - SDWebImage
+    - SwiftyGif
+  - DKPhotoGallery/Core (0.0.17):
+    - DKPhotoGallery/Model
+    - DKPhotoGallery/Preview
+    - SDWebImage
+    - SwiftyGif
+  - DKPhotoGallery/Model (0.0.17):
+    - SDWebImage
+    - SwiftyGif
+  - DKPhotoGallery/Preview (0.0.17):
+    - DKPhotoGallery/Model
+    - DKPhotoGallery/Resource
+    - SDWebImage
+    - SwiftyGif
+  - DKPhotoGallery/Resource (0.0.17):
+    - SDWebImage
+    - SwiftyGif
+  - facebook_audience_network (0.0.1):
+    - FBAudienceNetwork (~> 6.3)
+    - Flutter
+  - FBAEMKit (15.1.0):
+    - FBSDKCoreKit_Basics (= 15.1.0)
+  - FBAudienceNetwork (6.14.0)
+  - FBSDKCoreKit (15.1.0):
+    - FBAEMKit (= 15.1.0)
+    - FBSDKCoreKit_Basics (= 15.1.0)
+  - FBSDKCoreKit_Basics (15.1.0)
+  - FBSDKLoginKit (15.1.0):
+    - FBSDKCoreKit (= 15.1.0)
+  - file_picker (0.0.1):
+    - DKImagePickerController/PhotoGallery
+    - Flutter
+  - Firebase/Analytics (10.15.0):
+    - Firebase/Core
+  - Firebase/Auth (10.15.0):
+    - Firebase/CoreOnly
+    - FirebaseAuth (~> 10.15.0)
+  - Firebase/Core (10.15.0):
+    - Firebase/CoreOnly
+    - FirebaseAnalytics (~> 10.15.0)
+  - Firebase/CoreOnly (10.15.0):
+    - FirebaseCore (= 10.15.0)
+  - firebase_analytics (10.5.0):
+    - Firebase/Analytics (= 10.15.0)
+    - firebase_core
+    - Flutter
+  - firebase_auth (4.10.0):
+    - Firebase/Auth (= 10.15.0)
+    - firebase_core
+    - Flutter
+  - firebase_core (2.16.0):
+    - Firebase/CoreOnly (= 10.15.0)
+    - Flutter
+  - FirebaseAnalytics (10.15.0):
+    - FirebaseAnalytics/AdIdSupport (= 10.15.0)
+    - FirebaseCore (~> 10.0)
+    - FirebaseInstallations (~> 10.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.11)
+    - GoogleUtilities/MethodSwizzler (~> 7.11)
+    - GoogleUtilities/Network (~> 7.11)
+    - "GoogleUtilities/NSData+zlib (~> 7.11)"
+    - nanopb (< 2.30910.0, >= 2.30908.0)
+  - FirebaseAnalytics/AdIdSupport (10.15.0):
+    - FirebaseCore (~> 10.0)
+    - FirebaseInstallations (~> 10.0)
+    - GoogleAppMeasurement (= 10.15.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.11)
+    - GoogleUtilities/MethodSwizzler (~> 7.11)
+    - GoogleUtilities/Network (~> 7.11)
+    - "GoogleUtilities/NSData+zlib (~> 7.11)"
+    - nanopb (< 2.30910.0, >= 2.30908.0)
+  - FirebaseAppCheckInterop (10.15.0)
+  - FirebaseAuth (10.15.0):
+    - FirebaseAppCheckInterop (~> 10.0)
+    - FirebaseCore (~> 10.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.8)
+    - GoogleUtilities/Environment (~> 7.8)
+    - GTMSessionFetcher/Core (< 4.0, >= 2.1)
+    - RecaptchaInterop (~> 100.0)
+  - FirebaseCore (10.15.0):
+    - FirebaseCoreInternal (~> 10.0)
+    - GoogleUtilities/Environment (~> 7.8)
+    - GoogleUtilities/Logger (~> 7.8)
+  - FirebaseCoreInternal (10.15.0):
+    - "GoogleUtilities/NSData+zlib (~> 7.8)"
+  - FirebaseInstallations (10.15.0):
+    - FirebaseCore (~> 10.0)
+    - GoogleUtilities/Environment (~> 7.8)
+    - GoogleUtilities/UserDefaults (~> 7.8)
+    - PromisesObjC (~> 2.1)
+  - Flutter (1.0.0)
+  - flutter_downloader (0.0.1):
+    - Flutter
+  - flutter_facebook_auth (5.0.4):
+    - FBSDKLoginKit (~> 15.1.0)
+    - Flutter
+  - flutter_inappwebview (0.0.1):
+    - Flutter
+    - flutter_inappwebview/Core (= 0.0.1)
+    - OrderedSet (~> 5.0)
+  - flutter_inappwebview/Core (0.0.1):
+    - Flutter
+    - OrderedSet (~> 5.0)
+  - flutter_paystack (0.0.1):
+    - Flutter
+  - flutter_secure_storage (6.0.0):
+    - Flutter
+  - fluttertoast (0.0.2):
+    - Flutter
+    - Toast
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - GCDWebServer (3.5.4):
+    - GCDWebServer/Core (= 3.5.4)
+  - GCDWebServer/Core (3.5.4)
+  - Giphy (2.1.20):
+    - libwebp
+  - google_maps_flutter_ios (0.0.1):
+    - Flutter
+    - GoogleMaps (< 8.0)
+  - google_sign_in_ios (0.0.1):
+    - Flutter
+    - GoogleSignIn (~> 6.2)
+  - GoogleAppMeasurement (10.15.0):
+    - GoogleAppMeasurement/AdIdSupport (= 10.15.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.11)
+    - GoogleUtilities/MethodSwizzler (~> 7.11)
+    - GoogleUtilities/Network (~> 7.11)
+    - "GoogleUtilities/NSData+zlib (~> 7.11)"
+    - nanopb (< 2.30910.0, >= 2.30908.0)
+  - GoogleAppMeasurement/AdIdSupport (10.15.0):
+    - GoogleAppMeasurement/WithoutAdIdSupport (= 10.15.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.11)
+    - GoogleUtilities/MethodSwizzler (~> 7.11)
+    - GoogleUtilities/Network (~> 7.11)
+    - "GoogleUtilities/NSData+zlib (~> 7.11)"
+    - nanopb (< 2.30910.0, >= 2.30908.0)
+  - GoogleAppMeasurement/WithoutAdIdSupport (10.15.0):
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.11)
+    - GoogleUtilities/MethodSwizzler (~> 7.11)
+    - GoogleUtilities/Network (~> 7.11)
+    - "GoogleUtilities/NSData+zlib (~> 7.11)"
+    - nanopb (< 2.30910.0, >= 2.30908.0)
+  - GoogleMaps (6.2.1):
+    - GoogleMaps/Maps (= 6.2.1)
+  - GoogleMaps/Base (6.2.1)
+  - GoogleMaps/Maps (6.2.1):
+    - GoogleMaps/Base
+  - GoogleSignIn (6.2.4):
+    - AppAuth (~> 1.5)
+    - GTMAppAuth (~> 1.3)
+    - GTMSessionFetcher/Core (< 3.0, >= 1.1)
+  - GoogleUtilities/AppDelegateSwizzler (7.11.5):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (7.11.5):
+    - PromisesObjC (< 3.0, >= 1.2)
+  - GoogleUtilities/Logger (7.11.5):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/MethodSwizzler (7.11.5):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/Network (7.11.5):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (7.11.5)"
+  - GoogleUtilities/Reachability (7.11.5):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/UserDefaults (7.11.5):
+    - GoogleUtilities/Logger
+  - GTMAppAuth (1.3.1):
+    - AppAuth/Core (~> 1.6)
+    - GTMSessionFetcher/Core (< 3.0, >= 1.5)
+  - GTMSessionFetcher/Core (2.3.0)
+  - HLSCachingReverseProxyServer (0.1.0):
+    - GCDWebServer (~> 3.5)
+    - PINCache (>= 3.0.1-beta.3)
+  - image_picker_ios (0.0.1):
+    - Flutter
+  - in_app_review (0.2.0):
+    - Flutter
+  - jitsi_meet_wrapper (0.0.1):
+    - Flutter
+    - JitsiMeetSDK (= 7.0.1)
+  - JitsiMeetSDK (7.0.1):
+    - Giphy (= 2.1.20)
+    - JitsiWebRTC (~> 106.0)
+  - JitsiWebRTC (106.0.0)
+  - just_audio (0.0.1):
+    - Flutter
+  - libphonenumber_plugin (0.0.1):
+    - Flutter
+    - PhoneNumberKit
+  - libwebp (1.3.2):
+    - libwebp/demux (= 1.3.2)
+    - libwebp/mux (= 1.3.2)
+    - libwebp/sharpyuv (= 1.3.2)
+    - libwebp/webp (= 1.3.2)
+  - libwebp/demux (1.3.2):
+    - libwebp/webp
+  - libwebp/mux (1.3.2):
+    - libwebp/demux
+  - libwebp/sharpyuv (1.3.2)
+  - libwebp/webp (1.3.2):
+    - libwebp/sharpyuv
+  - nanopb (2.30909.0):
+    - nanopb/decode (= 2.30909.0)
+    - nanopb/encode (= 2.30909.0)
+  - nanopb/decode (2.30909.0)
+  - nanopb/encode (2.30909.0)
+  - ObjectMapper (3.5.3)
+  - onesignal_flutter (5.0.2):
+    - Flutter
+    - OneSignalXCFramework (= 5.0.2)
+  - OneSignalXCFramework (5.0.2):
+    - OneSignalXCFramework/OneSignalComplete (= 5.0.2)
+  - OneSignalXCFramework/OneSignal (5.0.2):
+    - OneSignalXCFramework/OneSignalCore
+    - OneSignalXCFramework/OneSignalExtension
+    - OneSignalXCFramework/OneSignalNotifications
+    - OneSignalXCFramework/OneSignalOSCore
+    - OneSignalXCFramework/OneSignalOutcomes
+    - OneSignalXCFramework/OneSignalUser
+  - OneSignalXCFramework/OneSignalComplete (5.0.2):
+    - OneSignalXCFramework/OneSignal
+    - OneSignalXCFramework/OneSignalInAppMessages
+    - OneSignalXCFramework/OneSignalLocation
+  - OneSignalXCFramework/OneSignalCore (5.0.2)
+  - OneSignalXCFramework/OneSignalExtension (5.0.2):
+    - OneSignalXCFramework/OneSignalCore
+    - OneSignalXCFramework/OneSignalOutcomes
+  - OneSignalXCFramework/OneSignalInAppMessages (5.0.2):
+    - OneSignalXCFramework/OneSignalCore
+    - OneSignalXCFramework/OneSignalNotifications
+    - OneSignalXCFramework/OneSignalOSCore
+    - OneSignalXCFramework/OneSignalOutcomes
+    - OneSignalXCFramework/OneSignalUser
+  - OneSignalXCFramework/OneSignalLocation (5.0.2):
+    - OneSignalXCFramework/OneSignalCore
+    - OneSignalXCFramework/OneSignalNotifications
+    - OneSignalXCFramework/OneSignalOSCore
+    - OneSignalXCFramework/OneSignalUser
+  - OneSignalXCFramework/OneSignalNotifications (5.0.2):
+    - OneSignalXCFramework/OneSignalCore
+    - OneSignalXCFramework/OneSignalExtension
+    - OneSignalXCFramework/OneSignalOutcomes
+  - OneSignalXCFramework/OneSignalOSCore (5.0.2):
+    - OneSignalXCFramework/OneSignalCore
+  - OneSignalXCFramework/OneSignalOutcomes (5.0.2):
+    - OneSignalXCFramework/OneSignalCore
+  - OneSignalXCFramework/OneSignalUser (5.0.2):
+    - OneSignalXCFramework/OneSignalCore
+    - OneSignalXCFramework/OneSignalNotifications
+    - OneSignalXCFramework/OneSignalOSCore
+    - OneSignalXCFramework/OneSignalOutcomes
+  - OrderedSet (5.0.0)
+  - package_info_plus (0.4.5):
+    - Flutter
+  - path_provider_foundation (0.0.1):
+    - Flutter
+    - FlutterMacOS
+  - payhere_mobilesdk_flutter (3.0.6):
+    - Flutter
+    - payHereSDK (= 3.0.5)
+  - payHereSDK (3.0.5):
+    - Alamofire (~> 5.0.0-rc.2)
+    - AlamofireObjectMapper
+    - SDWebImage
+  - paytm (0.0.1):
+    - Flutter
+  - permission_handler_apple (9.1.1):
+    - Flutter
+  - PhoneNumberKit (3.7.3):
+    - PhoneNumberKit/PhoneNumberKitCore (= 3.7.3)
+    - PhoneNumberKit/UIKit (= 3.7.3)
+  - PhoneNumberKit/PhoneNumberKitCore (3.7.3)
+  - PhoneNumberKit/UIKit (3.7.3):
+    - PhoneNumberKit/PhoneNumberKitCore
+  - PINCache (3.0.3):
+    - PINCache/Arc-exception-safe (= 3.0.3)
+    - PINCache/Core (= 3.0.3)
+  - PINCache/Arc-exception-safe (3.0.3):
+    - PINCache/Core
+  - PINCache/Core (3.0.3):
+    - PINOperation (~> 1.2.1)
+  - PINOperation (1.2.2)
+  - PromisesObjC (2.3.1)
+  - razorpay-pod (1.3.4)
+  - razorpay_flutter (1.1.10):
+    - Flutter
+    - razorpay-pod
+  - ReachabilitySwift (5.0.0)
+  - RecaptchaInterop (100.0.0)
+  - SDWebImage (5.18.2):
+    - SDWebImage/Core (= 5.18.2)
+  - SDWebImage/Core (5.18.2)
+  - share_plus (0.0.1):
+    - Flutter
+  - shared_preferences_foundation (0.0.1):
+    - Flutter
+    - FlutterMacOS
+  - sqflite (0.0.3):
+    - Flutter
+    - FMDB (>= 2.7.5)
+  - SwiftyGif (5.4.4)
+  - syncfusion_flutter_pdfviewer (0.0.1):
+    - Flutter
+  - Toast (4.0.0)
+  - url_launcher_ios (0.0.1):
+    - Flutter
+  - video_player_avfoundation (0.0.1):
+    - Flutter
+  - wakelock (0.0.1):
+    - Flutter
+  - wakelock_plus (0.0.1):
+    - Flutter
+  - webview_flutter_wkwebview (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - add_2_calendar (from `.symlinks/plugins/add_2_calendar/ios`)
+  - audio_session (from `.symlinks/plugins/audio_session/ios`)
+  - audioplayers_darwin (from `.symlinks/plugins/audioplayers_darwin/ios`)
+  - better_player (from `.symlinks/plugins/better_player/ios`)
+  - cashfree_pg (from `.symlinks/plugins/cashfree_pg/ios`)
+  - connectivity_plus (from `.symlinks/plugins/connectivity_plus/ios`)
+  - device_info_plus (from `.symlinks/plugins/device_info_plus/ios`)
+  - facebook_audience_network (from `.symlinks/plugins/facebook_audience_network/ios`)
+  - file_picker (from `.symlinks/plugins/file_picker/ios`)
+  - firebase_analytics (from `.symlinks/plugins/firebase_analytics/ios`)
+  - firebase_auth (from `.symlinks/plugins/firebase_auth/ios`)
+  - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
+  - Flutter (from `Flutter`)
+  - flutter_downloader (from `.symlinks/plugins/flutter_downloader/ios`)
+  - flutter_facebook_auth (from `.symlinks/plugins/flutter_facebook_auth/ios`)
+  - flutter_inappwebview (from `.symlinks/plugins/flutter_inappwebview/ios`)
+  - flutter_paystack (from `.symlinks/plugins/flutter_paystack/ios`)
+  - flutter_secure_storage (from `.symlinks/plugins/flutter_secure_storage/ios`)
+  - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
+  - google_maps_flutter_ios (from `.symlinks/plugins/google_maps_flutter_ios/ios`)
+  - google_sign_in_ios (from `.symlinks/plugins/google_sign_in_ios/ios`)
+  - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
+  - in_app_review (from `.symlinks/plugins/in_app_review/ios`)
+  - jitsi_meet_wrapper (from `.symlinks/plugins/jitsi_meet_wrapper/ios`)
+  - just_audio (from `.symlinks/plugins/just_audio/ios`)
+  - libphonenumber_plugin (from `.symlinks/plugins/libphonenumber_plugin/ios`)
+  - onesignal_flutter (from `.symlinks/plugins/onesignal_flutter/ios`)
+  - OneSignalXCFramework (< 6.0, >= 5.0.0)
+  - package_info_plus (from `.symlinks/plugins/package_info_plus/ios`)
+  - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
+  - payhere_mobilesdk_flutter (from `.symlinks/plugins/payhere_mobilesdk_flutter/ios`)
+  - paytm (from `.symlinks/plugins/paytm/ios`)
+  - permission_handler_apple (from `.symlinks/plugins/permission_handler_apple/ios`)
+  - razorpay_flutter (from `.symlinks/plugins/razorpay_flutter/ios`)
+  - share_plus (from `.symlinks/plugins/share_plus/ios`)
+  - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/darwin`)
+  - sqflite (from `.symlinks/plugins/sqflite/ios`)
+  - syncfusion_flutter_pdfviewer (from `.symlinks/plugins/syncfusion_flutter_pdfviewer/ios`)
+  - url_launcher_ios (from `.symlinks/plugins/url_launcher_ios/ios`)
+  - video_player_avfoundation (from `.symlinks/plugins/video_player_avfoundation/ios`)
+  - wakelock (from `.symlinks/plugins/wakelock/ios`)
+  - wakelock_plus (from `.symlinks/plugins/wakelock_plus/ios`)
+  - webview_flutter_wkwebview (from `.symlinks/plugins/webview_flutter_wkwebview/ios`)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AlamofireObjectMapper
+    - AppAuth
+    - Cache
+    - DKImagePickerController
+    - DKPhotoGallery
+    - FBAEMKit
+    - FBAudienceNetwork
+    - FBSDKCoreKit
+    - FBSDKCoreKit_Basics
+    - FBSDKLoginKit
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseAppCheckInterop
+    - FirebaseAuth
+    - FirebaseCore
+    - FirebaseCoreInternal
+    - FirebaseInstallations
+    - FMDB
+    - GCDWebServer
+    - Giphy
+    - GoogleAppMeasurement
+    - GoogleMaps
+    - GoogleSignIn
+    - GoogleUtilities
+    - GTMAppAuth
+    - GTMSessionFetcher
+    - HLSCachingReverseProxyServer
+    - JitsiMeetSDK
+    - JitsiWebRTC
+    - libwebp
+    - nanopb
+    - ObjectMapper
+    - OneSignalXCFramework
+    - OrderedSet
+    - payHereSDK
+    - PhoneNumberKit
+    - PINCache
+    - PINOperation
+    - PromisesObjC
+    - razorpay-pod
+    - ReachabilitySwift
+    - RecaptchaInterop
+    - SDWebImage
+    - SwiftyGif
+    - Toast
+
+EXTERNAL SOURCES:
+  add_2_calendar:
+    :path: ".symlinks/plugins/add_2_calendar/ios"
+  audio_session:
+    :path: ".symlinks/plugins/audio_session/ios"
+  audioplayers_darwin:
+    :path: ".symlinks/plugins/audioplayers_darwin/ios"
+  better_player:
+    :path: ".symlinks/plugins/better_player/ios"
+  cashfree_pg:
+    :path: ".symlinks/plugins/cashfree_pg/ios"
+  connectivity_plus:
+    :path: ".symlinks/plugins/connectivity_plus/ios"
+  device_info_plus:
+    :path: ".symlinks/plugins/device_info_plus/ios"
+  facebook_audience_network:
+    :path: ".symlinks/plugins/facebook_audience_network/ios"
+  file_picker:
+    :path: ".symlinks/plugins/file_picker/ios"
+  firebase_analytics:
+    :path: ".symlinks/plugins/firebase_analytics/ios"
+  firebase_auth:
+    :path: ".symlinks/plugins/firebase_auth/ios"
+  firebase_core:
+    :path: ".symlinks/plugins/firebase_core/ios"
+  Flutter:
+    :path: Flutter
+  flutter_downloader:
+    :path: ".symlinks/plugins/flutter_downloader/ios"
+  flutter_facebook_auth:
+    :path: ".symlinks/plugins/flutter_facebook_auth/ios"
+  flutter_inappwebview:
+    :path: ".symlinks/plugins/flutter_inappwebview/ios"
+  flutter_paystack:
+    :path: ".symlinks/plugins/flutter_paystack/ios"
+  flutter_secure_storage:
+    :path: ".symlinks/plugins/flutter_secure_storage/ios"
+  fluttertoast:
+    :path: ".symlinks/plugins/fluttertoast/ios"
+  google_maps_flutter_ios:
+    :path: ".symlinks/plugins/google_maps_flutter_ios/ios"
+  google_sign_in_ios:
+    :path: ".symlinks/plugins/google_sign_in_ios/ios"
+  image_picker_ios:
+    :path: ".symlinks/plugins/image_picker_ios/ios"
+  in_app_review:
+    :path: ".symlinks/plugins/in_app_review/ios"
+  jitsi_meet_wrapper:
+    :path: ".symlinks/plugins/jitsi_meet_wrapper/ios"
+  just_audio:
+    :path: ".symlinks/plugins/just_audio/ios"
+  libphonenumber_plugin:
+    :path: ".symlinks/plugins/libphonenumber_plugin/ios"
+  onesignal_flutter:
+    :path: ".symlinks/plugins/onesignal_flutter/ios"
+  package_info_plus:
+    :path: ".symlinks/plugins/package_info_plus/ios"
+  path_provider_foundation:
+    :path: ".symlinks/plugins/path_provider_foundation/darwin"
+  payhere_mobilesdk_flutter:
+    :path: ".symlinks/plugins/payhere_mobilesdk_flutter/ios"
+  paytm:
+    :path: ".symlinks/plugins/paytm/ios"
+  permission_handler_apple:
+    :path: ".symlinks/plugins/permission_handler_apple/ios"
+  razorpay_flutter:
+    :path: ".symlinks/plugins/razorpay_flutter/ios"
+  share_plus:
+    :path: ".symlinks/plugins/share_plus/ios"
+  shared_preferences_foundation:
+    :path: ".symlinks/plugins/shared_preferences_foundation/darwin"
+  sqflite:
+    :path: ".symlinks/plugins/sqflite/ios"
+  syncfusion_flutter_pdfviewer:
+    :path: ".symlinks/plugins/syncfusion_flutter_pdfviewer/ios"
+  url_launcher_ios:
+    :path: ".symlinks/plugins/url_launcher_ios/ios"
+  video_player_avfoundation:
+    :path: ".symlinks/plugins/video_player_avfoundation/ios"
+  wakelock:
+    :path: ".symlinks/plugins/wakelock/ios"
+  wakelock_plus:
+    :path: ".symlinks/plugins/wakelock_plus/ios"
+  webview_flutter_wkwebview:
+    :path: ".symlinks/plugins/webview_flutter_wkwebview/ios"
+
+SPEC CHECKSUMS:
+  add_2_calendar: e9d68636aed37fb18e12f5a3d74c2e0589487af0
+  Alamofire: f9450d3c7f6bea2ad62e7a541c3e9b186c7991d6
+  AlamofireObjectMapper: 74d1440c92c42bbcc2b5f4dc81654ac095ec669f
+  AppAuth: 3bb1d1cd9340bd09f5ed189fb00b1cc28e1e8570
+  audio_session: 4f3e461722055d21515cf3261b64c973c062f345
+  audioplayers_darwin: 877d9a4d06331c5c374595e46e16453ac7eafa40
+  better_player: 2406bfe8175203c7a46fa15f9d778d73b12e1646
+  Cache: 4ca7e00363fca5455f26534e5607634c820ffc2d
+  cashfree_pg: 36bb2a5b4cc228a7697f55c55300b4a8b42fff00
+  connectivity_plus: 413a8857dd5d9f1c399a39130850d02fe0feaf7e
+  device_info_plus: 7545d84d8d1b896cb16a4ff98c19f07ec4b298ea
+  DKImagePickerController: b512c28220a2b8ac7419f21c491fc8534b7601ac
+  DKPhotoGallery: fdfad5125a9fdda9cc57df834d49df790dbb4179
+  facebook_audience_network: bb22bdda913d419d8c3247c9570bda4563302417
+  FBAEMKit: c7f82b5145d446bcbbcd50485c032689032fc6a2
+  FBAudienceNetwork: 4d6223a9a88a22e9dca8c9e6c1829a8745b86228
+  FBSDKCoreKit: 7542746fc63a2a38dd6a865eeb54268341f37b83
+  FBSDKCoreKit_Basics: 92d6b26c0bed30ab09bbdd96dccaa26e6c9978d1
+  FBSDKLoginKit: 4e275d30cf90e92bdf3a7c82857a8642abf23037
+  file_picker: ce3938a0df3cc1ef404671531facef740d03f920
+  Firebase: 66043bd4579e5b73811f96829c694c7af8d67435
+  firebase_analytics: 84fbf469b4964adb5410e25f3f45433dac480ccf
+  firebase_auth: ca31bca59224dc727ea0df7f066f30158a8acc3b
+  firebase_core: 77172d0a9d8d19d07606e24406e4c2fc14d3265b
+  FirebaseAnalytics: 47cef43728f81a839cf1306576bdd77ffa2eac7e
+  FirebaseAppCheckInterop: a8c555b1c2db1d9445e6c3a08a848167ddb7eb51
+  FirebaseAuth: a55ec5f7f8a5b1c2dd750235c1bb419bfb642445
+  FirebaseCore: 2cec518b43635f96afe7ac3a9c513e47558abd2e
+  FirebaseCoreInternal: 2f4bee5ed00301b5e56da0849268797a2dd31fb4
+  FirebaseInstallations: cae95cab0f965ce05b805189de1d4c70b11c76fb
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  flutter_downloader: 058b9c41564a90500f67f3e432e3524613a7fd83
+  flutter_facebook_auth: c69f4e643b1d9cc9063ec87c9411bd9ec268108f
+  flutter_inappwebview: acd4fc0f012cefd09015000c241137d82f01ba62
+  flutter_paystack: 50021637b71e7712780744f69d2843e71b65175d
+  flutter_secure_storage: 23fc622d89d073675f2eaa109381aefbcf5a49be
+  fluttertoast: 31b00dabfa7fb7bacd9e7dbee580d7a2ff4bf265
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
+  Giphy: b6d5087521d251bb8c99cdc0eb07bbdf86d142d5
+  google_maps_flutter_ios: abdac20d6ce8931f6ebc5f46616df241bfaa2cfd
+  google_sign_in_ios: 1256ff9d941db546373826966720b0c24804bcdd
+  GoogleAppMeasurement: 722db6550d1e6d552b08398b69a975ac61039338
+  GoogleMaps: 20d7b12be49a14287f797e88e0e31bc4156aaeb4
+  GoogleSignIn: 5651ce3a61e56ca864160e79b484cd9ed3f49b7a
+  GoogleUtilities: 13e2c67ede716b8741c7989e26893d151b2b2084
+  GTMAppAuth: 0ff230db599948a9ad7470ca667337803b3fc4dd
+  GTMSessionFetcher: 3a63d75eecd6aa32c2fc79f578064e1214dfdec2
+  HLSCachingReverseProxyServer: 59935e1e0244ad7f3375d75b5ef46e8eb26ab181
+  image_picker_ios: 4a8aadfbb6dc30ad5141a2ce3832af9214a705b5
+  in_app_review: 318597b3a06c22bb46dc454d56828c85f444f99d
+  jitsi_meet_wrapper: 5ef31595bf43682c8b5e9fb302798cdf4cd394d2
+  JitsiMeetSDK: 3a8798edb12e401237a0d74ce863a3227ca5d681
+  JitsiWebRTC: f441eb0e2d67f0588bf24e21c5162e97342714fb
+  just_audio: baa7252489dbcf47a4c7cc9ca663e9661c99aafa
+  libphonenumber_plugin: e8a7d64a6624a7c25f2c4ab0b7ead2a8e341e35e
+  libwebp: 1786c9f4ff8a279e4dac1e8f385004d5fc253009
+  nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
+  ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
+  onesignal_flutter: 2cb875e4395346422f41b935629c1c4da942f043
+  OneSignalXCFramework: d47a350b15e106a5dc310e3f97867e28dad6589e
+  OrderedSet: aaeb196f7fef5a9edf55d89760da9176ad40b93c
+  package_info_plus: fd030dabf36271f146f1f3beacd48f564b0f17f7
+  path_provider_foundation: 29f094ae23ebbca9d3d0cec13889cd9060c0e943
+  payhere_mobilesdk_flutter: 52ef97b1d4cda8f42bb6d31e0890c5e285c81b78
+  payHereSDK: 4f21d4c3b9158247827277dea7de25da216e4541
+  paytm: e6c2885af0c3db275f669b942b722ac3fc507249
+  permission_handler_apple: e76247795d700c14ea09e3a2d8855d41ee80a2e6
+  PhoneNumberKit: 3684748d15a7a3e140f717c72844fb0bfe1a9714
+  PINCache: 7a8fc1a691173d21dbddbf86cd515de6efa55086
+  PINOperation: daa34d4aa1d8449089be7d405b9d974abc4724c6
+  PromisesObjC: c50d2056b5253dadbd6c2bea79b0674bd5a52fa4
+  razorpay-pod: df3aa440969489d242c40ec606db9a0c7095743f
+  razorpay_flutter: 84b3bfd206ae9c9c2a9ba585524a1b3d8102b6c1
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+  RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
+  SDWebImage: c0de394d7cf7f9838aed1fd6bb6037654a4572e4
+  share_plus: 599aa54e4ea31d4b4c0e9c911bcc26c55e791028
+  shared_preferences_foundation: 5b919d13b803cadd15ed2dc053125c68730e5126
+  sqflite: 31f7eba61e3074736dff8807a9b41581e4f7f15a
+  SwiftyGif: 93a1cc87bf3a51916001cf8f3d63835fb64c819f
+  syncfusion_flutter_pdfviewer: bb9998884b864cfedf72628df3503bdf57e397c0
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+  url_launcher_ios: 08a3dfac5fb39e8759aeb0abbd5d9480f30fc8b4
+  video_player_avfoundation: 81e49bb3d9fb63dccf9fa0f6d877dc3ddbeac126
+  wakelock: d0fc7c864128eac40eba1617cb5264d9c940b46f
+  wakelock_plus: 8b09852c8876491e4b6d179e17dfe2a0b5f60d47
+  webview_flutter_wkwebview: b7e70ef1ddded7e69c796c7390ee74180182971f
+
+PODFILE CHECKSUM: 6e91cbccd9c0d7f5b46026135dda1f782a21bf78
+
+COCOAPODS: 1.13.0

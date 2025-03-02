@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">eClass</string>
+    <string name="facebook_app_id">ENTER_FACEBOOK_APP_ID_HERE</string>
+    <string name="fb_login_protocol_scheme">ENTER_FACEBOOK_APP_ID_HERE</string>
+    <string name="facebook_client_token">ENTER_FACEBOOK_CLIENT_TOKEN_HERE</string>
+</resources>

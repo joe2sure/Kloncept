@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "306602220422",
+    "project_id": "eclass-18593",
+    "storage_bucket": "eclass-18593.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:306602220422:android:e5b2f65dd2fd5af67e2a07",
+        "android_client_info": {
+          "package_name": "com.kloncept.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZeahHes0A35wXODnXXQcgb5WGHmhQEgo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

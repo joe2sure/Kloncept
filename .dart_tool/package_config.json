@@ -1,0 +1,1541 @@
+{
+  "configVersion": 2,
+  "packages": [
+    {
+      "name": "_flutterfire_internals",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/_flutterfire_internals-1.3.50",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "add_2_calendar",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/add_2_calendar-3.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.1"
+    },
+    {
+      "name": "args",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/args-2.6.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "async",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/async-2.11.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "audio_session",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/audio_session-0.1.25",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "audioplayers",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/audioplayers-6.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "audioplayers_android",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/audioplayers_android-5.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "audioplayers_darwin",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/audioplayers_darwin-6.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "audioplayers_linux",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/audioplayers_linux-4.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "audioplayers_platform_interface",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/audioplayers_platform_interface-7.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "audioplayers_web",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/audioplayers_web-5.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "audioplayers_windows",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/audioplayers_windows-4.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "auto_size_text",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/auto_size_text-3.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "better_player",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/git/betterplayer-af40d0b041602a91d5e94c7ef051432f0acd0d69/",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "boolean_selector",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/boolean_selector-2.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "cached_network_image",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/cached_network_image-3.4.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "cached_network_image_platform_interface",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/cached_network_image_platform_interface-4.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "cached_network_image_web",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/cached_network_image_web-1.3.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "carousel_slider",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/carousel_slider-5.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "characters",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/characters-1.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "chewie",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/chewie-1.10.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "clock",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/clock-1.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "collection",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/collection-1.19.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "connectivity_plus",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/connectivity_plus-6.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "connectivity_plus_platform_interface",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/connectivity_plus_platform_interface-2.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "convert",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/convert-3.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "cross_file",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/cross_file-0.3.4+2",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "crypto",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/crypto-3.0.6",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "csslib",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/csslib-1.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.1"
+    },
+    {
+      "name": "cupertino_icons",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/cupertino_icons-1.0.8",
+      "packageUri": "lib/",
+      "languageVersion": "3.1"
+    },
+    {
+      "name": "dbus",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/dbus-0.7.11",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "device_info_plus",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/device_info_plus-11.2.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "device_info_plus_platform_interface",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/device_info_plus_platform_interface-7.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "dio",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/dio-5.8.0+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "dio_web_adapter",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/dio_web_adapter-2.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "equatable",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/equatable-2.0.7",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "eventify",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/eventify-1.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "facebook_audience_network",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/facebook_audience_network-1.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "facebook_auth_desktop",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/facebook_auth_desktop-2.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "fading_edge_scrollview",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/fading_edge_scrollview-4.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "fake_async",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/fake_async-1.3.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "ffi",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/ffi-2.1.3",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "file",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/file-7.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "file_picker",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/file_picker-8.3.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "file_selector_linux",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/file_selector_linux-0.9.3+2",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "file_selector_macos",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/file_selector_macos-0.9.4+2",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "file_selector_platform_interface",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/file_selector_platform_interface-2.6.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "file_selector_windows",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/file_selector_windows-0.9.3+3",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "firebase_analytics",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_analytics-11.4.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "firebase_analytics_platform_interface",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_analytics_platform_interface-4.3.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "firebase_analytics_web",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_analytics_web-0.5.10+7",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "firebase_auth",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_auth-5.4.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "firebase_auth_platform_interface",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_auth_platform_interface-7.5.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "firebase_auth_web",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_auth_web-5.13.7",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "firebase_core",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_core-3.10.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "firebase_core_platform_interface",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_core_platform_interface-5.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "firebase_core_web",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_core_web-2.19.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "fixnum",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/fixnum-1.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.1"
+    },
+    {
+      "name": "flutter",
+      "rootUri": "file:///C:/Users/IFEANYI/flutter-extract/flutter/packages/flutter",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "flutter_cache_manager",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_cache_manager-3.4.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "flutter_carousel_slider",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_carousel_slider-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "flutter_cashfree_pg_sdk",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_cashfree_pg_sdk-2.2.3+41",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "flutter_downloader",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_downloader-1.12.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.6"
+    },
+    {
+      "name": "flutter_facebook_auth",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_facebook_auth-7.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "flutter_facebook_auth_platform_interface",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_facebook_auth_platform_interface-6.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "flutter_facebook_auth_web",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_facebook_auth_web-6.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "flutter_inappwebview",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_inappwebview-6.1.5",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "flutter_inappwebview_android",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_inappwebview_android-1.1.3",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "flutter_inappwebview_internal_annotations",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_inappwebview_internal_annotations-1.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "flutter_inappwebview_ios",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_inappwebview_ios-1.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "flutter_inappwebview_macos",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_inappwebview_macos-1.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "flutter_inappwebview_platform_interface",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_inappwebview_platform_interface-1.3.0+1",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "flutter_inappwebview_web",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_inappwebview_web-1.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "flutter_inappwebview_windows",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_inappwebview_windows-0.6.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "flutter_localizations",
+      "rootUri": "file:///C:/Users/IFEANYI/flutter-extract/flutter/packages/flutter_localizations",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "flutter_paystack",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/git/flutter_paystack-b16532e67c9f1432fefee0d36fc1e7ce6f16e161/",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "flutter_plugin_android_lifecycle",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.24",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "flutter_rating_bar",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_rating_bar-4.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "flutter_secure_storage",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_secure_storage-9.2.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "flutter_secure_storage_linux",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_secure_storage_linux-1.2.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "flutter_secure_storage_macos",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_secure_storage_macos-3.1.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "flutter_secure_storage_platform_interface",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_secure_storage_platform_interface-1.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "flutter_secure_storage_web",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_secure_storage_web-1.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "flutter_secure_storage_windows",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_secure_storage_windows-3.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "flutter_svg",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_svg-2.0.17",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "flutter_test",
+      "rootUri": "file:///C:/Users/IFEANYI/flutter-extract/flutter/packages/flutter_test",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "flutter_translate",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_translate-4.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "flutter_web_plugins",
+      "rootUri": "file:///C:/Users/IFEANYI/flutter-extract/flutter/packages/flutter_web_plugins",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "flutter_widget_from_html",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_widget_from_html-0.15.3",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "flutter_widget_from_html_core",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_widget_from_html_core-0.15.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "fluttertoast",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/fluttertoast-8.2.10",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "flutterwave_standard",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/git/flutter_standard-0f156e06b92dfaed1dbd74bda3b70792fa14eb96/",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "font_awesome_flutter",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/font_awesome_flutter-10.8.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "fwfh_cached_network_image",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/fwfh_cached_network_image-0.14.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "fwfh_chewie",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/fwfh_chewie-0.14.8",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "fwfh_just_audio",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/fwfh_just_audio-0.15.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "fwfh_svg",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/fwfh_svg-0.8.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "fwfh_url_launcher",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/fwfh_url_launcher-0.9.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "fwfh_webview",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/fwfh_webview-0.15.3",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "google_identity_services_web",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/google_identity_services_web-0.3.3",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "google_maps",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/google_maps-8.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "google_maps_flutter",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/google_maps_flutter-2.10.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "google_maps_flutter_android",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/google_maps_flutter_android-2.14.12",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "google_maps_flutter_ios",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/google_maps_flutter_ios-2.13.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "google_maps_flutter_platform_interface",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/google_maps_flutter_platform_interface-2.10.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "google_maps_flutter_web",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/google_maps_flutter_web-0.5.10",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "google_sign_in",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/google_sign_in-6.2.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "google_sign_in_android",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/google_sign_in_android-6.1.34",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "google_sign_in_ios",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/google_sign_in_ios-5.7.8",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "google_sign_in_platform_interface",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/google_sign_in_platform_interface-2.4.5",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "google_sign_in_web",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/google_sign_in_web-0.12.4+3",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "html",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/html-0.15.5",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "html_unescape",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/html_unescape-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "http",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/http-1.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "http_auth",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/http_auth-1.0.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "http_parser",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/http_parser-4.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "image_picker",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker-1.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "image_picker_android",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker_android-0.8.12+20",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "image_picker_for_web",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker_for_web-3.0.6",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "image_picker_ios",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker_ios-0.8.12+2",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "image_picker_linux",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker_linux-0.2.1+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "image_picker_macos",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker_macos-0.2.1+2",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "image_picker_platform_interface",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker_platform_interface-2.10.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "image_picker_windows",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker_windows-0.2.1+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "in_app_review",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/in_app_review-2.0.10",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "in_app_review_platform_interface",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/in_app_review_platform_interface-2.0.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "in_app_update",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/in_app_update-4.2.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "intl",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/intl-0.18.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "intl_phone_number_input",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/intl_phone_number_input-0.7.4",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "jitsi_meet_wrapper",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/jitsi_meet_wrapper-0.2.0+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "jitsi_meet_wrapper_platform_interface",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/jitsi_meet_wrapper_platform_interface-0.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "js",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/js-0.6.7",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "just_audio",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/just_audio-0.9.46",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "just_audio_platform_interface",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/just_audio_platform_interface-4.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "just_audio_web",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/just_audio_web-0.4.14",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "leak_tracker",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/leak_tracker-10.0.7",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "leak_tracker_flutter_testing",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/leak_tracker_flutter_testing-3.0.8",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "leak_tracker_testing",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/leak_tracker_testing-3.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "libphonenumber_platform_interface",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/libphonenumber_platform_interface-0.4.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "libphonenumber_plugin",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/libphonenumber_plugin-0.3.3",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "libphonenumber_web",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/libphonenumber_web-0.3.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "loading_overlay",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/loading_overlay-0.4.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "logging",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/logging-1.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "matcher",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/matcher-0.12.16+1",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "material_color_utilities",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/material_color_utilities-0.11.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "meta",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/meta-1.15.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "mime",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/mime-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "nested",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/nested-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "nm",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/nm-0.5.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "octo_image",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/octo_image-2.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "onesignal_flutter",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/onesignal_flutter-5.2.9",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "package_info_plus",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/package_info_plus-8.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "package_info_plus_platform_interface",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/package_info_plus_platform_interface-3.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "page_transition",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/page_transition-2.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "path",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/path-1.9.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "path_morph",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/path_morph-1.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "path_parsing",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/path_parsing-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "path_provider",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/path_provider-2.1.5",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "path_provider_android",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/path_provider_android-2.2.15",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "path_provider_foundation",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/path_provider_foundation-2.4.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "path_provider_linux",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/path_provider_linux-2.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "path_provider_platform_interface",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/path_provider_platform_interface-2.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "path_provider_windows",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/path_provider_windows-2.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "payhere_mobilesdk_flutter",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/payhere_mobilesdk_flutter-3.0.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "paytm",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/paytm-3.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "payu_checkoutpro_flutter",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/payu_checkoutpro_flutter-1.2.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "percent_indicator",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/percent_indicator-4.2.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "permission_handler",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/permission_handler-11.3.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
+      "name": "permission_handler_android",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/permission_handler_android-12.0.13",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
+      "name": "permission_handler_apple",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/permission_handler_apple-9.4.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
+      "name": "permission_handler_html",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/permission_handler_html-0.1.3+5",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "permission_handler_platform_interface",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/permission_handler_platform_interface-4.2.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "permission_handler_windows",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/permission_handler_windows-0.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "petitparser",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/petitparser-6.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "platform",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/platform-3.1.6",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "plugin_platform_interface",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/plugin_platform_interface-2.1.8",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "provider",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/provider-6.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "qr",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/qr-3.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "qr_flutter",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/qr_flutter-4.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "razorpay_flutter",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/razorpay_flutter-1.3.7",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "rxdart",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/rxdart-0.28.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "sanitize_html",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/sanitize_html-2.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "share_plus",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/share_plus-10.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "share_plus_platform_interface",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/share_plus_platform_interface-5.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "shared_preferences",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences-2.5.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "shared_preferences_android",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences_android-2.4.4",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "shared_preferences_foundation",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences_foundation-2.5.4",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "shared_preferences_linux",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences_linux-2.4.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "shared_preferences_platform_interface",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences_platform_interface-2.4.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "shared_preferences_web",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences_web-2.4.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "shared_preferences_windows",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences_windows-2.4.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "shimmer",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/shimmer-3.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "sky_engine",
+      "rootUri": "file:///C:/Users/IFEANYI/flutter-extract/flutter/bin/cache/pkg/sky_engine",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "source_span",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/source_span-1.10.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "sprintf",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/sprintf-7.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "sqflite",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/sqflite-2.4.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "sqflite_android",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/sqflite_android-2.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "sqflite_common",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/sqflite_common-2.5.4+6",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "sqflite_darwin",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/sqflite_darwin-2.4.1+1",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "sqflite_platform_interface",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/sqflite_platform_interface-2.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "stack_trace",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/stack_trace-1.12.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "sticky_headers",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/sticky_headers-0.3.0+2",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "stream_channel",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/stream_channel-2.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "stream_transform",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/stream_transform-2.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.1"
+    },
+    {
+      "name": "string_scanner",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/string_scanner-1.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.1"
+    },
+    {
+      "name": "syncfusion_flutter_core",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/syncfusion_flutter_core-28.2.4",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "syncfusion_flutter_pdf",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/syncfusion_flutter_pdf-28.2.4",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "syncfusion_flutter_pdfviewer",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/syncfusion_flutter_pdfviewer-28.2.4",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "syncfusion_flutter_signaturepad",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/syncfusion_flutter_signaturepad-28.2.4",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "syncfusion_pdfviewer_macos",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/syncfusion_pdfviewer_macos-28.2.4",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "syncfusion_pdfviewer_platform_interface",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/syncfusion_pdfviewer_platform_interface-28.2.4",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "syncfusion_pdfviewer_web",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/syncfusion_pdfviewer_web-28.2.4",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "syncfusion_pdfviewer_windows",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/syncfusion_pdfviewer_windows-28.2.4",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "synchronized",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/synchronized-3.3.0+3",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "term_glyph",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/term_glyph-1.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "test_api",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/test_api-0.7.3",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "translator",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/translator-1.0.3+1",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "typed_data",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/typed_data-1.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "universal_io",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/universal_io-2.2.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "upi_india",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/upi_india-3.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "url_launcher",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/url_launcher-6.3.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "url_launcher_android",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/url_launcher_android-6.3.14",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "url_launcher_ios",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/url_launcher_ios-6.3.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "url_launcher_linux",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/url_launcher_linux-3.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "url_launcher_macos",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/url_launcher_macos-3.2.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "url_launcher_platform_interface",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/url_launcher_platform_interface-2.3.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.1"
+    },
+    {
+      "name": "url_launcher_web",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/url_launcher_web-2.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.6"
+    },
+    {
+      "name": "url_launcher_windows",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/url_launcher_windows-3.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "uuid",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/uuid-4.5.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "vector_graphics",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/vector_graphics-1.1.17",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "vector_graphics_codec",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/vector_graphics_codec-1.1.13",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "vector_graphics_compiler",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/vector_graphics_compiler-1.1.16",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "vector_math",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/vector_math-2.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "video_player",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/video_player-2.9.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "video_player_android",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/video_player_android-2.7.17",
+      "packageUri": "lib/",
+      "languageVersion": "3.6"
+    },
+    {
+      "name": "video_player_avfoundation",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/video_player_avfoundation-2.6.7",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "video_player_platform_interface",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/video_player_platform_interface-6.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "video_player_web",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/video_player_web-2.3.4",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "visibility_detector",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/visibility_detector-0.4.0+2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "vm_service",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/vm_service-14.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "wakelock_plus",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/wakelock_plus-1.2.10",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "wakelock_plus_platform_interface",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/wakelock_plus_platform_interface-1.2.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "web",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/web-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "webview_flutter",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/webview_flutter-4.10.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "webview_flutter_android",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/webview_flutter_android-4.3.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "webview_flutter_platform_interface",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/webview_flutter_platform_interface-2.10.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "webview_flutter_wkwebview",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/webview_flutter_wkwebview-3.18.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "win32",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/win32-5.10.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "win32_registry",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/win32_registry-1.1.5",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "xdg_directories",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/xdg_directories-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "xml",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/xml-6.5.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "youtube_player_flutter",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/youtube_player_flutter-9.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "youtube_player_iframe",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/youtube_player_iframe-5.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "youtube_player_iframe_web",
+      "rootUri": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache/hosted/pub.dev/youtube_player_iframe_web-3.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "kloncept",
+      "rootUri": "../",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    }
+  ],
+  "generated": "2025-03-02T20:30:50.741639Z",
+  "generator": "pub",
+  "generatorVersion": "3.6.0",
+  "flutterRoot": "file:///C:/Users/IFEANYI/flutter-extract/flutter",
+  "flutterVersion": "3.27.1",
+  "pubCache": "file:///C:/Users/IFEANYI/AppData/Local/Pub/Cache"
+}

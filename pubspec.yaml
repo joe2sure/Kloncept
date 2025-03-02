@@ -1,0 +1,217 @@
+name: kloncept
+description: A new Flutter application.
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.19.6 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  device_info_plus: ^11.2.2
+  in_app_update: ^4.0.1
+  in_app_review: ^2.0.6
+  qr_flutter: ^4.0.0
+  onesignal_flutter: ^5.0.2
+  add_2_calendar: ^3.0.1
+  facebook_audience_network: ^1.0.1
+  intl_phone_number_input: ^0.7.3+1
+  upi_india: ^3.0.1
+  share_plus: ^10.0.3
+  flutter_carousel_slider: ^1.1.0
+  flutter_facebook_auth: ^7.1.1
+  # cashfree_pg: ^2.0.12+32
+  flutterwave_standard:
+      git:
+        url: https://github.com/I-driod/flutter_standard
+        ###ref: ffd342ef628c34076fc66175cea5b2d25e3e8087
+        ref: develop
+  # payu_web_checkout: ^1.0.3
+  payhere_mobilesdk_flutter: ^3.0.4
+  sqflite: ^2.2.0+3
+  path: ^1.8.2
+  
+  wakelock_plus: ^1.2.10
+  url_launcher: ^6.1.12
+  flutter_localizations:
+    sdk: flutter
+  flutter_translate: ^4.0.3
+  google_maps_flutter: ^2.2.1
+  firebase_analytics: ^11.4.1
+  shared_preferences: ^2.0.15
+  translator: ^1.0.0
+  # vimeo_player_flutter: ^0.1.0
+  loading_overlay: ^0.4.2
+  flutter_rating_bar: ^4.0.1
+  syncfusion_flutter_pdfviewer: ^28.2.4
+  provider: ^6.0.4
+  font_awesome_flutter: ^10.2.1
+  percent_indicator: ^4.2.2
+  path_morph: ^1.0.1
+  fading_edge_scrollview: ^4.1.1
+  http: ^1.3.0
+  razorpay_flutter: ^1.3.5
+  fluttertoast: ^8.1.1
+  page_transition: ^2.0.9
+
+  carousel_slider: ^5.0.0
+
+  cached_network_image: ^3.2.2
+  image_picker: ^1.0.7
+  file_picker: ^8.0.0+1
+  flutter_paystack:
+      git:
+        url: https://github.com/CodeAvid/flutter_paystack
+        # url: https://github.com/bhandaribhumin/flutter_paystack
+        ###ref: ffd342ef628c34076fc66175cea5b2d25e3e8087
+        ref: master
+  youtube_player_flutter: ^9.0.4
+  shimmer: ^3.0.0
+  dio: ^5.4.2+1
+  http_auth: ^1.0.1
+  auto_size_text: ^3.0.0
+  html_unescape: ^2.0.0
+  sticky_headers: ^0.3.0+2
+  paytm: ^3.0.1
+  
+  # inappwebview: ^5.7.1
+  webview_flutter_wkwebview: ^3.15.0
+  firebase_core: ^3.10.1
+  firebase_auth: ^5.4.1
+  google_sign_in: ^6.1.4
+  path_provider: ^2.0.11
+  permission_handler: ^11.3.1
+  connectivity_plus: ^6.0.1
+  audioplayers: ^6.0.0
+  better_player:
+      git:
+        url: https://github.com/r3pr3ss10n/betterplayer
+        ##url: https://github.com/picasso-one/betterplayer-fork
+        ###ref: ffd342ef628c34076fc66175cea5b2d25e3e8087
+        ref: master
+       # ref: develop
+  video_player: ^2.4.7
+  jitsi_meet_wrapper: ^0.2.0+1
+
+
+  # Old Versions but do not upgrade.
+  flutter_downloader: ^1.11.6
+  flutter_widget_from_html: ^0.15.3
+  youtube_player_iframe: ^5.2.0
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.3
+  chewie: ^1.5.0
+  html: ^0.15.4
+  flutter_secure_storage: ^9.0.0
+  payu_checkoutpro_flutter: ^1.2.1
+  flutter_cashfree_pg_sdk: ^2.1.7+37
+
+  intl: any
+  flutter_inappwebview: any
+  audio_session: any
+  firebase_analytics_web: any
+  firebase_auth_web: any
+  firebase_core_web: any
+  flutter_facebook_auth_web: any
+  flutter_secure_storage_web: any
+  google_sign_in_web: any
+  image_picker_for_web: any
+  just_audio_web: any
+  libphonenumber_web: any
+  shared_preferences_web: any
+  url_launcher_web: any
+  video_player_web: any
+
+  webview_flutter: any
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+dependency_overrides:
+  intl: ^0.18.0
+  webview_flutter: ^4.0.0
+  win32: ^5.6.0
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/placeholder/
+    - assets/i18n/
+
+  #   - images/a_dot_burr.jpeg
+  #   - images/a_dot_ham.jpeg
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware.
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  fonts:
+    - family: Mada
+      fonts:
+        - asset: assets/fonts/Mada-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Mada-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Mada-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Mada-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Mada-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Mada-Black.ttf
+          weight: 800
+        - asset: assets/fonts/Mada-ExtraLight.ttf
+          weight: 200
+    - family: icomoon
+      fonts:
+        - asset: assets/custom_icons/custom-icons.ttf
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttfs
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
