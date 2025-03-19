@@ -7,7 +7,6 @@ import '../common/global.dart';
 import '../provider/home_data_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 // ignore: must_be_immutable
 class LoadingScreen extends StatefulWidget {
   String? token;
@@ -15,56 +14,50 @@ class LoadingScreen extends StatefulWidget {
   @override
   _LoadingScreenState createState() => _LoadingScreenState();
 }
-
 class _LoadingScreenState extends State<LoadingScreen> {
   bool _visible = false;
-
-  initState() {
+  @override
+  void initState() {
     super.initState();
-    // listenInternetStatus(context);
+    // listenInternetStatus(context); // Disabled for now
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
-      // Set dummy token if not already set
-      if (authToken == null) {
-        authToken = "dummy_token";
-        await storage.write(key: "token", value: authToken);
-      }
-      
-      // Load dummy data from providers
-      HomeDataProvider homeData =
-          Provider.of<HomeDataProvider>(context, listen: false);
-      await homeData.getHomeDetails(context);
-
-      // Set currency
-      if (await storage.containsKey(key: 'selectedCurrency') &&
-          await storage.containsKey(key: 'selectedCurrencyRate')) {
-        selectedCurrency = await storage.read(key: 'selectedCurrency');
-        selectedCurrencyRate =
-            int.tryParse(await storage.read(key: 'selectedCurrencyRate') ?? "1");
-      } else {
-        selectedCurrency = homeData.homeModel!.currency!.currency;
-        selectedCurrencyRate = 1;
-      }
-
-    // Load language data using dummy data
-    LanguageProvider languageProvider =
-        Provider.of<LanguageProvider>(context, listen: false);
-    await languageProvider.loadData(context, loadScreen: false);
-
-      // // Loading Languages
-      // LanguageProvider languageProvider =
-      //     Provider.of<LanguageProvider>(context, listen: false);
-      // await languageProvider.loadData(context, loadScreen: false);
-      // changeLocale(context, languageProvider.languageCode);
-
-      // Proceed to main app after a short delay
-      Timer(Duration(milliseconds: 1500), () {
-        setState(() {
-          _visible = true;
+      try {
+        // Set dummy token if not already set
+        if (authToken == null) {
+          authToken = "dummy_token";
+          await storage.write(key: "token", value: authToken);
+        }
+        // Load dummy data from providers
+        HomeDataProvider homeData =
+            Provider.of<HomeDataProvider>(context, listen: false);
+        await homeData.getHomeDetails(context);
+        // Set currency
+        if (await storage.containsKey(key: 'selectedCurrency') &&
+            await storage.containsKey(key: 'selectedCurrencyRate')) {
+          selectedCurrency = await storage.read(key: 'selectedCurrency');
+          selectedCurrencyRate =
+              int.tryParse(await storage.read(key: 'selectedCurrencyRate') ?? "1") ?? 1;
+        } else {
+          selectedCurrency = homeData.homeModel!.currency!.currency;
+          selectedCurrencyRate = 1;
+        }
+        // Load language data using dummy data
+        LanguageProvider languageProvider =
+            Provider.of<LanguageProvider>(context, listen: false);
+        await languageProvider.loadData(context, loadScreen: false);
+        // Change locale to the selected language
+        changeLocale(context, languageProvider.languageCode);
+        // Proceed to main app after a short delay
+        Timer(Duration(milliseconds: 1500), () {
+          setState(() {
+            _visible = true;
+          });
         });
-      });
+      } catch (e) {
+        print("Error in LoadingScreen initState: $e");
+      }
     });
   }
-
   Widget logoWidget() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -93,14 +86,12 @@ class _LoadingScreenState extends State<LoadingScreen> {
       ],
     );
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _visible == true ? MyBottomNavigationBar(pageInd: 0) : logoWidget(),
+      body: _visible ? MyBottomNavigationBar(pageInd: 0) : logoWidget(),
     );
   }
-
   @override
   void dispose() {
     cancelInternetStatus();
