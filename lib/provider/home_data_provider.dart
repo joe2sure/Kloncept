@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kloncept/common/dummy_data.dart';
 import 'package:kloncept/model/home_model.dart';
-import 'package:kloncept/widgets/featured_category_list.dart';
+// import 'package:kloncept/widgets/featured_category_list.dart';
 
 class HomeDataProvider with ChangeNotifier {
   HomeModel? homeModel;

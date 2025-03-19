@@ -51,7 +51,7 @@ class _SignInScreenState extends State<SignInScreen>
   void initState() {
     listenInternetStatus(context);
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-        statusBarColor: Colors.black.withAlpha(0.3 as int),
+        statusBarColor: Colors.black.withAlpha((0.3 * 255).toInt()),
         statusBarIconBrightness: Brightness.light
     ));
     

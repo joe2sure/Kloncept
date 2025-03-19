@@ -21,7 +21,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
   initState() {
     super.initState();
-    listenInternetStatus(context);
+    // listenInternetStatus(context);
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
       // Set dummy token if not already set
       if (authToken == null) {
@@ -45,11 +45,16 @@ class _LoadingScreenState extends State<LoadingScreen> {
         selectedCurrencyRate = 1;
       }
 
-      // Loading Languages
-      LanguageProvider languageProvider =
-          Provider.of<LanguageProvider>(context, listen: false);
-      await languageProvider.loadData(context, loadScreen: false);
-      changeLocale(context, languageProvider.languageCode);
+    // Load language data using dummy data
+    LanguageProvider languageProvider =
+        Provider.of<LanguageProvider>(context, listen: false);
+    await languageProvider.loadData(context, loadScreen: false);
+
+      // // Loading Languages
+      // LanguageProvider languageProvider =
+      //     Provider.of<LanguageProvider>(context, listen: false);
+      // await languageProvider.loadData(context, loadScreen: false);
+      // changeLocale(context, languageProvider.languageCode);
 
       // Proceed to main app after a short delay
       Timer(Duration(milliseconds: 1500), () {
