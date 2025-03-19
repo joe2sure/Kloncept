@@ -12,6 +12,9 @@ class Review {
     this.featured,
     this.createdAt,
     this.updatedAt,
+    required String userName,
+    required userImage,
+    required String comment,
   });
 
   int? id;
@@ -42,6 +45,9 @@ class Review {
             ? null
             : DateTime.parse(json["created_at"]),
         updatedAt: DateTime.parse(json["updated_at"]),
+        userName: '',
+        userImage: 'assets/images/cate1.png',
+        comment: '',
       );
 
   Map<String, dynamic> toJson() => {

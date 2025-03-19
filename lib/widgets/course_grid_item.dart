@@ -207,8 +207,8 @@ class CourseGridItem extends StatelessWidget {
     String? category = Provider.of<HomeDataProvider>(context)
         .getCategoryName(courseDetail!.categoryId);
 
-    bool? isPurchased =
-        Provider.of<CoursesProvider>(context).isPurchased(courseDetail!.id);
+    // bool? isPurchased =
+    //     Provider.of<CoursesProvider>(context).isPurchased(courseDetail!.id);
     T.Theme mode = Provider.of<T.Theme>(context);
     if (idx! % 2 == 0)
       edgeInsets = EdgeInsets.only(left: 8.0);
@@ -228,7 +228,7 @@ class CourseGridItem extends StatelessWidget {
         ],
         borderRadius: BorderRadius.circular(10.0),
       ),
-      child: itemDetails(context, isPurchased, currency, rating, category),
+      // child: itemDetails(context, isPurchased, currency, rating, category),
     );
   }
 }

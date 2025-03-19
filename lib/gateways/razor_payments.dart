@@ -221,7 +221,7 @@ class _MyRazorPaymentPageState extends State<MyRazorPaymentPage> {
         'wallets': ['paytm']
       },
       'prefill': {
-        'contact': "${user.profileInstance.mobile}",
+        // 'contact': "${user.profileInstance.mobile}",
         'email': "${user.profileInstance.email}"
       }
     };

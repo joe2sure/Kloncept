@@ -351,11 +351,11 @@ class _EditProfileState extends State<EditProfile> {
                   upfname = user.profileInstance.fname.toString();
                 if (uplname == "")
                   uplname = user.profileInstance.lname.toString();
-                if (upmob == "") upmob = user.profileInstance.mobile;
-                if (upaddress == "")
-                  upaddress = user.profileInstance.address.toString();
-                if (updetail == "")
-                  updetail = user.profileInstance.detail.toString();
+                // if (upmob == "") upmob = user.profileInstance.mobile;
+                // if (upaddress == "")
+                //   upaddress = user.profileInstance.address.toString();
+                // if (updetail == "")
+                //   updetail = user.profileInstance.detail.toString();
                 if (_formKey.currentState!.validate())
                   await updateDetails(email).then((value) async {
                     if (value) {
@@ -495,7 +495,7 @@ class _EditProfileState extends State<EditProfile> {
             SizedBox(height: 16),
             TextButton(
               onPressed: () {
-                deleteAccount();
+                // deleteAccount();
                 Navigator.pop(context);
               },
               child: Text(
@@ -512,24 +512,24 @@ class _EditProfileState extends State<EditProfile> {
     }
   }
 
-  Future<void> deleteAccount() async {
-    Response response =
-        await dio.delete(APIData.deleteAccount + "${user!.profileInstance.id}");
+  // Future<void> deleteAccount() async {
+  //   Response response =
+  //       await dio.delete(APIData.deleteAccount + "${user!.profileInstance.id}");
 
-    if (response.statusCode == 200) {
-      print("Delete Account API Response : ${response.data}");
-      authToken = null;
-      await storage.deleteAll();
-      Fluttertoast.showToast(
-          msg: translate("Your Account has been deleted successfully."));
-      Provider.of<Visible>(context, listen: false).toggleVisible(false);
-      Navigator.of(context).pushNamed('/SignIn');
-    } else {
-      print("Delete Account API Response : ${response.data}");
-      Fluttertoast.showToast(
-          msg: translate("Failed! Your Account could not be deleted."));
-    }
-  }
+  //   if (response.statusCode == 200) {
+  //     print("Delete Account API Response : ${response.data}");
+  //     authToken = null;
+  //     await storage.deleteAll();
+  //     Fluttertoast.showToast(
+  //         msg: translate("Your Account has been deleted successfully."));
+  //     Provider.of<Visible>(context, listen: false).toggleVisible(false);
+  //     Navigator.of(context).pushNamed('/SignIn');
+  //   } else {
+  //     print("Delete Account API Response : ${response.data}");
+  //     Fluttertoast.showToast(
+  //         msg: translate("Failed! Your Account could not be deleted."));
+  //   }
+  // }
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 

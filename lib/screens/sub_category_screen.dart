@@ -18,9 +18,9 @@ class SubCategoryScreen extends StatelessWidget {
     SubCategory? subCategory = ModalRoute.of(context)!.settings.arguments as SubCategory;
     Color spcl = Color(0xff655586);
     T.Theme mode = Provider.of<T.Theme>(context);
-    List<Course> courses = Provider.of<CoursesProvider>(context)
-        .getsubcatecourses(subCategory.id, subCategory.categoryId);
-    var homeData = Provider.of<HomeDataProvider>(context).childCategoryList;
+    // List<Course> courses = Provider.of<CoursesProvider>(context)
+    //     .getsubcatecourses(subCategory.id, subCategory.categoryId);
+    // var homeData = Provider.of<HomeDataProvider>(context).childCategoryList;
     return Scaffold(
       backgroundColor: mode.bgcolor,
       appBar: customAppBar(context, subCategory.title.toString()),
@@ -30,72 +30,73 @@ class SubCategoryScreen extends StatelessWidget {
             SliverToBoxAdapter(
                 child: headingTitle(
                     translate("Child_Categories"), Color(0xff0083A4), 16)),
+            // SliverToBoxAdapter(
+            //   child: FutureBuilder(
+            //       future: CategoryList().childcate(subCategory.id.toString(),
+            //           subCategory.categoryId.toString(), homeData!),
+            //       builder: (context, snap) {
+            //         if (snap.hasData)
+            //           return Container(
+            //             height: 130,
+            //             child: ListView.builder(
+            //                 itemCount: snap.data!.length,
+            //                 scrollDirection: Axis.horizontal,
+            //                 itemBuilder: (context, idx) {
+            //                   return GestureDetector(
+            //                     onTap: () {
+            //                       Navigator.of(context).pushNamed(
+            //                           '/childCategory',
+            //                           arguments: snap.data![idx]);
+            //                     },
+            //                     child: Column(
+            //                       children: [
+            //                         Container(
+            //                           margin: EdgeInsets.all(7.0),
+            //                           height: 75.0,
+            //                           width: 75.0,
+            //                           decoration: BoxDecoration(
+            //                             borderRadius:
+            //                                 BorderRadius.circular(40.0),
+            //                             image: DecorationImage(
+            //                               image: AssetImage(img[idx % 2]),
+            //                             ),
+            //                           ),
+            //                         ),
+            //                         Expanded(
+            //                           child: Container(
+            //                             alignment: Alignment.topCenter,
+            //                             width: 83.0,
+            //                             child: Text(
+            //                               snap.data![idx].title.toString(),
+            //                               textAlign: TextAlign.center,
+            //                               style: TextStyle(
+            //                                 color: mode.lighttheme
+            //                                     ? Colors.grey[700]
+            //                                     : spcl,
+            //                                 fontWeight: FontWeight.w500,
+            //                               ),
+            //                             ),
+            //                           ),
+            //                         )
+            //                       ],
+            //                     ),
+            //                   );
+            //                 }),
+            //           );
+            //         else
+            //           return Container(
+            //             child: Center(
+            //               child: CircularProgressIndicator(),
+            //             ),
+            //           );
+            //       }),
+            // ),
             SliverToBoxAdapter(
-              child: FutureBuilder(
-                  future: CategoryList().childcate(subCategory.id.toString(),
-                      subCategory.categoryId.toString(), homeData!),
-                  builder: (context, snap) {
-                    if (snap.hasData)
-                      return Container(
-                        height: 130,
-                        child: ListView.builder(
-                            itemCount: snap.data!.length,
-                            scrollDirection: Axis.horizontal,
-                            itemBuilder: (context, idx) {
-                              return GestureDetector(
-                                onTap: () {
-                                  Navigator.of(context).pushNamed(
-                                      '/childCategory',
-                                      arguments: snap.data![idx]);
-                                },
-                                child: Column(
-                                  children: [
-                                    Container(
-                                      margin: EdgeInsets.all(7.0),
-                                      height: 75.0,
-                                      width: 75.0,
-                                      decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(40.0),
-                                        image: DecorationImage(
-                                          image: AssetImage(img[idx % 2]),
-                                        ),
-                                      ),
-                                    ),
-                                    Expanded(
-                                      child: Container(
-                                        alignment: Alignment.topCenter,
-                                        width: 83.0,
-                                        child: Text(
-                                          snap.data![idx].title.toString(),
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            color: mode.lighttheme
-                                                ? Colors.grey[700]
-                                                : spcl,
-                                            fontWeight: FontWeight.w500,
-                                          ),
-                                        ),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              );
-                            }),
-                      );
-                    else
-                      return Container(
-                        child: Center(
-                          child: CircularProgressIndicator(),
+                // child: courses.length == 0
+                //     ? null
+                //     : headingTitle(
+                //         translate("Courses_"), Color(0xff0083A4), 16)
                         ),
-                      );
-                  }),
-            ),
-            SliverToBoxAdapter(
-                child: courses.length == 0
-                    ? null
-                    : headingTitle(
-                        translate("Courses_"), Color(0xff0083A4), 16)),
             SliverToBoxAdapter(
               child: SizedBox(
                 height: 13,
@@ -103,8 +104,9 @@ class SubCategoryScreen extends StatelessWidget {
             ),
             SliverGrid(
               delegate: SliverChildBuilderDelegate(
-                (context, idx) => CourseGridItem(courses[idx], idx),
-                childCount: courses.length,
+                (context, index) => Container(),
+                // (context, idx) => CourseGridItem(courses[idx], idx),
+                // childCount: courses.length,
               ),
               gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                 maxCrossAxisExtent: 200,

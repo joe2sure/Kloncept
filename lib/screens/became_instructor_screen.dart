@@ -546,13 +546,13 @@ class _BecomeInstructorState extends State<BecomeInstructor> {
     halfw = fullw! / 2.0;
     T.Theme mode = Provider.of<T.Theme>(context);
     txtColor = mode.txtcolor;
-    UserProfileModel user = Provider.of<UserProfile>(context).profileInstance;
+    // UserProfileModel user = Provider.of<UserProfile>(context).profileInstance;
     return Scaffold(
       key: _scaffoldKey,
       backgroundColor: mode.bgcolor,
       appBar: secondaryAppBar(mode.notificationIconColor, mode.bgcolor, context,
           translate("Become_an_Instructor")),
-      body: scaffoldView(mode, user),
+      body: scaffoldView(mode, UserProfileModel()),
     );
   }
 }

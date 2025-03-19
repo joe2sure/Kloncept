@@ -306,8 +306,8 @@ class FeaturedListItem extends StatelessWidget {
         .getCategoryName(courseDetail!.categoryId);
 
     T.Theme mode = Provider.of<T.Theme>(context);
-    bool isPurchased =
-        Provider.of<CoursesProvider>(context).isPurchased(courseDetail!.id);
+    // bool isPurchased =
+    //     Provider.of<CoursesProvider>(context).isPurchased(courseDetail!.id);
     String? rating = getRating(courseDetail!.review);
 
     languageProvider = Provider.of<LanguageProvider>(context, listen: false);
@@ -328,8 +328,8 @@ class FeaturedListItem extends StatelessWidget {
               spreadRadius: -15.0)
         ],
       ),
-      child:
-          itemDetails(context, category, currency, rating, mode, isPurchased),
+      // child:
+      //     itemDetails(context, category, currency, rating, mode, isPurchased),
     );
   }
 }

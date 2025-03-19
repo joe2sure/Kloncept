@@ -156,12 +156,12 @@ class _FeaturedCategoryListState extends State<FeaturedCategoryList> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        showImage(featuredCategoryList[idx].catImage),
+                        // showImage(featuredCategoryList[idx].catImage),
                         SizedBox(
                           height: 5.0,
                         ),
-                        showTitle(featuredCategoryList[idx].title,
-                            featuredCategoryList[idx].catImage),
+                        // showTitle(featuredCategoryList[idx].title,
+                        //     featuredCategoryList[idx].catImage),
                       ],
                     ),
                   );

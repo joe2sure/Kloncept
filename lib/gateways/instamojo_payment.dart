@@ -44,9 +44,9 @@ class _InstamojoPaymentPageState extends State<InstamojoPaymentPage> {
       email = Provider.of<UserProfile>(context, listen: false)
           .profileInstance
           .email;
-      phone = Provider.of<UserProfile>(context, listen: false)
-          .profileInstance
-          .mobile;
+      // phone = Provider.of<UserProfile>(context, listen: false)
+      //     .profileInstance
+      //     .mobile;
       instamojoUrl = Provider.of<PaymentAPIProvider>(context, listen: false)
           .paymentApi
           .instamojoUrl;

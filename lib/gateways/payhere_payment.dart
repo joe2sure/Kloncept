@@ -269,12 +269,12 @@ class _PayHerePaymentState extends State<PayHerePayment> {
       email = Provider.of<UserProfile>(context, listen: false)
           .profileInstance
           .email;
-      phone = Provider.of<UserProfile>(context, listen: false)
-          .profileInstance
-          .mobile;
-      address = Provider.of<UserProfile>(context, listen: false)
-          .profileInstance
-          .address;
+      // phone = Provider.of<UserProfile>(context, listen: false)
+      //     .profileInstance
+      //     .mobile;
+      // address = Provider.of<UserProfile>(context, listen: false)
+      //     .profileInstance
+      //     .address;
       merchantId = Provider.of<PaymentAPIProvider>(context, listen: false)
           .paymentApi
           .allKeys!

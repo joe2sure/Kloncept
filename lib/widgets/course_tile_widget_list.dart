@@ -242,8 +242,8 @@ class CourseListItem extends StatelessWidget {
     String? currency =
         Provider.of<HomeDataProvider>(context).homeModel!.currency!.currency;
     T.Theme mode = Provider.of<T.Theme>(context);
-    bool isPurchased =
-        Provider.of<CoursesProvider>(context).isPurchased(courseDetail.id);
+    // bool isPurchased =
+    //     Provider.of<CoursesProvider>(context).isPurchased(courseDetail.id);
     String category = Provider.of<HomeDataProvider>(context)
         .getCategoryName(courseDetail.categoryId);
 
@@ -265,8 +265,8 @@ class CourseListItem extends StatelessWidget {
                     spreadRadius: -15.0)
               ],
             ),
-            child: itemDetails(context, isPurchased, currency, mode,
-                rating == null ? "0" : rating, category),
+            // child: itemDetails(context, isPurchased, currency, mode,
+            //     rating == null ? "0" : rating, category),
           )
         : showShimmer(context);
   }

@@ -1080,8 +1080,8 @@ class _CourseDetailScreenState extends State<CourseDetailScreen>
     CoursesProvider course = Provider.of<CoursesProvider>(context);
     bool useAsInt = false;
     if (apiData.categoryId is int) useAsInt = true;
-    List<Course> allCategory = course.getCategoryCourses(
-        useAsInt ? apiData.categoryId : int.tryParse(apiData.categoryId));
+    // List<Course> allCategory = course.getCategoryCourses(
+    //     useAsInt ? apiData.categoryId : int.tryParse(apiData.categoryId));
     var category = Provider.of<HomeDataProvider>(context).getCategoryName(
         !useAsInt ? apiData.categoryId : apiData.categoryId.toString());
     double progress = 0.0;
@@ -1089,8 +1089,8 @@ class _CourseDetailScreenState extends State<CourseDetailScreen>
     bool isProgressEmpty = false;
     List<String>? markedChpIds = [];
     if (apiData.purchased as bool) {
-      progress = course.getProgress(apiData.id);
-      allProgress = course.getAllProgress(apiData.id);
+      // progress = course.getProgress(apiData.id);
+      // allProgress = course.getAllProgress(apiData.id);
       if (allProgress == null) {
         isProgressEmpty = true;
       }
@@ -1104,15 +1104,26 @@ class _CourseDetailScreenState extends State<CourseDetailScreen>
     // apiData.purchased as bool,
     return Scaffold(
       key: _scaffoldKey,
-      body: scaffoldBody(
-        category,
-        markedChpIds!,
-        apiData.purchased as bool,
-        apiData.type.toString(),
-        currency,
-        progress,
-        allCategory,
+      body: Column(
+        children: [
+          Center(
+            child: Text(
+              "${translate("Course_Details")} - ${category}",
+              style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+            ),
+          )
+        ],
       ),
+      // body: scaffoldBody(
+      //   category,
+      //   markedChpIds!,
+      //   apiData.purchased as bool,
+      //   apiData.type.toString(),
+      //   currency,
+      //   progress,
+      //   allCategory,
+        
+      // ),
     );
   }
 }

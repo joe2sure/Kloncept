@@ -334,7 +334,7 @@ class _SettingScreenState extends State<SettingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    UserProfileModel user = Provider.of<UserProfile>(context).profileInstance;
+    // UserProfileModel user = Provider.of<UserProfile>(context).profileInstance;
     T.Theme mode = Provider.of<T.Theme>(context);
     return Scaffold(
       key: _scaffoldKey,
@@ -345,7 +345,7 @@ class _SettingScreenState extends State<SettingScreen> {
             children: [
               headingOfSection(
                   translate("Personal_Information"), mode.headingColor, 1),
-              personalInfoSection(user, mode.txtcolor),
+              // personalInfoSection(user, mode.txtcolor),
               headingOfSection(translate("Support_"), mode.headingColor, 0),
               supportSection(mode.txtcolor),
               headingOfSection(

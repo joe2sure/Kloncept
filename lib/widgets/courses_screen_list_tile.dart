@@ -13,7 +13,7 @@ class ExpCoursesListItem extends StatelessWidget {
   final Course courseDetail;
   final bool isPurchased;
 
-  ExpCoursesListItem(this.courseDetail, this.isPurchased, this.txtColor);
+  ExpCoursesListItem(this.courseDetail, this.isPurchased, this.txtColor, {required List children});
 
   Widget showImage(String? img) {
     return Expanded(
@@ -45,8 +45,8 @@ class ExpCoursesListItem extends StatelessWidget {
   Widget showDetails(BuildContext context, String category) {
     double? progress;
     if (isPurchased) {
-      progress =
-          Provider.of<CoursesProvider>(context).getProgress(courseDetail.id);
+      // progress =
+      //     Provider.of<CoursesProvider>(context).getProgress(courseDetail.id);
     }
     return Expanded(
       flex: 2,

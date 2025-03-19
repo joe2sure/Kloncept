@@ -261,14 +261,14 @@ class _BundleDetailScreenState extends State<BundleDetailScreen> {
     bundleDetail = ModalRoute.of(context)!.settings.arguments as BundleCourses?;
     String? currency = Provider.of<HomeDataProvider>(context).homeModel!.currency!.currency;
     var courses = Provider.of<CoursesProvider>(context);
-    List<Course>? bundleCourses = courses.getCourses(bundleDetail!.courseId);
+    // List<Course>? bundleCourses = courses.getCourses(bundleDetail!.courseId);
 
-    bool purchased = courses.bundlePurchasedListIds!.contains(bundleDetail!.id);
+    // bool purchased = courses.bundlePurchasedListIds!.contains(bundleDetail!.id);
     T.Theme mode = Provider.of<T.Theme>(context);
     txtcolor = mode.txtcolor;
     return Scaffold(
       key: _scaffoldKey,
-      body: scaffoldBody(bundleDetail!, purchased, bundleCourses, currency),
+      // body: scaffoldBody(bundleDetail!, purchased, bundleCourses, currency),
     );
   }
 }

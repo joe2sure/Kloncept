@@ -43,12 +43,12 @@ class _RavePaymentState extends State<RavePayment> {
       email = Provider.of<UserProfile>(context, listen: false)
           .profileInstance
           .email.toString();
-      phone = Provider.of<UserProfile>(context, listen: false)
-          .profileInstance
-          .mobile;
-      address = Provider.of<UserProfile>(context, listen: false)
-          .profileInstance
-          .address;
+      // phone = Provider.of<UserProfile>(context, listen: false)
+      //     .profileInstance
+      //     .mobile;
+      // address = Provider.of<UserProfile>(context, listen: false)
+      //     .profileInstance
+      //     .address;
       publicKey = Provider.of<PaymentAPIProvider>(context, listen: false)
           .paymentApi
           .allKeys!

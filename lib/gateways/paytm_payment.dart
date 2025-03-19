@@ -112,8 +112,8 @@ class _PaytmPaymentPageState extends State<PaytmPaymentPage> {
                         ElevatedButton(
                           onPressed: () {
                             //Firstly Generate CheckSum bcoz Paytm Require this
-                            generateTxnToken(0, payment.paytmMerchantId,
-                                payment.paytmMerchantKey, userDetails.id);
+                            // generateTxnToken(0, payment.paytmMerchantId,
+                            //     payment.paytmMerchantKey, userDetails.id);
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.blue,
@@ -126,8 +126,8 @@ class _PaytmPaymentPageState extends State<PaytmPaymentPage> {
                         ElevatedButton(
                           onPressed: () {
                             //Firstly Generate CheckSum bcoz Paytm Require this
-                            generateTxnToken(1, payment.paytmMerchantId,
-                                payment.paytmMerchantKey, userDetails.id);
+                            // generateTxnToken(1, payment.paytmMerchantId,
+                            //     payment.paytmMerchantKey, userDetails.id);
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.blue,
@@ -140,8 +140,8 @@ class _PaytmPaymentPageState extends State<PaytmPaymentPage> {
                         ElevatedButton(
                           onPressed: () {
                             //Firstly Generate CheckSum bcoz Paytm Require this
-                            generateTxnToken(2, payment.paytmMerchantId,
-                                payment.paytmMerchantKey, userDetails.id);
+                            // generateTxnToken(2, payment.paytmMerchantId,
+                            //     payment.paytmMerchantKey, userDetails.id);
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.blue,
@@ -154,8 +154,8 @@ class _PaytmPaymentPageState extends State<PaytmPaymentPage> {
                         ElevatedButton(
                           onPressed: () {
                             //Firstly Generate CheckSum bcoz Paytm Require this
-                            generateTxnToken(3, payment.paytmMerchantId,
-                                payment.paytmMerchantKey, userDetails.id);
+                            // generateTxnToken(3, payment.paytmMerchantId,
+                            //     payment.paytmMerchantKey, userDetails.id);
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.blue,

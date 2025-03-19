@@ -28,8 +28,8 @@ class _JitsiMeetingJoinState extends State<JitsiMeetingJoin> {
 
     _jitsiMeeting = widget.jitsiMeeting;
 
-    _userProfileModel =
-        Provider.of<UserProfile>(context, listen: false).profileInstance;
+    // _userProfileModel =
+    //     Provider.of<UserProfile>(context, listen: false).profileInstance;
   }
 
   @override

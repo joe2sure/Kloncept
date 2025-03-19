@@ -406,46 +406,46 @@ class ScreenState extends State<Screen> with TickerProviderStateMixin {
                     Provider.of<HomeDataProvider>(context, listen: false)
                         .getCategoryName(filteredCourses[idx].categoryId);
 
-                return CustomExpansionTile(
-                  title: ExpCoursesListItem(
-                      filteredCourses[idx],
-                      coursePro.isPurchased(filteredCourses[idx].id),
-                      mode.txtcolor),
-                  children: filteredCourses[idx].whatlearns!.length == 0 &&
-                          filteredCourses[idx].include!.length == 0
-                      ? []
-                      : <Widget>[
-                          SingleChildScrollView(
-                            controller: ScrollController(),
-                            padding: EdgeInsets.only(top: 15.0, bottom: 10.0),
-                            child: Column(
-                              children: buildCards(
-                                  filteredCourses[idx].whatlearns,
-                                  filteredCourses[idx].include,
-                                  mode.txtcolor,
-                                  category),
-                            ),
-                          )
-                        ],
-                  onExpansionChanged: ((newState) {
-                    if (newState) {
-                      openedidxs.add(idx);
-                    }
-                    if (!newState) {
-                      openedidxs.remove(idx);
-                    }
-                    if (openedidxs.length > 0) {
-                      setState(() {
-                        selected = true;
-                      });
-                    }
-                    if (openedidxs.length == 0) {
-                      setState(() {
-                        selected = false;
-                      });
-                    }
-                  }),
-                );
+                // return CustomExpansionTile(
+                //   title: ExpCoursesListItem(
+                //       filteredCourses[idx],
+                //       coursePro.isPurchased(filteredCourses[idx].id),
+                //       mode.txtcolor),
+                //   children: filteredCourses[idx].whatlearns!.length == 0 &&
+                //           filteredCourses[idx].include!.length == 0
+                //       ? []
+                //       : <Widget>[
+                //           SingleChildScrollView(
+                //             controller: ScrollController(),
+                //             padding: EdgeInsets.only(top: 15.0, bottom: 10.0),
+                //             child: Column(
+                //               children: buildCards(
+                //                   filteredCourses[idx].whatlearns,
+                //                   filteredCourses[idx].include,
+                //                   mode.txtcolor,
+                //                   category),
+                //             ),
+                //           )
+                //         ],
+                //   onExpansionChanged: ((newState) {
+                //     if (newState) {
+                //       openedidxs.add(idx);
+                //     }
+                //     if (!newState) {
+                //       openedidxs.remove(idx);
+                //     }
+                //     if (openedidxs.length > 0) {
+                //       setState(() {
+                //         selected = true;
+                //       });
+                //     }
+                //     if (openedidxs.length == 0) {
+                //       setState(() {
+                //         selected = false;
+                //       });
+                //     }
+                //   }),
+                // );
               })
         ]),
       ),
@@ -482,12 +482,12 @@ class ScreenState extends State<Screen> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     CoursesProvider coursePro = Provider.of<CoursesProvider>(context);
     FilterDetailsProvider det = Provider.of<FilterDetailsProvider>(context);
-    bool ispurchased;
-    if (openedidxs.length > 0)
-      ispurchased = coursePro
-          .isPurchased(widget.courses[openedidxs[openedidxs.length - 1]].id);
-    else
-      ispurchased = false;
+    bool? ispurchased;
+    // if (openedidxs.length > 0)
+    //   ispurchased = coursePro
+    //       .isPurchased(widget.courses[openedidxs[openedidxs.length - 1]].id);
+    // else
+    //   ispurchased = false;
 
     List<Course> filteredCourses = [];
 
@@ -501,7 +501,7 @@ class ScreenState extends State<Screen> with TickerProviderStateMixin {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       backgroundColor: Color(0xFFF1F3F8),
       floatingActionButton: selected && openedidxs.length > 0
-          ? floatingButton(ispurchased)
+          ? floatingButton(ispurchased!)
           : SizedBox.shrink(),
       body: widget.courses.length == 0
           ? (visible ? whenempty(widget.cType) : shimmerScreen())

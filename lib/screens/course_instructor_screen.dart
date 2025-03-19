@@ -242,12 +242,12 @@ class _CourseInstructorScreenState extends State<CourseInstructorScreen> {
             detailsSection(details),
             aboutTheInstructor(details),
             allCoursesHeading(details.courseCount),
-            SliverList(
-              delegate: SliverChildBuilderDelegate(
-                (context, idx) => InstructCourses(details.course![idx]),
-                childCount: details.course!.length,
-              ),
-            )
+            // SliverList(
+            //   delegate: SliverChildBuilderDelegate(
+            //     (context, idx) => InstructCourses(details.course![idx]),
+            //     childCount: details.course!.length,
+            //   ),
+            // )
           ],
         ),
       ),

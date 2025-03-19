@@ -162,8 +162,8 @@ class ImageSwiper extends StatelessWidget {
                   EdgeInsets.only(bottom: 15.0, top: 5.0, left: 15, right: 15),
               child: Stack(
                 children: [
-                  showImage(orientation, item.image),
-                  detailsOnImage(item.heading, item.subHeading),
+                  // showImage(orientation, item.image),
+                  // detailsOnImage(item.heading, item.subHeading),
                 ],
               ),
             );

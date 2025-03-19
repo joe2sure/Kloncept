@@ -178,7 +178,10 @@ class _PlayListScreenState extends State<PlayListScreen>
             height: 20,
           ),
           Column(
-            children: zoomMeetingList(zoomMeeting!),
+            children: [
+              Text('zoom meeting')
+            ],
+            // children: zoomMeetingList(zoomMeeting!),
           ),
         ],
       ),
@@ -1543,9 +1546,9 @@ class _PlayListScreenState extends State<PlayListScreen>
     selectedSecs = widget.markedSec;
 
     T.Theme mode = Provider.of<T.Theme>(context);
-    bool firstTime = Provider.of<CoursesProvider>(context, listen: false)
-        .checkPurchaedProgressStatus(
-            "${widget.sections![0].sectionDetails!.courseId}");
+    // bool firstTime = Provider.of<CoursesProvider>(context, listen: false)
+    //     .checkPurchaedProgressStatus(
+    //         "${widget.sections![0].sectionDetails!.courseId}");
     return Scaffold(
       key: _scaffoldKey,
       backgroundColor: Colors.black,
@@ -1726,51 +1729,52 @@ class _PlayListScreenState extends State<PlayListScreen>
                     : showBottomNavigation
                         ? FloatingActionButton.extended(
                             backgroundColor: Color(0xffF44A4A),
-                            onPressed: () async {
-                              setState(() {
-                                isLoadingMark = true;
-                              });
-                              List<String> fChecked = selectedSecs!;
-                              RecievedProgress? x;
-                              bool res = false;
-                              if (firstTime)
-                                x = await updateProgress(fChecked);
-                              else
-                                res = await updateProgressBool(fChecked);
-                              if (x != null || res) {
-                                Provider.of<CoursesProvider>(context,
-                                        listen: false)
-                                    .setProgress(
-                                        int.tryParse(widget.sections![0]
-                                            .sectionDetails!.courseId!),
-                                        fChecked,
-                                        x);
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text(
-                                      translate("Sections_Marking_Completed"),
-                                    ),
-                                  ),
-                                );
-                                setState(() {
-                                  showBottomNavigation = false;
-                                });
-                              } else {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text(
-                                      translate("Sections_Marking_Failed"),
-                                    ),
-                                  ),
-                                );
-                              }
-                              setState(() {
-                                isLoadingMark = false;
-                              });
-                            },
-                            label: Text(
-                              translate("Mark_As_Complete"),
-                            ),
+                            onPressed: () {}, label: Text('label'),
+                            // onPressed: () async {
+                            //   setState(() {
+                            //     isLoadingMark = true;
+                            //   });
+                            //   List<String> fChecked = selectedSecs!;
+                            //   RecievedProgress? x;
+                            //   bool res = false;
+                            //   if (firstTime)
+                            //     x = await updateProgress(fChecked);
+                            //   else
+                            //     res = await updateProgressBool(fChecked);
+                            //   if (x != null || res) {
+                            //     Provider.of<CoursesProvider>(context,
+                            //             listen: false)
+                            //         .setProgress(
+                            //             int.tryParse(widget.sections![0]
+                            //                 .sectionDetails!.courseId!),
+                            //             fChecked,
+                            //             x);
+                            //     ScaffoldMessenger.of(context).showSnackBar(
+                            //       SnackBar(
+                            //         content: Text(
+                            //           translate("Sections_Marking_Completed"),
+                            //         ),
+                            //       ),
+                            //     );
+                            //     setState(() {
+                            //       showBottomNavigation = false;
+                            //     });
+                            //   } else {
+                            //     ScaffoldMessenger.of(context).showSnackBar(
+                            //       SnackBar(
+                            //         content: Text(
+                            //           translate("Sections_Marking_Failed"),
+                            //         ),
+                            //       ),
+                            //     );
+                            //   }
+                            //   setState(() {
+                            //     isLoadingMark = false;
+                            //   });
+                            // },
+                            // label: Text(
+                            //   translate("Mark_As_Complete"),
+                            // ),
                           )
                         : SizedBox.shrink(),
                 floatingActionButtonLocation:

@@ -95,10 +95,10 @@ class _CategoryScreenState extends State<CategoryScreen> {
   Widget build(BuildContext context) {
     MyCategory? cate = ModalRoute.of(context)!.settings.arguments as MyCategory;
     T.Theme mode = Provider.of<T.Theme>(context);
-    List<Course> courses =
-        Provider.of<CoursesProvider>(context).getCategoryCourses(cate.id);
-    var homeData =
-        Provider.of<HomeDataProvider>(context, listen: false).subCategoryList;
+    // List<Course> courses =
+    //     Provider.of<CoursesProvider>(context).getCategoryCourses(cate.id);
+    // var homeData =
+    //     Provider.of<HomeDataProvider>(context, listen: false).subCategoryList;
     return Scaffold(
       backgroundColor: mode.bgcolor,
       appBar: secondaryAppBar(Colors.black, mode.bgcolor, context, cate.title.toString()),
@@ -106,18 +106,19 @@ class _CategoryScreenState extends State<CategoryScreen> {
       body: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
-            child: subCategoriesList(cate.id, homeData),
+            // child: subCategoriesList(cate.id, homeData),
           ),
           SliverToBoxAdapter(
-              child: courses.length == 0
-                  ? null
-                  : headingTitle(translate("Courses_"), Color(0xff0083A4), 19)),
+              // child: courses.length == 0
+              //     ? null
+              //     : headingTitle(translate("Courses_"), Color(0xff0083A4), 19)
+          ),
           SliverToBoxAdapter(
             child: SizedBox(
               height: 6,
             ),
           ),
-          gridView(courses)
+          // gridView(courses)
         ],
       ),
     );

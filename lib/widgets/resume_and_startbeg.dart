@@ -415,8 +415,8 @@ class _ResumeAndStartState extends State<ResumeAndStart> {
                         });
 
                         if (x)
-                          courses.setProgress(
-                              widget.details.course!.id, [], null);
+                          // courses.setProgress(
+                          //     widget.details.course!.id, [], null);
                         if (_allClips.length > 0) {
                           bool isWatching = Provider.of<WatchlistProvider>(
                                   context,

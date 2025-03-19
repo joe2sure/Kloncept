@@ -111,8 +111,8 @@ class _AllCategoryScreenState extends State<AllCategoryScreen> {
                   ],
                 ),
               ),
-              children: childCatItemList(
-                  element.id, element.categoryId, homeData.childCategoryList),
+              // children: childCatItemList(
+              //     element.id, element.categoryId, homeData.childCategoryList),
             ),
           );
         }
@@ -149,8 +149,8 @@ class _AllCategoryScreenState extends State<AllCategoryScreen> {
         }),
         trailing: InkWell(
           onTap: () {
-            Navigator.of(context)
-                .pushNamed('/category', arguments: homeData!.categoryList![idx]);
+            // Navigator.of(context)
+            //     .pushNamed('/category', arguments: homeData!.categoryList![idx]);
           },
           child: Container(
             height: 40.0,
@@ -176,8 +176,9 @@ class _AllCategoryScreenState extends State<AllCategoryScreen> {
               width: 40.0,
               margin: EdgeInsets.fromLTRB(0.0, 0.0, 18.0, 0.0),
               child: CachedNetworkImage(
-                imageUrl:
-                    "${APIData.categoryImages}${homeData!.categoryList![idx].catImage}",
+                imageUrl: '',
+                // imageUrl:
+                //     "${APIData.categoryImages}${homeData!.categoryList![idx].catImage}",
                 imageBuilder: (context, imageProvider) => Container(
                   height: 40.0,
                   width: 40.0,
@@ -209,19 +210,23 @@ class _AllCategoryScreenState extends State<AllCategoryScreen> {
               width: 15,
             ),
             Expanded(
-              child: Text(
-                homeData.categoryList![idx].title.toString(),
-                style: TextStyle(
-                  color: Color(0xFF3F4654),
-                  fontWeight: FontWeight.w600,
-                  fontSize: 20,
-                ),
-              ),
+              child: Text('categoryList'),
+              // child: Text(
+              //   homeData.categoryList![idx].title.toString(),
+              //   style: TextStyle(
+              //     color: Color(0xFF3F4654),
+              //     fontWeight: FontWeight.w600,
+              //     fontSize: 20,
+              //   ),
+              // ),
             ),
           ],
         ),
-        children: subCategoryItemList(
-            homeData.categoryList![idx].id, homeData.subCategoryList, bgColor!),
+        children: [
+          Text('categoryItemList')
+        ],
+        // children: subCategoryItemList(
+        //     homeData.categoryList![idx].id, homeData.subCategoryList, bgColor!),
       ),
     );
   }

@@ -233,8 +233,8 @@ class BundleCourseItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool purchased = Provider.of<CoursesProvider>(context)
-        .isBundlePurchased(bundleCoursesDetail.id);
+    // bool purchased = Provider.of<CoursesProvider>(context)
+    //     .isBundlePurchased(bundleCoursesDetail.id);
     print("object: ${bundleCoursesDetail.courseId![0]}");
     // String? category =
     //     Provider.of<HomeDataProvider>(context).getCategoryName("4");
@@ -246,10 +246,10 @@ class BundleCourseItem extends StatelessWidget {
     print("object22: $category");
     T.Theme mode = Provider.of<T.Theme>(context);
     return
-        // Container(
-        //   child: Text("ss"),
-        // );
-        tileDetails(context, mode, category, currency, purchased);
+        Container(
+          child: Text("ss"),
+        );
+        // tileDetails(context, mode, category, currency, purchased);
   }
 }
 

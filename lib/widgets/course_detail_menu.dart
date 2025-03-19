@@ -307,16 +307,16 @@ class _CourseDetailMenuScreenState extends State<CourseDetailMenuScreen> {
     return sectionList;
   }
 
-  Future<void> addRemoveCompareCourse() async {
-    UserProfile userProfile = Provider.of<UserProfile>(context, listen: false);
-    if (addedInCompare) {
-      await compareCourseProvider!.addToCompareCourse(
-          userProfile.profileInstance.id, widget.details.course!.id);
-    } else {
-      await compareCourseProvider!.removeFromCompareCourse(compareId);
-    }
-    setState(() {});
-  }
+  // Future<void> addRemoveCompareCourse() async {
+  //   UserProfile userProfile = Provider.of<UserProfile>(context, listen: false);
+  //   if (addedInCompare) {
+  //     await compareCourseProvider!.addToCompareCourse(
+  //         userProfile.profileInstance.id, widget.details.course!.id);
+  //   } else {
+  //     await compareCourseProvider!.removeFromCompareCourse(compareId);
+  //   }
+  //   setState(() {});
+  // }
 
   bool strtBeginLoad = false;
 
@@ -402,7 +402,7 @@ class _CourseDetailMenuScreenState extends State<CourseDetailMenuScreen> {
             strtBeginLoad = false;
           });
 
-          if (x) courses!.setProgress(widget.details.course!.id, [], null);
+          // if (x) courses!.setProgress(widget.details.course!.id, [], null);
           if (_allClips.length > 0) {
             bool isWatching =
                 Provider.of<WatchlistProvider>(context, listen: false)
@@ -545,7 +545,7 @@ class _CourseDetailMenuScreenState extends State<CourseDetailMenuScreen> {
             ),
           );
         } else if (idx == 8) {
-          addRemoveCompareCourse();
+          // addRemoveCompareCourse();
         }
       },
       child: Container(

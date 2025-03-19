@@ -631,7 +631,7 @@ class SliderFact {
     this.heading,
     this.subHeading,
     this.createdAt,
-    this.updatedAt,
+    this.updatedAt, required status, required image, required detail,
   });
 
   int? id;
@@ -649,7 +649,7 @@ class SliderFact {
         createdAt: json["created_at"] == null
             ? null
             : DateTime.parse(json["created_at"]),
-        updatedAt: DateTime.parse(json["updated_at"]),
+        updatedAt: DateTime.parse(json["updated_at"]), status: null, image: null, detail: null,
       );
 
   Map<String, dynamic> toJson() => {

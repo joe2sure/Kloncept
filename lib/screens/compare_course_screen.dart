@@ -104,15 +104,15 @@ class _CompareCourseScreenState extends State<CompareCourseScreen> {
     List<DataRow> dataRowList = [];
 
     provider!.compareCourseModel!.compare!.forEach((compareCourse) {
-      bool isPurchased = Provider.of<CoursesProvider>(context)
-          .isPurchased(int.tryParse(compareCourse.courseId.toString()));
+      // bool isPurchased = Provider.of<CoursesProvider>(context)
+      //     .isPurchased(int.tryParse(compareCourse.courseId.toString()));
 
       String? category = Provider.of<HomeDataProvider>(context)
           .getCategoryName(compareCourse.compares!.first.categoryId);
 
-      String? subCategory = Provider.of<HomeDataProvider>(context)
-          .getSubCategoryName(compareCourse.compares!.first.subcategoryId);
-      if (subCategory == null) subCategory = "N/A";
+      // String? subCategory = Provider.of<HomeDataProvider>(context)
+      //     .getSubCategoryName(compareCourse.compares!.first.subcategoryId);
+      // if (subCategory == null) subCategory = "N/A";
 
       String? languageName;
 
@@ -138,13 +138,13 @@ class _CompareCourseScreenState extends State<CompareCourseScreen> {
                         onTap: () {
                           Navigator.of(context).pushNamed(
                             "/courseDetails",
-                            arguments: DataSend(
-                              compareCourse.compares!.first.userId,
-                              isPurchased,
-                              compareCourse.compares!.first.id as dynamic,
-                              compareCourse.compares!.first.categoryId,
-                              compareCourse.compares!.first.type,
-                            ),
+                            // arguments: DataSend(
+                            //   compareCourse.compares!.first.userId,
+                            //   isPurchased,
+                            //   compareCourse.compares!.first.id as dynamic,
+                            //   compareCourse.compares!.first.categoryId,
+                            //   compareCourse.compares!.first.type,
+                            // ),
                           );
                         },
                         child: Container(
@@ -349,7 +349,8 @@ class _CompareCourseScreenState extends State<CompareCourseScreen> {
             DataCell(
               Center(
                 child: Text(
-                  subCategory,
+                  // subCategory
+                  'subCategory',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 16.0,

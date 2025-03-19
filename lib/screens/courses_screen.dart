@@ -287,9 +287,9 @@ class _CoursesScreenState extends State<CoursesScreen> {
   Widget build(BuildContext context) {
     CoursesProvider courses = Provider.of<CoursesProvider>(context);
     List<Course>? allCourses = courses.allCourses;
-    List<CourseWithProgress>? stud = courses.getStudyingCoursesOnly();
-    List<Course>? wishcourses =
-        courses.getWishList(Provider.of<WishListProvider>(context).courseIds);
+    // List<CourseWithProgress>? stud = courses.getStudyingCoursesOnly();
+    // List<Course>? wishcourses =
+    //     courses.getWishList(Provider.of<WishListProvider>(context).courseIds);
 
     languageProvider = Provider.of<LanguageProvider>(context, listen: false);
 
@@ -311,7 +311,7 @@ class _CoursesScreenState extends State<CoursesScreen> {
                 SizedBox(
                   height: 15.0,
                 ),
-                getCourses(allCourses, stud, wishcourses),
+                // getCourses(allCourses, stud, wishcourses),
               ],
             ),
           ),

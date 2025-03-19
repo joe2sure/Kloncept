@@ -93,15 +93,23 @@ class ChildCategoryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     ChildCategory childCategory = ModalRoute.of(context)!.settings.arguments as ChildCategory;
     T.Theme mode = Provider.of<T.Theme>(context);
-    List<Course> courses = Provider.of<CoursesProvider>(context)
-        .getchildcatecourses(
-            childCategory.id,
-            childCategory.subcategoryId.toString(),
-            childCategory.categoryId.toString());
+    // List<Course> courses = Provider.of<CoursesProvider>(context)
+    //     .getchildcatecourses(
+    //         childCategory.id,
+    //         childCategory.subcategoryId.toString(),
+    //         childCategory.categoryId.toString());
     return Scaffold(
         backgroundColor: mode.bgcolor,
         appBar: secondaryAppBar(
             Colors.black, mode.bgcolor, context, childCategory.title.toString()),
-        body: scaffoldView(courses));
+        // body: scaffoldView(Courses)
+        body: Column(
+          children: [
+            Center(
+              child: Text('Courses'),
+            )
+          ],
+        ),
+        );
   }
 }

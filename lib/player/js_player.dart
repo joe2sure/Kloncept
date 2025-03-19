@@ -37,34 +37,34 @@ class _JSPlayerState extends State<JSPlayer> with WidgetsBindingObserver {
       DeviceOrientation.landscapeRight,
     ]);
 
-    _initializeWebView();
+    // _initializeWebView();
   }
 
   /// Initialize the WebViewController and load the URL.
-  void _initializeWebView() {
-    var userDetails =
-        Provider.of<UserProfile>(context, listen: false).profileInstance;
-    var url = APIData.watchCourse +
-        '${userDetails.id}/${userDetails.code}/${widget.courseId}';
+  // void _initializeWebView() {
+  //   var userDetails =
+  //       Provider.of<UserProfile>(context, listen: false).profileInstance;
+  //   var url = APIData.watchCourse +
+  //       '${userDetails.id}/${userDetails.code}/${widget.courseId}';
 
-    _controller1 = WebViewController()
-      ..setJavaScriptMode(JavaScriptMode.unrestricted)
-      ..setBackgroundColor(const Color(0x00000000))
-      ..setNavigationDelegate(
-        NavigationDelegate(
-          onPageStarted: (String url) {
-            print('Page loading: $url');
-          },
-          onPageFinished: (String url) {
-            print('Page finished loading: $url');
-          },
-          onWebResourceError: (WebResourceError error) {
-            print('Error loading page: ${error.description}');
-          },
-        ),
-      )
-      ..loadRequest(Uri.parse(url));
-  }
+  //   _controller1 = WebViewController()
+  //     ..setJavaScriptMode(JavaScriptMode.unrestricted)
+  //     ..setBackgroundColor(const Color(0x00000000))
+  //     ..setNavigationDelegate(
+  //       NavigationDelegate(
+  //         onPageStarted: (String url) {
+  //           print('Page loading: $url');
+  //         },
+  //         onPageFinished: (String url) {
+  //           print('Page finished loading: $url');
+  //         },
+  //         onWebResourceError: (WebResourceError error) {
+  //           print('Error loading page: ${error.description}');
+  //         },
+  //       ),
+  //     )
+  //     ..loadRequest(Uri.parse(url));
+  // }
 
   @override
   void dispose() {

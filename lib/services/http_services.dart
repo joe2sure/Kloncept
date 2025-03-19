@@ -82,124 +82,142 @@ class HttpService {
       return false;
   }
 
-  Future<bool> login(
-      String? email, String? pass, BuildContext context, _scaffoldKey) async {
-    http.Response res = await http.post(Uri.parse(APIData.login), body: {
-      "email": email,
-      "password": pass
-    }, headers: {
-      "Accept": "application/json",
-    });
-    if (res.statusCode == 200) {
-      var body = jsonDecode(res.body);
-      authToken = body["access_token"];
-      var refreshToken = body["access_token"];
-      await storage.write(key: "token", value: "$authToken");
-      await storage.write(key: "refreshToken", value: "$refreshToken");
-      authToken = await storage.read(key: "token");
-      HomeDataProvider homeData =
-          Provider.of<HomeDataProvider>(context, listen: false);
-      await homeData.getHomeDetails(context);
-    }
-    print("Login API Status Code : ${res.statusCode}");
-    log("Login API Response : ${res.body}");
-    if (res.statusCode == 200) {
-      return true;
-    } else {
-      if (res.statusCode == 402) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text("Verify email to continue."),
-            action: SnackBarAction(label: "Ok", onPressed: () {}),
-          ),
-        );
-        return false;
-      } else {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text("Login Failed!"),
-            action: SnackBarAction(label: "Ok", onPressed: () {}),
-          ),
-        );
-        return false;
-      }
-    }
+  // Dummy login implementation that always succeeds
+  Future<bool> login(String email, String password, BuildContext context, GlobalKey<ScaffoldState> scaffoldKey) async {
+    // Set a dummy auth token
+    authToken = "dummy_auth_token";
+    await storage.write(key: "token", value: authToken);
+    
+    return true;
   }
 
-  Future<bool> signUp(String name, String email, String password, String mobile,
-      BuildContext context, _scaffoldKey) async {
-    print(name);
-    print(email);
-    print(password);
-    print(mobile);
-
-    print("Register Url ${APIData.register}");
-
-    http.Response res = await http.post(
-      Uri.parse(APIData.register),
-      body: {
-        "name": name,
-        "email": email,
-        "password": password,
-        "mobile": mobile,
-      },
-      headers: {
-        "Accept": "application/json",
-      },
-    );
-
-    print('Sign-Up API Status Code :-> ${res.statusCode}');
-    print("Sign-Up API Response :-> ${res.body}");
-    if (res.statusCode == 200) {
-      var body = jsonDecode(res.body);
-      authToken = body["access_token"];
-      var refreshToken = body["access_token"];
-      await storage.write(key: "token", value: "$authToken");
-      await storage.write(key: "refreshToken", value: "$refreshToken");
-      authToken = await storage.read(key: "token");
-      HomeDataProvider homeData =
-          Provider.of<HomeDataProvider>(context, listen: false);
-      await homeData.getHomeDetails(context);
-      return true;
-    } else {
-      if (res.statusCode == 402) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text("Verification email sent verify to continue."),
-            action: SnackBarAction(
-              label: "Ok",
-              onPressed: () {
-                Navigator.of(context).pushNamed('/SignIn');
-              },
-            ),
-          ),
-        );
-        return false;
-      } else if (res.statusCode == 201) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text("Verification email can't be sent."),
-            action: SnackBarAction(
-              label: "Ok",
-              onPressed: () {
-                Navigator.of(context).pushNamed('/SignIn');
-              },
-            ),
-          ),
-        );
-        return false;
-      } else if (res.statusCode == 422) {
-        Fluttertoast.showToast(
-          msg: "An account with same email already exists.",
-          toastLength: Toast.LENGTH_LONG,
-        );
-        return false;
-      } else {
-        Fluttertoast.showToast(msg: "Registration Failed!");
-        return false;
-      }
-    }
+  // Dummy signup implementation that always succeeds
+  Future<bool> signUp(String name, String email, String password, String mobile, BuildContext context, GlobalKey<ScaffoldState> scaffoldKey) async {
+    // Set a dummy auth token
+    authToken = "dummy_auth_token";
+    await storage.write(key: "token", value: authToken);
+    
+    return true;
   }
+
+  // Future<bool> login(
+  //     String? email, String? pass, BuildContext context, _scaffoldKey) async {
+  //   http.Response res = await http.post(Uri.parse(APIData.login), body: {
+  //     "email": email,
+  //     "password": pass
+  //   }, headers: {
+  //     "Accept": "application/json",
+  //   });
+  //   if (res.statusCode == 200) {
+  //     var body = jsonDecode(res.body);
+  //     authToken = body["access_token"];
+  //     var refreshToken = body["access_token"];
+  //     await storage.write(key: "token", value: "$authToken");
+  //     await storage.write(key: "refreshToken", value: "$refreshToken");
+  //     authToken = await storage.read(key: "token");
+  //     HomeDataProvider homeData =
+  //         Provider.of<HomeDataProvider>(context, listen: false);
+  //     await homeData.getHomeDetails(context);
+  //   }
+  //   print("Login API Status Code : ${res.statusCode}");
+  //   log("Login API Response : ${res.body}");
+  //   if (res.statusCode == 200) {
+  //     return true;
+  //   } else {
+  //     if (res.statusCode == 402) {
+  //       ScaffoldMessenger.of(context).showSnackBar(
+  //         SnackBar(
+  //           content: Text("Verify email to continue."),
+  //           action: SnackBarAction(label: "Ok", onPressed: () {}),
+  //         ),
+  //       );
+  //       return false;
+  //     } else {
+  //       ScaffoldMessenger.of(context).showSnackBar(
+  //         SnackBar(
+  //           content: Text("Login Failed!"),
+  //           action: SnackBarAction(label: "Ok", onPressed: () {}),
+  //         ),
+  //       );
+  //       return false;
+  //     }
+  //   }
+  // }
+
+  // Future<bool> signUp(String name, String email, String password, String mobile,
+  //     BuildContext context, _scaffoldKey) async {
+  //   print(name);
+  //   print(email);
+  //   print(password);
+  //   print(mobile);
+
+  //   print("Register Url ${APIData.register}");
+
+  //   http.Response res = await http.post(
+  //     Uri.parse(APIData.register),
+  //     body: {
+  //       "name": name,
+  //       "email": email,
+  //       "password": password,
+  //       "mobile": mobile,
+  //     },
+  //     headers: {
+  //       "Accept": "application/json",
+  //     },
+  //   );
+
+  //   print('Sign-Up API Status Code :-> ${res.statusCode}');
+  //   print("Sign-Up API Response :-> ${res.body}");
+  //   if (res.statusCode == 200) {
+  //     var body = jsonDecode(res.body);
+  //     authToken = body["access_token"];
+  //     var refreshToken = body["access_token"];
+  //     await storage.write(key: "token", value: "$authToken");
+  //     await storage.write(key: "refreshToken", value: "$refreshToken");
+  //     authToken = await storage.read(key: "token");
+  //     HomeDataProvider homeData =
+  //         Provider.of<HomeDataProvider>(context, listen: false);
+  //     await homeData.getHomeDetails(context);
+  //     return true;
+  //   } else {
+  //     if (res.statusCode == 402) {
+  //       ScaffoldMessenger.of(context).showSnackBar(
+  //         SnackBar(
+  //           content: Text("Verification email sent verify to continue."),
+  //           action: SnackBarAction(
+  //             label: "Ok",
+  //             onPressed: () {
+  //               Navigator.of(context).pushNamed('/SignIn');
+  //             },
+  //           ),
+  //         ),
+  //       );
+  //       return false;
+  //     } else if (res.statusCode == 201) {
+  //       ScaffoldMessenger.of(context).showSnackBar(
+  //         SnackBar(
+  //           content: Text("Verification email can't be sent."),
+  //           action: SnackBarAction(
+  //             label: "Ok",
+  //             onPressed: () {
+  //               Navigator.of(context).pushNamed('/SignIn');
+  //             },
+  //           ),
+  //         ),
+  //       );
+  //       return false;
+  //     } else if (res.statusCode == 422) {
+  //       Fluttertoast.showToast(
+  //         msg: "An account with same email already exists.",
+  //         toastLength: Toast.LENGTH_LONG,
+  //       );
+  //       return false;
+  //     } else {
+  //       Fluttertoast.showToast(msg: "Registration Failed!");
+  //       return false;
+  //     }
+  //   }
+  // }
 
   Future<List<About>> fetchAboutUs() async {
     var response =
