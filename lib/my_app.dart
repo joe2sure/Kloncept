@@ -14,11 +14,11 @@ import 'package:kloncept/provider/walletDetailsProvider.dart';
 import 'package:kloncept/provider/watchlist_provider.dart';
 import 'package:kloncept/screens/compare_course_screen.dart';
 import 'package:kloncept/screens/currency_screen.dart';
+import 'package:kloncept/screens/loading_screen.dart';
 import 'package:kloncept/screens/wallet_screen.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_translate/flutter_translate.dart';
-import 'Screens/loading_screen.dart';
 import 'gateways/donate.dart';
 import 'provider/cart_provider.dart';
 import 'provider/content_provider.dart';
@@ -114,7 +114,7 @@ class MyApp extends StatelessWidget {
           ],
           supportedLocales: localizationDelegate.supportedLocales,
           locale: localizationDelegate.currentLocale,
-          home: token == null ? SignInScreen() : LoadingScreen(token),
+          home: token == null ? SignInScreen() : LoadingScreen(),
           debugShowCheckedModeBanner: false,
           theme: ThemeData(fontFamily: 'Mada'),
           routes: {

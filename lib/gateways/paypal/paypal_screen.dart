@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:kloncept/Screens/loading_screen.dart';
 import 'package:intl/intl.dart';
 import 'package:kloncept/Widgets/success_ticket.dart';
 import 'package:kloncept/common/apidata.dart';
@@ -8,6 +7,7 @@ import 'package:kloncept/common/global.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
+import 'package:kloncept/screens/loading_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../provider/home_data_provider.dart';
@@ -75,7 +75,7 @@ class _PaypalScreenState extends State<PaypalScreen> {
                       onPressed: () {
                         var router = new MaterialPageRoute(
                             builder: (BuildContext context) =>
-                                LoadingScreen(authToken));
+                                LoadingScreen());
                         Navigator.of(context).push(router);
                       },
                     )

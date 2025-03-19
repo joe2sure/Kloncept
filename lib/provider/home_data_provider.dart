@@ -1,109 +1,223 @@
+// lib/provider/home_data_provider.dart
+
 import 'package:flutter/material.dart';
 import 'package:kloncept/common/dummy_data.dart';
 import 'package:kloncept/model/home_model.dart';
-// import 'package:kloncept/widgets/featured_category_list.dart';
+import 'package:kloncept/model/zoom_meeting.dart';
 
 class HomeDataProvider with ChangeNotifier {
   HomeModel? homeModel;
+  List<SliderFact>? sliderFactList = [];
+  List<MySlider>? sliderList = [];
   List<Testimonial>? testimonialList = [];
   List<Trusted>? trustedList = [];
-  List<SliderFact>? sliderFactList = [];
-  List<SliderFact>? sliderList = []; // Updated type to List<SliderFact>?
-  List<FeaturedCategory>? featuredCategoryList = []; // Updated to use FeaturedCategory
-  List<dynamic>? zoomMeetingList = [];
-
-  HomeDataProvider() {
-    // Initialize with dummy data
-    loadDummyData();
-  }
-
-  Future<void> loadDummyData() async {
-    // Create HomeModel from dummy data
-    homeModel = HomeModel.fromJson(DummyData.homeModel);
-    
-    // Set testimonials
-    testimonialList = DummyData.testimonials;
-    
-    // Set trusted companies
-    trustedList = DummyData.trustedCompanies;
-    
-    // Set slider facts
-    sliderFactList = DummyData.sliderFacts.map((fact) => SliderFact(
-      id: fact['id'],
-      heading: fact['heading'],
-      subHeading: fact['sub_heading'],
-      status: fact['status'], image: 'assets/images/cate1.png', detail:'slider info',
-    )).toList();
-    
-    // Set sliders
-    sliderList = DummyData.sliderList.map((slider) => SliderFact(
-      id: slider['id'],
-      heading: slider['heading'],
-      subHeading: slider['sub_heading'],
-      detail: slider['detail'],
-      status: slider['status'],
-      image: slider['image'],
-    )).toList();
-    
-    // Set featured categories
-    featuredCategoryList = DummyData.categories
-        .where((category) => category['featured'] == '1')
-        .map((category) => FeaturedCategory(
-              id: category['id'],
-              title: category['title'],
-              icon: category['icon'],
-              slug: category['slug'],
-              status: category['status'],
-              featured: category['featured'],
-              catImage: category['image'],
-              position: category['position'],
-            ))
-        .toList();
-    
-    // Set zoom meetings
-    zoomMeetingList = DummyData.zoomMeetings;
-    
-    notifyListeners();
-  }
+  List<MyCategory>? featuredCategoryList = [];
+  List<SubCategory>? subCategoryList = [];
+  List<MyCategory>? categoryList = [];
+  List<ChildCategory>? childCategoryList = [];
+  List<ZoomMeeting>? zoomMeetingList = [];
+  Map categoryMap = {};
 
   Future<HomeModel?> getHomeDetails(BuildContext context) async {
-    // Just return the already loaded dummy data
+    // Use dummy data instead of API call
+    homeModel = HomeModel.fromJson(DummyData.homeData);
+    generateLists(homeModel, context);
+    notifyListeners();
     return homeModel;
   }
 
-  String getCategoryName(dynamic categoryId) {
-    // Find category by ID
-    var category = DummyData.categories.firstWhere(
-      (cat) => cat['id'].toString() == categoryId.toString(),
-      orElse: () => {"title": "Unknown Category"},
+  void generateLists(HomeModel? homeData, BuildContext context) {
+    generateSliderFactList(homeData!.sliderfacts);
+    generateSliderList(homeData.slider);
+    generateTestimonialList(homeData);
+    generateTrustedList(homeData);
+    generateFeaturedCategoryList(homeData);
+    generateCategoryList(homeData);
+    generateSubCateList(homeData);
+    generateChildCateList(homeData);
+    generateMeetingList(homeData.zoomMeeting);
+  }
+
+  void generateSliderFactList(List<SliderFact>? sliderfacts) {
+    sliderFactList = List.generate(
+      sliderfacts!.length,
+      (index) => SliderFact(
+        id: sliderfacts[index].id,
+        icon: sliderfacts[index].icon,
+        heading: sliderfacts[index].heading,
+        subHeading: sliderfacts[index].subHeading,
+        status: sliderfacts[index].status,
+        image: sliderfacts[index].image,
+        detail: sliderfacts[index].detail,
+        createdAt: sliderfacts[index].createdAt,
+        updatedAt: sliderfacts[index].updatedAt,
+      ),
     );
-    
-    return category['title'];
+  }
+
+  void generateSliderList(List<MySlider>? slider) {
+    sliderList = List.generate(
+      slider!.length,
+      (index) => MySlider(
+        id: slider[index].id,
+        heading: slider[index].heading,
+        subHeading: slider[index].subHeading,
+        searchText: slider[index].searchText,
+        detail: slider[index].detail,
+        status: slider[index].status,
+        image: slider[index].image,
+        position: slider[index].position,
+        createdAt: slider[index].createdAt,
+        updatedAt: slider[index].updatedAt,
+      ),
+    );
+  }
+
+  void generateTestimonialList(HomeModel? homeModels) {
+    testimonialList = List.generate(
+      homeModels!.testimonial!.length,
+      (index) => Testimonial(
+        id: homeModels.testimonial![index].id,
+        clientName: homeModels.testimonial![index].clientName,
+        details: homeModels.testimonial![index].details,
+        status: homeModels.testimonial![index].status,
+        image: homeModels.testimonial![index].image,
+        createdAt: homeModels.testimonial![index].createdAt,
+        updatedAt: homeModels.testimonial![index].updatedAt,
+      ),
+    );
+    testimonialList!.removeWhere((element) => element.status == "0");
+  }
+
+  void generateTrustedList(HomeModel? homeModels) {
+    trustedList = List.generate(
+      homeModels!.trusted!.length,
+      (index) => Trusted(
+        id: homeModels.trusted![index].id,
+        url: homeModels.trusted![index].url,
+        image: homeModels.trusted![index].image,
+        status: homeModels.trusted![index].status,
+        createdAt: homeModels.trusted![index].createdAt,
+        updatedAt: homeModels.trusted![index].updatedAt,
+      ),
+    );
+  }
+
+  void generateFeaturedCategoryList(HomeModel? homeModels) {
+    featuredCategoryList = List.generate(
+      homeModels!.featuredCate!.length,
+      (index) => MyCategory(
+        id: homeModels.featuredCate![index].id,
+        title: homeModels.featuredCate![index].title,
+        icon: homeModels.featuredCate![index].icon,
+        slug: homeModels.featuredCate![index].slug,
+        featured: homeModels.featuredCate![index].featured,
+        status: homeModels.featuredCate![index].status,
+        position: homeModels.featuredCate![index].position,
+        createdAt: homeModels.featuredCate![index].createdAt,
+        updatedAt: homeModels.featuredCate![index].updatedAt,
+        catImage: homeModels.featuredCate![index].catImage,
+      ),
+    );
+    featuredCategoryList!.removeWhere((element) => element.status == "0");
+  }
+
+  void generateCategoryList(HomeModel? homeModels) {
+    categoryList = List.generate(
+      homeModels!.category!.length,
+      (index) => MyCategory(
+        id: homeModels.category![index].id,
+        title: homeModels.category![index].title,
+        icon: homeModels.category![index].icon,
+        slug: homeModels.category![index].slug,
+        featured: homeModels.category![index].featured,
+        status: homeModels.category![index].status,
+        position: homeModels.category![index].position,
+        createdAt: homeModels.category![index].createdAt,
+        updatedAt: homeModels.category![index].updatedAt,
+        catImage: homeModels.category![index].catImage,
+      ),
+    );
+    categoryList!.removeWhere((element) => element.status == "0");
+  }
+
+  void generateSubCateList(HomeModel? homeModels) {
+    subCategoryList = List.generate(
+      homeModels!.subcategory!.length,
+      (index) => SubCategory(
+        id: homeModels.subcategory![index].id,
+        categoryId: homeModels.subcategory![index].categoryId,
+        title: homeModels.subcategory![index].title,
+        icon: homeModels.subcategory![index].icon,
+        slug: homeModels.subcategory![index].slug,
+        status: homeModels.subcategory![index].status,
+        createdAt: homeModels.subcategory![index].createdAt,
+        updatedAt: homeModels.subcategory![index].updatedAt,
+      ),
+    );
+    subCategoryList!.removeWhere((element) => element.status == "0");
+  }
+
+  void generateChildCateList(HomeModel? homeModels) {
+    childCategoryList = List.generate(
+      homeModels!.childcategory!.length,
+      (index) => ChildCategory(
+        id: homeModels.childcategory![index].id,
+        categoryId: homeModels.childcategory![index].categoryId,
+        subcategoryId: homeModels.childcategory![index].subcategoryId,
+        title: homeModels.childcategory![index].title,
+        icon: homeModels.childcategory![index].icon,
+        slug: homeModels.childcategory![index].slug,
+        status: homeModels.childcategory![index].status,
+        createdAt: homeModels.childcategory![index].createdAt,
+        updatedAt: homeModels.childcategory![index].updatedAt,
+      ),
+    );
+    childCategoryList!.removeWhere((element) => element.status == "0");
+  }
+
+  void generateMeetingList(List<ZoomMeeting>? zoomMeeting) {
+    zoomMeetingList = List.generate(
+      zoomMeeting!.length,
+      (index) => ZoomMeeting(
+        id: zoomMeeting[index].id,
+        courseId: zoomMeeting[index].courseId,
+        meetingId: zoomMeeting[index].meetingId,
+        meetingTitle: zoomMeeting[index].meetingTitle,
+        startTime: zoomMeeting[index].startTime,
+        zoomUrl: zoomMeeting[index].zoomUrl,
+        userId: zoomMeeting[index].userId,
+        agenda: zoomMeeting[index].agenda,
+        createdAt: zoomMeeting[index].createdAt,
+        updatedAt: zoomMeeting[index].updatedAt,
+        type: zoomMeeting[index].type,
+        linkBy: zoomMeeting[index].linkBy,
+        ownerId: zoomMeeting[index].ownerId,
+        image: zoomMeeting[index].image,
+      ),
+    );
+  }
+
+  String getCategoryName(dynamic id) {
+    if (id == null) {
+      return '';
+    }
+    if (categoryMap[int.tryParse(id)] != null) {
+      return categoryMap[int.tryParse(id)];
+    }
+    return "null";
+  }
+
+  String? getSubCategoryName(String? id) {
+    String? subCategoryName;
+    subCategoryList!.forEach((subCategory) {
+      if (subCategory.id.toString() == id) {
+        subCategoryName = subCategory.title.toString();
+      }
+    });
+    return subCategoryName;
   }
 }
-
-class FeaturedCategory {
-  final int? id;
-  final String? title;
-  final String? icon;
-  final String? slug;
-  final String? status;
-  final String? featured;
-  final String? catImage;
-  final String? position;
-
-  FeaturedCategory({
-    this.id,
-    this.title,
-    this.icon,
-    this.slug,
-    this.status,
-    this.featured,
-    this.catImage,
-    this.position,
-  });
-}
-
 
 
 

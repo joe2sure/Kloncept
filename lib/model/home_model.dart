@@ -624,20 +624,27 @@ class MySlider {
       };
 }
 
+
 class SliderFact {
   SliderFact({
     this.id,
     this.icon,
     this.heading,
     this.subHeading,
+    this.status,
+    this.image,
+    this.detail,
     this.createdAt,
-    this.updatedAt, required status, required image, required detail,
+    this.updatedAt,
   });
 
   int? id;
   String? icon;
   String? heading;
   String? subHeading;
+  String? status;
+  String? image;
+  String? detail;
   DateTime? createdAt;
   DateTime? updatedAt;
 
@@ -646,10 +653,13 @@ class SliderFact {
         icon: json["icon"],
         heading: json["heading"],
         subHeading: json["sub_heading"],
+        status: json["status"],
+        image: json["image"],
+        detail: json["detail"],
         createdAt: json["created_at"] == null
             ? null
             : DateTime.parse(json["created_at"]),
-        updatedAt: DateTime.parse(json["updated_at"]), status: null, image: null, detail: null,
+        updatedAt: DateTime.parse(json["updated_at"]),
       );
 
   Map<String, dynamic> toJson() => {
@@ -657,10 +667,51 @@ class SliderFact {
         "icon": icon,
         "heading": heading,
         "sub_heading": subHeading,
+        "status": status,
+        "image": image,
+        "detail": detail,
         "created_at": createdAt!.toIso8601String(),
         "updated_at": updatedAt!.toIso8601String(),
       };
 }
+
+// class SliderFact {
+//   SliderFact({
+//     this.id,
+//     this.icon,
+//     this.heading,
+//     this.subHeading,
+//     this.createdAt,
+//     this.updatedAt, required status, required image, required detail,
+//   });
+
+//   int? id;
+//   String? icon;
+//   String? heading;
+//   String? subHeading;
+//   DateTime? createdAt;
+//   DateTime? updatedAt;
+
+//   factory SliderFact.fromJson(Map<String, dynamic> json) => SliderFact(
+//         id: json["id"],
+//         icon: json["icon"],
+//         heading: json["heading"],
+//         subHeading: json["sub_heading"],
+//         createdAt: json["created_at"] == null
+//             ? null
+//             : DateTime.parse(json["created_at"]),
+//         updatedAt: DateTime.parse(json["updated_at"]), status: null, image: null, detail: null,
+//       );
+
+//   Map<String, dynamic> toJson() => {
+//         "id": id,
+//         "icon": icon,
+//         "heading": heading,
+//         "sub_heading": subHeading,
+//         "created_at": createdAt!.toIso8601String(),
+//         "updated_at": updatedAt!.toIso8601String(),
+//       };
+// }
 
 class Testimonial {
   Testimonial({

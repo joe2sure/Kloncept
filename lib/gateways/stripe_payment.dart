@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
-import 'package:kloncept/Screens/loading_screen.dart';
 import 'package:kloncept/Widgets/appbar.dart';
 import 'package:kloncept/Widgets/credit_card_form.dart';
 import 'package:kloncept/Widgets/credit_card_model.dart';
@@ -19,6 +18,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl/intl.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:http/http.dart' as http;
+import 'package:kloncept/screens/loading_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../common/theme.dart' as T;
@@ -607,7 +607,7 @@ class StripePaymentScreenState extends State<StripePaymentScreen> {
                       onPressed: () {
                         var router = new MaterialPageRoute(
                             builder: (BuildContext context) =>
-                                LoadingScreen(authToken));
+                                LoadingScreen());
                         Navigator.of(context).push(router);
                       },
                     )
