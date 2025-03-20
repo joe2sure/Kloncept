@@ -2,9 +2,9 @@
 
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:kloncept/screens/sign_in_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:kloncept/provider/home_data_provider.dart';
-import 'package:kloncept/screens/bottom_navigation_screen.dart';
 
 class LoadingScreen extends StatefulWidget {
   @override
@@ -18,22 +18,38 @@ class _LoadingScreenState extends State<LoadingScreen> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
-      HomeDataProvider homeData =
-          Provider.of<HomeDataProvider>(context, listen: false);
-      await homeData.getHomeDetails(context);
+      try {
+        // Fetch home data
+        HomeDataProvider homeData =
+            Provider.of<HomeDataProvider>(context, listen: false);
+        await homeData.getHomeDetails(context);
 
-      setState(() {
-        _visible = true;
-      });
+        // Set visibility to true
+        setState(() {
+          _visible = true;
+        });
 
-      Timer(Duration(milliseconds: 500), () {
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => MyBottomNavigationBar(pageInd: 0),
+        // Navigate to SignInScreen after a delay
+        Timer(Duration(milliseconds: 500), () {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => SignInScreen(),
+            ),
+          );
+        });
+      } catch (e) {
+        // Handle errors
+        print("Error loading home data: $e");
+        setState(() {
+          _visible = true;
+        });
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text("Failed to load data. Please try again."),
           ),
         );
-      });
+      }
     });
   }
 
@@ -41,9 +57,9 @@ class _LoadingScreenState extends State<LoadingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: CircularProgressIndicator(
-          valueColor: AlwaysStoppedAnimation<Color>(Color(0xFFF44A4A)),
-        ),
+        child: _visible
+            ? CircularProgressIndicator() // Show loading indicator
+            : SignInScreen(), // Fallback to SignInScreen if something goes wrong
       ),
     );
   }

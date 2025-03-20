@@ -1408,7 +1408,8 @@ class _PlayListScreenState extends State<PlayListScreen>
                                 ),
                                 Padding(
                                   child: Text(
-                                      "${DateFormat('dd-MM-yyyy | hh:mm aa').format(zoomMeetings[i].startTime!)}",
+                                    'Date',
+                                      // "${DateFormat('dd-MM-yyyy | hh:mm aa').format(zoomMeetings[i].startTime!)}",
                                       maxLines: 1,
                                       overflow: TextOverflow.ellipsis,
                                       style: TextStyle(

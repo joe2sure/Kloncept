@@ -1,12 +1,10 @@
-// lib/common/dummy_data.dart
-
 class DummyData {
   // Dummy home data
   static Map<String, dynamic> homeData = {
     "slider": [
       {
         "id": 1,
-        "image": "assets/images/slider1.jpg",
+        "image": "assets/placeholder/trusted.png",
         "heading": "Welcome to Kloncept",
         "subHeading": "Learn and Grow",
         "detail": "Start your journey with us",
@@ -18,7 +16,7 @@ class DummyData {
       },
       {
         "id": 2,
-        "image": "assets/images/slider2.jpg",
+        "image": "assets/placeholder/trusted.png",
         "heading": "Explore Courses",
         "subHeading": "Expand your knowledge",
         "detail": "Discover new skills",
@@ -32,7 +30,7 @@ class DummyData {
     "sliderfacts": [
       {
         "id": 1,
-        "icon": "assets/icons/icon1.png",
+        "icon": "assets/placeholder/trusted.png",
         "heading": "100+ Courses",
         "subHeading": "Learn from the best",
         "createdAt": "2023-01-01",
@@ -40,7 +38,7 @@ class DummyData {
       },
       {
         "id": 2,
-        "icon": "assets/icons/icon2.png",
+        "icon": "assets/placeholder/trusted.png",
         "heading": "Expert Instructors",
         "subHeading": "Learn from industry experts",
         "createdAt": "2023-01-01",
@@ -51,7 +49,7 @@ class DummyData {
       {
         "id": 1,
         "clientName": "John Doe",
-        "image": "assets/images/user1.jpg",
+        "image": "assets/placeholder/trusted.png",
         "status": "1",
         "details": "Great platform for learning",
         "createdAt": "2023-01-01",
@@ -60,7 +58,7 @@ class DummyData {
       {
         "id": 2,
         "clientName": "Jane Smith",
-        "image": "assets/images/user2.jpg",
+        "image": "assets/placeholder/trusted.png",
         "status": "1",
         "details": "Amazing courses and instructors",
         "createdAt": "2023-01-01",
@@ -71,7 +69,7 @@ class DummyData {
       {
         "id": 1,
         "url": "https://example.com",
-        "image": "assets/images/trusted1.png",
+        "image": "assets/placeholder/trusted.png",
         "status": "1",
         "createdAt": "2023-01-01",
         "updatedAt": "2023-01-01",
@@ -79,7 +77,7 @@ class DummyData {
       {
         "id": 2,
         "url": "https://example.com",
-        "image": "assets/images/trusted2.png",
+        "image": "assets/placeholder/trusted.png",
         "status": "1",
         "createdAt": "2023-01-01",
         "updatedAt": "2023-01-01",
@@ -89,58 +87,58 @@ class DummyData {
       {
         "id": 1,
         "slug": "featured-category-1",
-        "icon": "assets/icons/category1.png",
+        "icon": "assets/placeholder/trusted.png",
         "title": "Featured Category 1",
         "status": "1",
         "featured": "1",
         "position": 1,
         "updatedAt": "2023-01-01",
         "createdAt": "2023-01-01",
-        "catImage": "assets/images/category1.jpg",
+        "catImage": "assets/placeholder/trusted.png",
       },
       {
         "id": 2,
         "slug": "featured-category-2",
-        "icon": "assets/icons/category2.png",
+        "icon": "assets/placeholder/trusted.png",
         "title": "Featured Category 2",
         "status": "1",
         "featured": "1",
         "position": 2,
         "updatedAt": "2023-01-01",
         "createdAt": "2023-01-01",
-        "catImage": "assets/images/category2.jpg",
+        "catImage": "assets/placeholder/trusted.png",
       }
     ],
     "category": [
       {
         "id": 1,
         "title": "Category 1",
-        "icon": "assets/icons/category1.png",
+        "icon": "assets/placeholder/trusted.png",
         "slug": "category-1",
         "featured": "1",
         "status": "1",
         "position": 1,
         "createdAt": "2023-01-01",
         "updatedAt": "2023-01-01",
-        "catImage": "assets/images/category1.jpg",
+        "catImage": "assets/placeholder/trusted.png",
       },
       {
         "id": 2,
         "title": "Category 2",
-        "icon": "assets/icons/category2.png",
+        "icon": "assets/placeholder/trusted.png",
         "slug": "category-2",
         "featured": "1",
         "status": "1",
         "position": 2,
         "createdAt": "2023-01-01",
         "updatedAt": "2023-01-01",
-        "catImage": "assets/images/category2.jpg",
+        "catImage": "assets/placeholder/trusted.png",
       }
     ],
     "subcategory": [
       {
         "id": 1,
-        "icon": "assets/icons/subcategory1.png",
+        "icon": "assets/placeholder/trusted.png",
         "categoryId": "1",
         "status": "1",
         "slug": "subcategory-1",
@@ -150,7 +148,7 @@ class DummyData {
       },
       {
         "id": 2,
-        "icon": "assets/icons/subcategory2.png",
+        "icon": "assets/placeholder/trusted.png",
         "categoryId": "2",
         "status": "1",
         "slug": "subcategory-2",
@@ -165,7 +163,7 @@ class DummyData {
         "status": "1",
         "title": "Child Category 1",
         "slug": "child-category-1",
-        "icon": "assets/icons/childcategory1.png",
+        "icon": "assets/placeholder/trusted.png",
         "subcategoryId": "1",
         "categoryId": "1",
         "createdAt": "2023-01-01",
@@ -176,7 +174,7 @@ class DummyData {
         "status": "1",
         "title": "Child Category 2",
         "slug": "child-category-2",
-        "icon": "assets/icons/childcategory2.png",
+        "icon": "assets/placeholder/trusted.png",
         "subcategoryId": "2",
         "categoryId": "2",
         "createdAt": "2023-01-01",
@@ -198,15 +196,19 @@ class DummyData {
         "type": "1",
         "linkBy": "1",
         "ownerId": "1",
-        "image": "assets/images/meeting1.jpg",
+        "image": "assets/placeholder/trusted.png",
       }
     ],
     "currency": {
+      "id": 1,
+      "icon": "USD",
       "currency": "USD",
-      "currencyRate": 1,
+      "default": "USD",
+      "created_at": "2023-01-01",
+      "updated_at": "2023-01-01",
     },
     "settings": {
-      "logo": "assets/images/logo.png",
+      "logo": "assets/placeholder/trusted.png",
       "cpyTxt": "© 2023 Kloncept. All rights reserved.",
       "fbLoginEnable": "1",
       "googleLoginEnable": "1",
@@ -219,7 +221,7 @@ class DummyData {
     "email": "user@example.com",
     "password": "password123",
     "name": "John Doe",
-    "userImg": "assets/images/user1.jpg",
+    "userImg": "assets/placeholder/trusted.png",
   };
 }
 
