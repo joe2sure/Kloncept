@@ -3,6 +3,7 @@ import 'package:kloncept/common/global.dart';
 import 'package:kloncept/localization/language_provider.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 import 'package:kloncept/model/review.dart';
+import 'package:kloncept/provider/dummy/dummy_provider.dart';
 import '../Widgets/rating_star.dart';
 import '../Widgets/utils.dart';
 import '../common/apidata.dart';
@@ -299,8 +300,8 @@ class FeaturedListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var currency =
-        Provider.of<HomeDataProvider>(context).homeModel!.currency!.currency;
+dynamic currency =
+    Provider.of<DummyCurrenciesProvider>(context).currencies.first.symbol;
     String category = courseDetail!.categoryName; // Use categoryName from DummyCourse
 
     T.Theme mode = Provider.of<T.Theme>(context);

@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 // ignore: must_be_immutable
 class BundleCoursesList extends StatelessWidget {
   bool _visible;
-  final List<DummyBundleCourse> dummyBundleCourses;
+  final List<DummyCourse> dummyBundleCourses;
 
   BundleCoursesList(this.dummyBundleCourses, this._visible);
 

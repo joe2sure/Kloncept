@@ -79,12 +79,14 @@ class DummyHomeDataProvider with ChangeNotifier {
   List<DummyTestimonial> _testimonialList = [];
   List<DummyTrustedCompany> _trustedList = [];
   List<DummyZoomMeeting> _zoomMeetingList = [];
+   DummyCurrency? _currencies; 
 
   List<DummySlider> get sliderList => _sliderList;
   List<DummyFactSlider> get sliderFactList => _sliderFactList;
   List<DummyTestimonial> get testimonialList => _testimonialList;
   List<DummyTrustedCompany> get trustedList => _trustedList;
   List<DummyZoomMeeting> get zoomMeetingList => _zoomMeetingList;
+  DummyCurrency? get currencies => _currencies; 
 
   void loadDummyHomeData() {
     // Create dummy sliders
@@ -149,6 +151,12 @@ class DummyHomeDataProvider with ChangeNotifier {
       ),
     );
 
+    _currencies = DummyCurrency(
+      id: 1,
+      name: "USD",
+      symbol: "\$",
+      rate: 1.0,
+    );
     notifyListeners();
   }
 }

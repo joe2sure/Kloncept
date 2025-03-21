@@ -217,8 +217,8 @@ class BundleCourseItem extends StatelessWidget {
     bool purchased = false; // Update logic for purchased if needed
     String? category = dummyBundleCoursesDetail.categoryName; // Use categoryName from DummyBundleCourse
 
-    dynamic currency =
-        Provider.of<DummyHomeDataProvider>(context).currencies!.currency!.currency;
+dynamic currency =
+    Provider.of<DummyCurrenciesProvider>(context).currencies.first.symbol;
     T.Theme mode = Provider.of<T.Theme>(context);
     return tileDetails(context, mode, category, currency, purchased);
   }
