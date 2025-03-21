@@ -23,6 +23,12 @@ class Course {
       this.status,
       this.previewImage,
       this.videoUrl,
+      this.thumbnail,
+      this.instructorName,
+      this.instructorImage,
+      this.categoryName,
+      this.rating,
+      this.progress,
       this.previewType,
       this.type,
       this.duration,
@@ -45,10 +51,16 @@ class Course {
   String? shortDetail;
   String? detail;
   String? requirement;
-  String? price;
-  dynamic discountPrice;
+  num? price;
+  num? discountPrice;
   String? day;
   String? video;
+  String? thumbnail;
+  String? instructorName;
+  String? instructorImage;
+  String? categoryName;
+  String? rating;
+  int? progress;
   String? url;
   String? featured;
   String? slug;
@@ -82,6 +94,12 @@ class Course {
         discountPrice:
             json["discount_price"] == null ? null : json["discount_price"],
         day: json["day"] == null ? null : json["day"],
+        thumbnail: json['thumbnail'] == null ? null : json["thumbnail"],
+           instructorName: json['instructor_name'] == null ? null : json["instructor_name"],
+      instructorImage: json['instructor_image'] == null ? null : json["instructor_image"],
+            rating: json['rating'] == null ? null : json["rating"],
+            
+      progress: json['progress'] == null ? null : json["progress"],
         video: json["video"] == null ? null : json["video"],
         url: json["url"] == null ? null : json["url"],
         featured: json["featured"],
@@ -142,6 +160,11 @@ class Course {
         "whatlearns": List<dynamic>.from(whatlearns!.map((x) => x.toJson())),
         "review": List<dynamic>.from(review!.map((x) => x.toJson())),
         "country": country,
+        "rating": rating,
+        "progress": progress,
+        "instructor_name": instructorName,
+        "instructor_image" :instructorImage,
+        "thumbnail" : thumbnail,
       };
 }
 

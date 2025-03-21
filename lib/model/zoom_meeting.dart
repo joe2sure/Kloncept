@@ -5,7 +5,10 @@ class ZoomMeeting {
     this.meetingId,
     this.meetingTitle,
     this.startTime,
+    this.meetingDuration,
     this.zoomUrl,
+       this.timezone,
+       this.status,
     this.userId,
     this.agenda,
     this.createdAt,
@@ -14,12 +17,17 @@ class ZoomMeeting {
     this.linkBy,
     this.ownerId,
     this.image,
+    this.hostName,
+    this.hostImage,
   });
 
   int? id;
   String? courseId;
   String? meetingId;
   String? meetingTitle;
+  int? meetingDuration;
+  String? timezone;
+  int? status;
   String? startTime;
   String? zoomUrl;
   String? userId;
@@ -30,6 +38,8 @@ class ZoomMeeting {
   String? linkBy;
   String? ownerId;
   String? image;
+    String? hostName;
+  String? hostImage;
 
   factory ZoomMeeting.fromJson(Map<String, dynamic> json) => ZoomMeeting(
         id: json["id"] as int?,
@@ -37,6 +47,9 @@ class ZoomMeeting {
         meetingId: json["meeting_id"] as String?,
         meetingTitle: json["meeting_title"] as String?,
         startTime: json["start_time"] as String?,
+        meetingDuration: json['meeting_duration'] as int?,
+        timezone: json['timezone'] as String?,
+        status: json['status'] as int?,
         zoomUrl: json["zoom_url"] as String?,
         userId: json["user_id"] as String?,
         agenda: json["agenda"] as String?,
@@ -50,6 +63,8 @@ class ZoomMeeting {
         linkBy: json["link_by"] as String?,
         ownerId: json["owner_id"] as String?,
         image: json["image"] as String?,
+              hostName: json['host_name'] as String?,
+      hostImage: json['host_image'] as String?,
       );
 
   Map<String, dynamic> toJson() => {
@@ -58,6 +73,7 @@ class ZoomMeeting {
         "meeting_id": meetingId,
         "meeting_title": meetingTitle,
         "start_time": startTime,
+        "meeting_duration": meetingDuration,
         "zoom_url": zoomUrl,
         "user_id": userId,
         "agenda": agenda,
@@ -67,6 +83,9 @@ class ZoomMeeting {
         "link_by": linkBy,
         "owner_id": ownerId,
         "image": image,
+            "host_name": hostName,
+        "host_image": hostImage,
+        "status": status,
       };
 }
 

@@ -1,5 +1,3 @@
-// lib/screens/sign_in_screen.dart
-
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -450,6 +448,7 @@ class _SignInScreenState extends State<SignInScreen>
         canPop: canPopNow,
         child: Scaffold(
           key: scaffoldKey,
+          backgroundColor: Color(0xFF181632),
           resizeToAvoidBottomInset: false,
           body: homeData.homeModel == null
               ? Center(child: CircularProgressIndicator())

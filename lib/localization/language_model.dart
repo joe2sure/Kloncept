@@ -27,12 +27,7 @@ class LanguageModel {
   }
 }
 
-/// id : 1
-/// local : "en"
-/// name : "English"
-/// def : "1"
-/// created_at : "2020-01-21T07:38:34.000000Z"
-/// updated_at : "2020-01-21T07:38:34.000000Z"
+
 
 class Language {
   dynamic _id;

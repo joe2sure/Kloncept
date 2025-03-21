@@ -66,6 +66,7 @@ class Institute {
     this.affilatedBy,
     this.address,
     this.slug,
+    this.affiliatePrice,
   });
 
   Institute.fromJson(dynamic json) {
@@ -84,14 +85,15 @@ class Institute {
     affilatedBy = json['affilated_by'];
     address = json['address'];
     slug = json['slug'];
+     affiliatePrice: json['affiliate_price'];
   }
   num? id;
   String? title;
   String? detail;
-  String? userId;
+  int? userId;
   String? image;
-  String? status;
-  String? verified;
+  int? status;
+  int? verified;
   String? skill;
   String? createdAt;
   String? updatedAt;
@@ -100,6 +102,7 @@ class Institute {
   String? affilatedBy;
   String? address;
   String? slug;
+  String? affiliatePrice;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -118,6 +121,7 @@ class Institute {
     map['affilated_by'] = affilatedBy;
     map['address'] = address;
     map['slug'] = slug;
+    map['affiliatePrice'] = slug;
     return map;
   }
 }

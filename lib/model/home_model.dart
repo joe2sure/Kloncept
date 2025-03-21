@@ -1,4 +1,5 @@
 // lib/model/home_model.dart
+import 'dart:core';
 
 import 'package:kloncept/model/zoom_meeting.dart';
 
@@ -18,7 +19,7 @@ class HomeModel {
   });
 
   Settings? settings;
-  Currency? currency;
+  CurrencyModel? currency;
   List<MySlider>? slider;
   List<SliderFact>? sliderfacts;
   List<Trusted>? trusted;
@@ -35,7 +36,7 @@ class HomeModel {
             : Settings.fromJson(json["settings"] as Map<String, dynamic>),
         currency: json["currency"] == null
             ? null
-            : Currency.fromJson(json["currency"] as Map<String, dynamic>),
+            : CurrencyModel.fromJson(json["currency"] as Map<String, dynamic>),
         slider: json["slider"] == null
             ? null
             : List<MySlider>.from(
@@ -518,45 +519,98 @@ class Settings {
       };
 }
 
-class Currency {
-  Currency({
+
+class CurrencyModel {
+  int? id;
+  String? name;
+  String? code;
+  String? symbol;
+  String? rate;
+  int? status;
+  String? position;
+  String? createdAt;
+  String? updatedAt;
+
+  CurrencyModel({
     this.id,
-    this.icon,
-    this.currency,
-    this.currencyDefault,
+    this.name,
+    this.code,
+    this.symbol,
+    this.rate,
+    this.status,
+    this.position,
     this.createdAt,
     this.updatedAt,
   });
 
-  int? id;
-  String? icon;
-  String? currency;
-  dynamic currencyDefault;
-  DateTime? createdAt;
-  DateTime? updatedAt;
+  factory CurrencyModel.fromJson(Map<String, dynamic> json) {
+    return CurrencyModel(
+      id: json['id'],
+      name: json['name'],
+      code: json['code'],
+      symbol: json['symbol'],
+      rate: json['rate'],
+      status: json['status'],
+      position: json['position'],
+      createdAt: json['created_at'],
+      updatedAt: json['updated_at'],
+    );
+  }
 
-  factory Currency.fromJson(Map<String, dynamic> json) => Currency(
-        id: json["id"] as int?,
-        icon: json["icon"] as String?,
-        currency: json["currency"] as String?,
-        currencyDefault: json["default"],
-        createdAt: json["created_at"] == null
-            ? null
-            : DateTime.parse(json["created_at"] as String),
-        updatedAt: json["updated_at"] == null
-            ? null
-            : DateTime.parse(json["updated_at"] as String),
-      );
-
-  Map<String, dynamic> toJson() => {
-        "id": id,
-        "icon": icon,
-        "currency": currency,
-        "default": currencyDefault,
-        "created_at": createdAt?.toIso8601String(),
-        "updated_at": updatedAt?.toIso8601String(),
-      };
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    data['name'] = this.name;
+    data['code'] = this.code;
+    data['symbol'] = this.symbol;
+    data['rate'] = this.rate;
+    data['status'] = this.status;
+    data['position'] = this.position;
+    data['created_at'] = this.createdAt;
+    data['updated_at'] = this.updatedAt;
+    return data;
+  }
 }
+
+// class Currency {
+//   Currency({
+//     this.id,
+//     this.icon,
+//     this.currency,
+//     this.currencyDefault,
+//     this.createdAt,
+//     this.updatedAt,
+//   });
+
+//   int? id;
+//   String? icon;
+//   String? currency;
+//   dynamic currencyDefault;
+//   DateTime? createdAt;
+//   DateTime? updatedAt;
+
+//   factory Currency.fromJson(Map<String, dynamic> json) => Currency(
+//         id: json["id"] as int?,
+//         icon: json["icon"] as String?,
+//         currency: json["currency"] as String?,
+//         currencyDefault: json["default"],
+//         createdAt: json["created_at"] == null
+//             ? null
+//             : DateTime.parse(json["created_at"] as String),
+//         updatedAt: json["updated_at"] == null
+//             ? null
+//             : DateTime.parse(json["updated_at"] as String),
+//       );
+
+//   Map<String, dynamic> toJson() => {
+//         "id": id,
+//         "icon": icon,
+//         "currency": currency,
+//         "default": currencyDefault,
+//         "created_at": createdAt?.toIso8601String(),
+//         "updated_at": updatedAt?.toIso8601String(),
+//       };
+// }
 
 class MySlider {
   MySlider({
@@ -619,6 +673,7 @@ class SliderFact {
     this.id,
     this.icon,
     this.heading,
+    this.color,
     this.subHeading,
     this.status,
     this.image,
@@ -630,8 +685,9 @@ class SliderFact {
   int? id;
   String? icon;
   String? heading;
+   String? color;
   String? subHeading;
-  String? status;
+  int? status;
   String? image;
   String? detail;
   DateTime? createdAt;
@@ -641,8 +697,9 @@ class SliderFact {
         id: json["id"] as int?,
         icon: json["icon"] as String?,
         heading: json["heading"] as String?,
+         color: json["color"] as String?,
         subHeading: json["sub_heading"] as String?,
-        status: json["status"] as String?,
+        status: json["status"] as int?,
         image: json["image"] as String?,
         detail: json["detail"] as String?,
         createdAt: json["created_at"] == null
@@ -679,7 +736,7 @@ class Trusted {
   int? id;
   String? url;
   String? image;
-  String? status;
+  int? status;
   DateTime? createdAt;
   DateTime? updatedAt;
 
@@ -687,7 +744,7 @@ class Trusted {
         id: json["id"] as int?,
         url: json["url"] as String?,
         image: json["image"] as String?,
-        status: json["status"] as String?,
+        status: json["status"] as int?,
         createdAt: json["created_at"] == null
             ? null
             : DateTime.parse(json["created_at"] as String),

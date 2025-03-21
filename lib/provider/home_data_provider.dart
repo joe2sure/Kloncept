@@ -1,4 +1,3 @@
-// lib/provider/home_data_provider.dart
 
 import 'package:flutter/material.dart';
 import 'package:kloncept/common/dummy_data.dart';
@@ -18,13 +17,20 @@ class HomeDataProvider with ChangeNotifier {
   List<ZoomMeeting>? zoomMeetingList = [];
   Map categoryMap = {};
 
-  Future<HomeModel?> getHomeDetails(BuildContext context) async {
-    // Use dummy data instead of API call
+
+Future<HomeModel?> getHomeDetails(BuildContext context) async {
+  try {
+    print("Loading dummy data...");
     homeModel = HomeModel.fromJson(DummyData.homeData);
+    print("HomeModel loaded successfully: ${homeModel != null}");
     generateLists(homeModel, context);
     notifyListeners();
     return homeModel;
+  } catch (e) {
+    print("Error in getHomeDetails: $e");
+    throw e;
   }
+}
 
   void generateLists(HomeModel? homeData, BuildContext context) {
     generateSliderFactList(homeData!.sliderfacts);

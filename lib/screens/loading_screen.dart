@@ -59,7 +59,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
       body: Center(
         child: _visible
             ? CircularProgressIndicator() // Show loading indicator
-            : SignInScreen(), // Fallback to SignInScreen if something goes wrong
+            : SignInScreen(),
       ),
     );
   }
