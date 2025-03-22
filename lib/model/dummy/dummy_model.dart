@@ -1,4 +1,3 @@
-// File: lib/model/dummy_models.dart
 import 'package:flutter/material.dart';
 
 // User Profile Model
@@ -17,14 +16,49 @@ class DummyUserProfileModel {
 }
 
 // Course Model
+
+class DummyRecentCourseModel {
+  final List<DummyCourse>? course;
+
+  DummyRecentCourseModel({this.course});
+}
+
+// Updated DummyCourse class with all required parameters
 class DummyCourse {
-  final int id;
-  final String title;
+  final int? id;
+  final int? userId;
+  final int? categoryId;
+  final int? subcategoryId;
+  final int? childcategoryId;
+  final int? languageId;
+  final String? title;
+  final String? shortDetail;
+  final String? detail;
+  final String? requirement;
+  final double? price;
+  final double? discountPrice;
+  final String? day;
+  final String? video;
+  final String? url;
+  final bool? featured;
+  final String? slug;
+  final String? status;
+  final String? previewImage;
+  final String? videoUrl;
+  final String? previewType;
+  final String? type;
+  final String? duration;
+  final String? lastActive;
+  final String? createdAt;
+  final String? updatedAt;
+  final String? include;
+  final String? whatlearns;
+  final double? review;
+  
+  // Original fields from DummyCourse
   final String description;
   final String imageUrl;
-  final String categoryName;
-  final double price;
-  final double discountPrice;
+  final dynamic categoryName; // Could be String or List depending on implementation
   final bool isFeatured;
   final bool isEnrolled;
   final String instructorName;
@@ -32,16 +66,42 @@ class DummyCourse {
   final double rating;
   final int ratingCount;
   final int totalLessons;
-  final String duration;
 
   DummyCourse({
-    required this.id,
-    required this.title,
+     this.id,
+     this.userId,
+     this.categoryId,
+     this.subcategoryId,
+     this.childcategoryId,
+     this.languageId,
+     this.title,
+     this.shortDetail,
+     this.detail,
+     this.requirement,
+     this.price,
+     this.discountPrice,
+     this.day,
+     this.video,
+     this.url,
+     this.featured,
+     this.slug,
+     this.status,
+     this.previewImage,
+     this.videoUrl,
+     this.previewType,
+     this.type,
+     this.duration,
+     this.lastActive,
+     this.createdAt,
+     this.updatedAt,
+     this.include,
+     this.whatlearns,
+     this.review,
+    
+    // Original DummyCourse fields
     required this.description,
     required this.imageUrl,
     required this.categoryName,
-    required this.price,
-    required this.discountPrice,
     required this.isFeatured,
     required this.isEnrolled,
     required this.instructorName,
@@ -49,9 +109,43 @@ class DummyCourse {
     required this.rating,
     required this.ratingCount,
     required this.totalLessons,
-    required this.duration,
   });
 }
+// class DummyCourse {
+//   final int id;
+//   final String title;
+//   final String description;
+//   final String imageUrl;
+//   final String categoryName;
+//   final double price;
+//   final double discountPrice;
+//   final bool isFeatured;
+//   final bool isEnrolled;
+//   final String instructorName;
+//   final String instructorImage;
+//   final double rating;
+//   final int ratingCount;
+//   final int totalLessons;
+//   final String duration;
+
+//   DummyCourse({
+//     required this.id,
+//     required this.title,
+//     required this.description,
+//     required this.imageUrl,
+//     required this.categoryName,
+//     required this.price,
+//     required this.discountPrice,
+//     required this.isFeatured,
+//     required this.isEnrolled,
+//     required this.instructorName,
+//     required this.instructorImage,
+//     required this.rating,
+//     required this.ratingCount,
+//     required this.totalLessons,
+//     required this.duration,
+//   });
+// }
 
 // Bundle Course Model
 class DummyBundleCourse {
@@ -60,7 +154,7 @@ class DummyBundleCourse {
   final String description;
   final String imageUrl;
   final double price;
-  final double discountPrice;
+  final double? discountPrice;
   final List<DummyCourse> courses;
   final String instructorName;
 
@@ -70,7 +164,7 @@ class DummyBundleCourse {
     required this.description,
     required this.imageUrl,
     required this.price,
-    required this.discountPrice,
+   this.discountPrice,
     required this.courses,
     required this.instructorName,
   });
@@ -257,6 +351,31 @@ class DummyCompareCourse {
   final List<DummyCourse> courses;
 
   DummyCompareCourse({required this.courses});
+}
+
+
+// Define a dummy cart item model to simulate the cart items in MyCart model
+class DummyCartItem {
+  final int? id;
+  final String? courseId;
+  final String? bundleId;
+  final String? createdAt;
+  final String? updatedAt;
+
+  DummyCartItem({
+    this.id,
+    this.courseId,
+    this.bundleId,
+    this.createdAt,
+    this.updatedAt,
+  });
+}
+
+// Define a dummy cart model to simulate the MyCart model
+class DummyMyCart {
+  final List<DummyCartItem>? cart;
+
+  DummyMyCart({this.cart});
 }
 
 

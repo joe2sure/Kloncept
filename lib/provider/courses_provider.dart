@@ -79,6 +79,7 @@
 
 
 import 'dart:developer';
+import 'package:kloncept/model/dummy/dummy_model.dart';
 import 'package:kloncept/services/countryProvider.dart';
 import '../common/apidata.dart';
 import '../common/global.dart';
@@ -278,7 +279,7 @@ class CoursesProvider with ChangeNotifier {
     return ans;
   }
 
-  Future<CoursesModel?> getAllCourse(BuildContext context) async {
+  Future<DummyCourse?> getAllCourse(BuildContext context) async {
     final String coursesURL = "${APIData.allCourse}${APIData.secretKey}";
 
     http.Response res = await http.get(Uri.parse(coursesURL));
@@ -287,7 +288,7 @@ class CoursesProvider with ChangeNotifier {
     log("All Courses API Response : ${res.body}");
 
     if (res.statusCode == 200) {
-      coursesModel = CoursesModel.fromJson(json.decode(res.body));
+      coursesModel = DummyCourse.fromJson(json.decode(res.body));
       await getCountry();
       allCourses = List.generate(
         coursesModel!.course!.length,

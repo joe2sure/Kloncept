@@ -18,19 +18,19 @@ class HomeDataProvider with ChangeNotifier {
   Map categoryMap = {};
 
 
-Future<HomeModel?> getHomeDetails(BuildContext context) async {
-  try {
-    print("Loading dummy data...");
-    homeModel = HomeModel.fromJson(DummyData.homeData);
-    print("HomeModel loaded successfully: ${homeModel != null}");
-    generateLists(homeModel, context);
-    notifyListeners();
-    return homeModel;
-  } catch (e) {
-    print("Error in getHomeDetails: $e");
-    throw e;
-  }
-}
+// Future<HomeModel?> getHomeDetails(BuildContext context) async {
+//   try {
+//     print("Loading dummy data...");
+//     homeModel = HomeModel.fromJson(DummyData.homeData);
+//     print("HomeModel loaded successfully: ${homeModel != null}");
+//     generateLists(homeModel, context);
+//     notifyListeners();
+//     return homeModel;
+//   } catch (e) {
+//     print("Error in getHomeDetails: $e");
+//     throw e;
+//   }
+// }
 
   void generateLists(HomeModel? homeData, BuildContext context) {
     generateSliderFactList(homeData!.sliderfacts);

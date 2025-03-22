@@ -1,19 +1,19 @@
-/// watchlist : [{"id":0,"user_id":"47","course_id":"1","start_time":"2021-10-01 06:44:43","active":"1","created_at":"2021-10-01T06:44:43.000000Z","updated_at":"2021-10-01T06:44:43.000000Z"}]
+// File: lib/model/dummy/dummy_watchlist_model.dart
 
-class WatchlistModel {
-  List<Watchlist>? _watchlist;
+class DummyWatchlistModel {
+  List<DummyWatchlist>? _watchlist;
 
-  List<Watchlist>? get watchlist => _watchlist;
+  List<DummyWatchlist>? get watchlist => _watchlist;
 
-  WatchlistModel({List<Watchlist>? watchlist}) {
+  DummyWatchlistModel({List<DummyWatchlist>? watchlist}) {
     _watchlist = watchlist;
   }
 
-  WatchlistModel.fromJson(dynamic json) {
+  DummyWatchlistModel.fromJson(dynamic json) {
     if (json['watchlist'] != null) {
       _watchlist = [];
       json['watchlist'].forEach((v) {
-        _watchlist!.add(Watchlist.fromJson(v));
+        _watchlist!.add(DummyWatchlist.fromJson(v));
       });
     }
   }
@@ -26,7 +26,8 @@ class WatchlistModel {
     return map;
   }
 }
-class Watchlist {
+
+class DummyWatchlist {
   int? _id;
   String? _userId;
   String? _courseId;
@@ -43,14 +44,15 @@ class Watchlist {
   String? get createdAt => _createdAt;
   String? get updatedAt => _updatedAt;
 
-  Watchlist(
-      {required int id,
-      required String userId,
-      required String courseId,
-      required String startTime,
-      required String active,
-      required String createdAt,
-      required String updatedAt}) {
+  DummyWatchlist({
+    required int id,
+    required String userId,
+    required String courseId,
+    required String startTime,
+    required String active,
+    required String createdAt,
+    required String updatedAt,
+  }) {
     _id = id;
     _userId = userId;
     _courseId = courseId;
@@ -60,7 +62,7 @@ class Watchlist {
     _updatedAt = updatedAt;
   }
 
-  Watchlist.fromJson(dynamic json) {
+  DummyWatchlist.fromJson(dynamic json) {
     _id = json['id'];
     _userId = json['user_id'];
     _courseId = json['course_id'];
@@ -82,12 +84,3 @@ class Watchlist {
     return map;
   }
 }
-
-
-/// id : 0
-/// user_id : "47"
-/// course_id : "1"
-/// start_time : "2021-10-01 06:44:43"
-/// active : "1"
-/// created_at : "2021-10-01T06:44:43.000000Z"
-/// updated_at : "2021-10-01T06:44:43.000000Z"
