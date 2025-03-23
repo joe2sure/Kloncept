@@ -29,7 +29,7 @@ class _PaymentGatewayState extends State<PaymentGateway> {
   int? value;
   int? id;
   var payAbleAmount;
-  List<PaymentGatewayModel> listPayment = [];
+  List<RealPaymentGatewayModel> listPayment = [];
   var loading = true;
 
   Widget bottomFixed(payment, user) {
@@ -215,141 +215,183 @@ class _PaymentGatewayState extends State<PaymentGateway> {
       // Create list of available payment gateways
       if (stripe.toString() == "1") {
         listPayment.add(
-          PaymentGatewayModel(
+          RealPaymentGatewayModel(
             1,
             "Stripe",
             "assets/placeholder/stripe.png",
             "1",
+            "description",
+            "active",
+            "detail"
           ),
         );
       }
       if (paypal.toString() == "1") {
         listPayment.add(
-          PaymentGatewayModel(
+          RealPaymentGatewayModel(
             2,
             "Paypal",
             "assets/placeholder/paypal.png",
             "1",
+            "description",
+            "active",
+            "detail"
           ),
         );
       }
       if (paystack.toString() == "1") {
         listPayment.add(
-          PaymentGatewayModel(
+          RealPaymentGatewayModel(
             3,
             "PayStack",
             "assets/placeholder/paystackwallets.png",
             "1",
+            "description",
+            "active",
+            "detail"
           ),
         );
       }
       if (paytm.toString() == "1") {
         listPayment.add(
-          PaymentGatewayModel(
+          RealPaymentGatewayModel(
             4,
             "Paytm",
             "assets/placeholder/paytm.png",
             "1",
+            "description",
+            "active",
+            "detail"
           ),
         );
       }
       if (razorpay.toString() == "1") {
         listPayment.add(
-          PaymentGatewayModel(
+          RealPaymentGatewayModel(
             5,
             "RazorPay",
             "assets/placeholder/razorpay.png",
             "1",
+            "description",
+            "active",
+            "detail"
           ),
         );
       }
       if (instamojo.toString() == "1") {
         listPayment.add(
-          PaymentGatewayModel(
+          RealPaymentGatewayModel(
             6,
             "Instamojo",
             "assets/placeholder/instamojo.png",
             "1",
+            "description",
+            "active",
+            "detail"
           ),
         );
       }
       if (payhere.toString() == "1") {
         listPayment.add(
-          PaymentGatewayModel(
+          RealPaymentGatewayModel(
             7,
             "PayHere",
             "assets/placeholder/payhere.png",
             "1",
+            "description",
+            "active",
+            "detail"
           ),
         );
       }
       if (rave.toString() == "1") {
         listPayment.add(
-          PaymentGatewayModel(
+          RealPaymentGatewayModel(
             71,
             "Rave",
             "assets/placeholder/rave.png",
             "1",
+            "description",
+            "active",
+            "detail"
           ),
         );
       }
       if (payu.toString() == "1") {
         listPayment.add(
-          PaymentGatewayModel(
+          RealPaymentGatewayModel(
             72,
             "PayU",
             "assets/placeholder/payumoney.png",
             "1",
+            "description",
+            "active",
+            "detail"
           ),
         );
       }
       if (cashfree.toString() == "1") {
         listPayment.add(
-          PaymentGatewayModel(
+          RealPaymentGatewayModel(
             73,
             "Cashfree",
             "assets/placeholder/cashfree.png",
             "1",
+            "description",
+            "active",
+            "detail"
           ),
         );
       }
       if (upi.toString() == "1") {
         listPayment.add(
-          PaymentGatewayModel(
+          RealPaymentGatewayModel(
             74,
             "UPI",
             "assets/placeholder/upi.png",
             "1",
+            "description",
+            "active",
+            "detail"
           ),
         );
       }
       if (bank.toString() == "1") {
         listPayment.add(
-          PaymentGatewayModel(
+          RealPaymentGatewayModel(
             8,
             "Bank Transfer",
             "assets/placeholder/bankwallets.png",
             "1",
+            "description",
+            "active",
+            "detail"
           ),
         );
       }
       if (manualPayment.toString() == "1") {
         listPayment.add(
-          PaymentGatewayModel(
+          RealPaymentGatewayModel(
             9,
             "Manual Payment",
             "assets/placeholder/manualpayment.png",
             "1",
+            "description",
+            "active",
+            "detail"
           ),
         );
       }
       if (wallet.toString() == "1") {
         listPayment.add(
-          PaymentGatewayModel(
+          RealPaymentGatewayModel(
             10,
             "Wallet",
             "assets/placeholder/wallet.png",
             "1",
+            "description",
+            "active",
+            "detail"
           ),
         );
       }

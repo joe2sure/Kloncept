@@ -1,6 +1,8 @@
 // File: lib/model/dummy/payment_models.dart
 import 'package:flutter/material.dart';
 import 'package:kloncept/model/dummy/dummy_model.dart';
+import 'package:kloncept/screens/payment_gateway.dart';
+
 
 // PaymentGatewayModel (already exists but needs to be recreated for completeness)
 class PaymentGatewayModel {
@@ -122,6 +124,7 @@ class DummyHomeModel {
   final DummyCurrency? currency;
   final DummySettings? settings;
   final List<DummyCategory>? categories;
+  List<PaymentGateway>? paymentGateways;
 
   DummyHomeModel({
     this.sliders,
@@ -130,7 +133,8 @@ class DummyHomeModel {
     this.trustedCompanies,
     this.currency,
     this.settings,
-    this.categories
+    this.categories,
+    this.paymentGateways,
   });
 }
 

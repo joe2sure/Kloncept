@@ -1,5 +1,5 @@
 class DummyWalletModel {
-  final String? wallet;
+  late final String? wallet;
   final String? path;
   final List<DummyWalletTransaction>? transactions;
 

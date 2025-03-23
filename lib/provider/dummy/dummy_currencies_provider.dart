@@ -32,4 +32,30 @@ class DummyCurrenciesProvider with ChangeNotifier {
     
     notifyListeners();
   }
+
+
+  // Method to simulate currency rate conversion
+  Future<Map<String, dynamic>> getCurrencyRate(String fromCurrency, String toCurrency, String price) async {
+    // Dummy exchange rates relative to USD
+    Map<String, double> exchangeRates = {
+      'USD': 1.0,
+      'EUR': 0.92,
+      'GBP': 0.78,
+      'INR': 83.50,
+      'JPY': 151.80,
+    };
+    
+    double priceValue = double.parse(price);
+    double fromRate = exchangeRates[fromCurrency] ?? 1.0;
+    double toRate = exchangeRates[toCurrency] ?? 1.0;
+    
+    // Convert to USD first (if not already), then to target currency
+    double inUSD = fromCurrency == 'USD' ? priceValue : priceValue / fromRate;
+    double result = toCurrency == 'USD' ? inUSD : inUSD * toRate;
+    
+    return {
+      'status': 'success',
+      'currency': result.toString(),
+    };
+  }
 }

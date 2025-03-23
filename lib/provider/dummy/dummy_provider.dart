@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:kloncept/model/dummy/dummy_model.dart';
 import 'package:kloncept/model/dummy/dummy_payment_gateway_model.dart' show DummyHomeModel;
+import 'package:kloncept/model/payment_gateway_model.dart';
 
 // Visibility Provider - Controls loading states
 class DummyVisibleProvider with ChangeNotifier {
@@ -84,6 +85,7 @@ class DummyCoursesProvider with ChangeNotifier {
 // File: lib/provider/dummy_providers.dart
 
 class DummyHomeDataProvider with ChangeNotifier {
+  bool dataLoaded = false;
   List<DummySlider> _sliderList = [];
   List<DummyFactSlider> _sliderFactList = [];
   List<DummyTestimonial> _testimonialList = [];
@@ -168,12 +170,41 @@ class DummyHomeDataProvider with ChangeNotifier {
       ),
     );
 
+
     _currencies = DummyCurrency(
       id: 1,
       name: "USD",
       symbol: "\$",
       rate: 1.0,
     );
+
+
+     // Create dummy home model with currency and payment gateways
+    _homeModel = DummyHomeModel(
+      currency: DummyCurrency(
+        id: 1,
+        name: 'USD',
+        symbol: '\$',
+        position: 'left',
+        format: '1,0.00',
+      ),
+      // paymentGateways: List.generate(
+      //   5,
+      //   (index) => RealPaymentGatewayModel(
+      //     id: index + 1,
+      //     name: ["Wallet", "PayPal", "Stripe", "Bank Transfer", "Apple Pay"][index],
+      //     image: "https://via.placeholder.com/100?text=Payment+${index + 1}",
+      //     description: "Payment gateway ${index + 1} description",
+      //     isActive: true,
+      //     detail: "Details for payment gateway ${index + 1}",
+      //   ),
+      // ),
+    );
+
+        dataLoaded = true;
+    
+    print("Dummy home data loaded successfully");
+    print("Current currency: ${_homeModel?.currency?.name}");
 
     notifyListeners();
   }

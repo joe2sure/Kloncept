@@ -218,24 +218,7 @@ class DummyBundleCourse {
   });
 }
 
-// Category Model
-// class DummyCategory {
-//   final int id;
-//   final String name;
-//   final String imageUrl;
-//   final int courseCount;
-//   final IconData icon;
-//   final Color color;
 
-//   DummyCategory({
-//     required this.id,
-//     required this.name,
-//     required this.imageUrl,
-//     required this.courseCount,
-//     required this.icon,
-//     required this.color,
-//   });
-// }
 class DummyCategory {
   final int id;
    final String? name;
@@ -406,25 +389,6 @@ class DummyTransaction {
     required this.description,
   });
 }
-
-
-
-// // Currency model (updating the existing one)
-// class DummyCurrency {
-//   final int id;
-//   final String name;
-//   final String symbol;
-//   final double rate;
-//   final String? currency;
-
-//   DummyCurrency({
-//     required this.id,
-//     required this.name,
-//     required this.symbol,
-//     required this.rate,
-//     this.currency,
-//   });
-// }
 
 
 class DummyCurrency {
