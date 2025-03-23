@@ -61,17 +61,18 @@ class CoursesProvider with ChangeNotifier {
 
   // Load dummy bundle courses
   void loadDummyBundleCourses(List<DummyBundleCourse> dummyBundles) {
-    _bundleCourses = dummyBundles.map((dummyBundle) {
-      return DummyBundleCourse.fromDummyBundleCourse({
-        'id': dummyBundle.id,
-        'title': dummyBundle.title,
-        'description': dummyBundle.description,
-        'imageUrl': dummyBundle.imageUrl,
-        'price': dummyBundle.price,
-        'discountPrice': dummyBundle.discountPrice,
-        'courses': dummyBundle.courses,
-      });
-    }).toList();
+  _bundleCourses = dummyBundles.map((dummyBundle) {
+    // This is the corrected line
+    return BundleCourses.fromDummyBundleCourse({
+      'id': dummyBundle.id,
+      'title': dummyBundle.title,
+      'description': dummyBundle.description,
+      'imageUrl': dummyBundle.imageUrl,
+      'price': dummyBundle.price,
+      'discountPrice': dummyBundle.discountPrice,
+      'courses': dummyBundle.courses,
+    });
+  }).toList();
     
     // Randomly set some bundles as purchased
     _bundlePurchasedListIds = []; // Clear previous IDs

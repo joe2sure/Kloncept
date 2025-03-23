@@ -279,7 +279,7 @@ class CoursesProvider with ChangeNotifier {
     return ans;
   }
 
-  Future<DummyCourse?> getAllCourse(BuildContext context) async {
+  Future<CoursesModel?> getAllCourse(BuildContext context) async {
     final String coursesURL = "${APIData.allCourse}${APIData.secretKey}";
 
     http.Response res = await http.get(Uri.parse(coursesURL));
@@ -288,7 +288,7 @@ class CoursesProvider with ChangeNotifier {
     log("All Courses API Response : ${res.body}");
 
     if (res.statusCode == 200) {
-      coursesModel = DummyCourse.fromJson(json.decode(res.body));
+      coursesModel = DummyCourse.fromJson(json.decode(res.body)) as CoursesModel?;
       await getCountry();
       allCourses = List.generate(
         coursesModel!.course!.length,

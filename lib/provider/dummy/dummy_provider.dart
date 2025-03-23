@@ -80,6 +80,8 @@ class DummyCoursesProvider with ChangeNotifier {
 }
 
 // Home Data Provider
+// File: lib/provider/dummy_providers.dart
+
 class DummyHomeDataProvider with ChangeNotifier {
   List<DummySlider> _sliderList = [];
   List<DummyFactSlider> _sliderFactList = [];
@@ -95,7 +97,10 @@ class DummyHomeDataProvider with ChangeNotifier {
   List<DummyZoomMeeting> get zoomMeetingList => _zoomMeetingList;
   DummyCurrency? get currencies => _currencies;
 
-  void loadDummyHomeData() {
+  Future<void> loadDummyHomeData() async {
+    // Simulate a delay to mimic an API call
+    await Future.delayed(Duration(seconds: 2));
+
     // Create dummy sliders
     _sliderList = List.generate(
       5,
@@ -166,6 +171,7 @@ class DummyHomeDataProvider with ChangeNotifier {
       symbol: "\$",
       rate: 1.0,
     );
+
     notifyListeners();
   }
 }

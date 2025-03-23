@@ -1,3 +1,5 @@
+import 'dummy/dummy_model.dart';
+
 class BundleCourses {
   int? id;
   String? title;
@@ -28,7 +30,7 @@ class BundleCourses {
   int? totalUsers;
   String? instructorName;
   String? instructorImage;
-
+  
   BundleCourses({
     this.id,
     this.title,
@@ -60,7 +62,7 @@ class BundleCourses {
     this.instructorName,
     this.instructorImage,
   });
-
+  
   factory BundleCourses.fromJson(Map<String, dynamic> json) {
     return BundleCourses(
       id: json['id'],
@@ -94,7 +96,35 @@ class BundleCourses {
       instructorImage: json['instructor_image'],
     );
   }
-
+  
+  // Add the missing factory method to convert from DummyBundleCourse
+  factory BundleCourses.fromDummyBundleCourse(Map<String, dynamic> json) {
+    return BundleCourses(
+      id: json['id'],
+      title: json['title'],
+      detail: json['description'],  // Map 'description' to 'detail'
+      price: json['price']?.toString(),  // Convert double to String
+      discountPrice: json['discountPrice']?.toString(),  // Convert double to String
+      image: json['imageUrl'],  // Map 'imageUrl' to 'image'
+      // Set courseId as a comma-separated list of course IDs from the courses array
+      courseId: json['courses'] != null 
+        ? (json['courses'] as List<DummyCourse>)
+            .map((course) => course.id.toString())
+            .join(',')
+        : null,
+      courseIncluded: json['courses'] != null ? (json['courses'] as List).length : 0,
+      instructorName: json['courses'] != null && (json['courses'] as List).isNotEmpty
+        ? ((json['courses'] as List<DummyCourse>)[0]).instructorName
+        : null,
+      instructorImage: json['courses'] != null && (json['courses'] as List).isNotEmpty
+        ? ((json['courses'] as List<DummyCourse>)[0]).instructorImage
+        : null,
+      status: 1,  // Default active status
+      createdAt: DateTime.now().toString(),
+      updatedAt: DateTime.now().toString(),
+    );
+  }
+  
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['id'] = this.id;
@@ -129,7 +159,6 @@ class BundleCourses {
     return data;
   }
 }
-
 
 // class BundleCourses {
 //   int? id;

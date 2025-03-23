@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-/// compare : [{"id":11,"user_id":"13","course_id":"4","created_at":"2022-12-13T12:58:08.000000Z","updated_at":"2022-12-13T12:58:08.000000Z","compares":[{"id":4,"user_id":"2","category_id":"6","subcategory_id":"16","childcategory_id":"16","language_id":"1","title":"Internationally Accredited Diploma in Yoga Training","short_detail":"Start a New Career in Yoga with this Yoga Course for Beginners/Intermediates","detail":"<p>Now earn your INTERNATIONALLY ACCREDITED DIPLOMA IN YOGA TRAINING accredited by CPD Certification Service, which is an independent body that ensures qualifications are in line with the most current professional standards. This means this course comply with universally accepted principles of Continual Professional Development (CPD) and have been structured to meet the criteria of personal development plans. CPD certification means that the content and structure of the courses have been independently assessed and approved for multi-disciplinary and industry-wide continuing personal and professional development purposes.</p>","requirement":"A Yoga Mat\r\nWillingness to apply Yogic knowledge into regular practice","price":"1500","discount_price":"500","day":null,"video":null,"url":"https://www.youtube.com/watch?v=VaoV1PrYft4","featured":"1","slug":"internationally-accredited-diploma-in-yoga-training","status":"1","preview_image":"yoga.jpg","video_url":null,"preview_type":"url","type":"1","duration":null,"duration_type":"m","last_active":null,"instructor_revenue":null,"created_at":"2020-01-22T11:22:23.000000Z","updated_at":"2022-03-29T06:48:32.000000Z","involvement_request":"0","refund_policy_id":null,"level_tags":"trending","assignment_enable":"1","appointment_enable":"1","certificate_enable":"1","course_tags":["test"],"reject_txt":"<p>Rejected</p>","drip_enable":"0","institude_id":"2","country":null,"other_cats":null,"deleted_at":null}]},{"id":12,"user_id":"13","course_id":"8","created_at":"2022-12-13T13:10:08.000000Z","updated_at":"2022-12-13T13:10:08.000000Z","compares":[{"id":8,"user_id":"1","category_id":"5","subcategory_id":"14","childcategory_id":"19","language_id":"1","title":"Adobe Lightroom","short_detail":"Learn Lightroom Classic CC by Doing Real Time Work - Edit Images to Impress","detail":"<p>Lightroom is most well known programming utilized by milions of picture takers and understanding this product is frequently a key to the stunning pictures. As of now you are in the best spot to begin, having proficient retoucher as your educator!</p>","requirement":"No  prior experience with the software\r\nYou need PC or Laptop\r\nLightroom Classic CC Software","price":"1200","discount_price":"500","day":null,"video":null,"url":"https://www.youtube.com/watch?v=f6RRKgQRQII&list=PL3jDvU7Nxe6GB4Wi01s9kN27XHVPso6D9","featured":"1","slug":"adobe-lightroom","status":"1","preview_image":"1579694025download.jpg","video_url":null,"preview_type":"url","type":"1","duration":null,"duration_type":"m","last_active":null,"instructor_revenue":null,"created_at":"2020-01-22T12:53:45.000000Z","updated_at":"2021-10-29T03:11:36.000000Z","involvement_request":"0","refund_policy_id":null,"level_tags":null,"assignment_enable":"1","appointment_enable":"1","certificate_enable":"1","course_tags":null,"reject_txt":null,"drip_enable":"0","institude_id":"","country":null,"other_cats":null,"deleted_at":null}]}]
 
 CompareCourseModel compareCourseModelFromJson(String str) =>
     CompareCourseModel.fromJson(json.decode(str));
@@ -31,12 +30,7 @@ class CompareCourseModel {
   }
 }
 
-/// id : 11
-/// user_id : "13"
-/// course_id : "4"
-/// created_at : "2022-12-13T12:58:08.000000Z"
-/// updated_at : "2022-12-13T12:58:08.000000Z"
-/// compares : [{"id":4,"user_id":"2","category_id":"6","subcategory_id":"16","childcategory_id":"16","language_id":"1","title":"Internationally Accredited Diploma in Yoga Training","short_detail":"Start a New Career in Yoga with this Yoga Course for Beginners/Intermediates","detail":"<p>Now earn your INTERNATIONALLY ACCREDITED DIPLOMA IN YOGA TRAINING accredited by CPD Certification Service, which is an independent body that ensures qualifications are in line with the most current professional standards. This means this course comply with universally accepted principles of Continual Professional Development (CPD) and have been structured to meet the criteria of personal development plans. CPD certification means that the content and structure of the courses have been independently assessed and approved for multi-disciplinary and industry-wide continuing personal and professional development purposes.</p>","requirement":"A Yoga Mat\r\nWillingness to apply Yogic knowledge into regular practice","price":"1500","discount_price":"500","day":null,"video":null,"url":"https://www.youtube.com/watch?v=VaoV1PrYft4","featured":"1","slug":"internationally-accredited-diploma-in-yoga-training","status":"1","preview_image":"yoga.jpg","video_url":null,"preview_type":"url","type":"1","duration":null,"duration_type":"m","last_active":null,"instructor_revenue":null,"created_at":"2020-01-22T11:22:23.000000Z","updated_at":"2022-03-29T06:48:32.000000Z","involvement_request":"0","refund_policy_id":null,"level_tags":"trending","assignment_enable":"1","appointment_enable":"1","certificate_enable":"1","course_tags":["test"],"reject_txt":"<p>Rejected</p>","drip_enable":"0","institude_id":"2","country":null,"other_cats":null,"deleted_at":null}]
+
 
 Compare compareFromJson(String str) => Compare.fromJson(json.decode(str));
 String compareToJson(Compare data) => json.encode(data.toJson());
@@ -85,47 +79,8 @@ class Compare {
   }
 }
 
-/// id : 4
-/// user_id : "2"
-/// category_id : "6"
-/// subcategory_id : "16"
-/// childcategory_id : "16"
-/// language_id : "1"
-/// title : "Internationally Accredited Diploma in Yoga Training"
-/// short_detail : "Start a New Career in Yoga with this Yoga Course for Beginners/Intermediates"
-/// detail : "<p>Now earn your INTERNATIONALLY ACCREDITED DIPLOMA IN YOGA TRAINING accredited by CPD Certification Service, which is an independent body that ensures qualifications are in line with the most current professional standards. This means this course comply with universally accepted principles of Continual Professional Development (CPD) and have been structured to meet the criteria of personal development plans. CPD certification means that the content and structure of the courses have been independently assessed and approved for multi-disciplinary and industry-wide continuing personal and professional development purposes.</p>"
-/// requirement : "A Yoga Mat\r\nWillingness to apply Yogic knowledge into regular practice"
-/// price : "1500"
-/// discount_price : "500"
-/// day : null
-/// video : null
-/// url : "https://www.youtube.com/watch?v=VaoV1PrYft4"
-/// featured : "1"
-/// slug : "internationally-accredited-diploma-in-yoga-training"
-/// status : "1"
-/// preview_image : "yoga.jpg"
-/// video_url : null
-/// preview_type : "url"
-/// type : "1"
-/// duration : null
-/// duration_type : "m"
-/// last_active : null
-/// instructor_revenue : null
-/// created_at : "2020-01-22T11:22:23.000000Z"
-/// updated_at : "2022-03-29T06:48:32.000000Z"
-/// involvement_request : "0"
-/// refund_policy_id : null
-/// level_tags : "trending"
-/// assignment_enable : "1"
-/// appointment_enable : "1"
-/// certificate_enable : "1"
-/// course_tags : ["test"]
-/// reject_txt : "<p>Rejected</p>"
-/// drip_enable : "0"
-/// institude_id : "2"
-/// country : null
-/// other_cats : null
-/// deleted_at : null
+
+
 
 Compares comparesFromJson(String str) => Compares.fromJson(json.decode(str));
 String comparesToJson(Compares data) => json.encode(data.toJson());
@@ -307,3 +262,56 @@ class Compares {
     return map;
   }
 }
+
+
+/// compare : [{"id":11,"user_id":"13","course_id":"4","created_at":"2022-12-13T12:58:08.000000Z","updated_at":"2022-12-13T12:58:08.000000Z","compares":[{"id":4,"user_id":"2","category_id":"6","subcategory_id":"16","childcategory_id":"16","language_id":"1","title":"Internationally Accredited Diploma in Yoga Training","short_detail":"Start a New Career in Yoga with this Yoga Course for Beginners/Intermediates","detail":"<p>Now earn your INTERNATIONALLY ACCREDITED DIPLOMA IN YOGA TRAINING accredited by CPD Certification Service, which is an independent body that ensures qualifications are in line with the most current professional standards. This means this course comply with universally accepted principles of Continual Professional Development (CPD) and have been structured to meet the criteria of personal development plans. CPD certification means that the content and structure of the courses have been independently assessed and approved for multi-disciplinary and industry-wide continuing personal and professional development purposes.</p>","requirement":"A Yoga Mat\r\nWillingness to apply Yogic knowledge into regular practice","price":"1500","discount_price":"500","day":null,"video":null,"url":"https://www.youtube.com/watch?v=VaoV1PrYft4","featured":"1","slug":"internationally-accredited-diploma-in-yoga-training","status":"1","preview_image":"yoga.jpg","video_url":null,"preview_type":"url","type":"1","duration":null,"duration_type":"m","last_active":null,"instructor_revenue":null,"created_at":"2020-01-22T11:22:23.000000Z","updated_at":"2022-03-29T06:48:32.000000Z","involvement_request":"0","refund_policy_id":null,"level_tags":"trending","assignment_enable":"1","appointment_enable":"1","certificate_enable":"1","course_tags":["test"],"reject_txt":"<p>Rejected</p>","drip_enable":"0","institude_id":"2","country":null,"other_cats":null,"deleted_at":null}]},{"id":12,"user_id":"13","course_id":"8","created_at":"2022-12-13T13:10:08.000000Z","updated_at":"2022-12-13T13:10:08.000000Z","compares":[{"id":8,"user_id":"1","category_id":"5","subcategory_id":"14","childcategory_id":"19","language_id":"1","title":"Adobe Lightroom","short_detail":"Learn Lightroom Classic CC by Doing Real Time Work - Edit Images to Impress","detail":"<p>Lightroom is most well known programming utilized by milions of picture takers and understanding this product is frequently a key to the stunning pictures. As of now you are in the best spot to begin, having proficient retoucher as your educator!</p>","requirement":"No  prior experience with the software\r\nYou need PC or Laptop\r\nLightroom Classic CC Software","price":"1200","discount_price":"500","day":null,"video":null,"url":"https://www.youtube.com/watch?v=f6RRKgQRQII&list=PL3jDvU7Nxe6GB4Wi01s9kN27XHVPso6D9","featured":"1","slug":"adobe-lightroom","status":"1","preview_image":"1579694025download.jpg","video_url":null,"preview_type":"url","type":"1","duration":null,"duration_type":"m","last_active":null,"instructor_revenue":null,"created_at":"2020-01-22T12:53:45.000000Z","updated_at":"2021-10-29T03:11:36.000000Z","involvement_request":"0","refund_policy_id":null,"level_tags":null,"assignment_enable":"1","appointment_enable":"1","certificate_enable":"1","course_tags":null,"reject_txt":null,"drip_enable":"0","institude_id":"","country":null,"other_cats":null,"deleted_at":null}]}]
+
+
+/// id : 11
+/// user_id : "13"
+/// course_id : "4"
+/// created_at : "2022-12-13T12:58:08.000000Z"
+/// updated_at : "2022-12-13T12:58:08.000000Z"
+/// compares : [{"id":4,"user_id":"2","category_id":"6","subcategory_id":"16","childcategory_id":"16","language_id":"1","title":"Internationally Accredited Diploma in Yoga Training","short_detail":"Start a New Career in Yoga with this Yoga Course for Beginners/Intermediates","detail":"<p>Now earn your INTERNATIONALLY ACCREDITED DIPLOMA IN YOGA TRAINING accredited by CPD Certification Service, which is an independent body that ensures qualifications are in line with the most current professional standards. This means this course comply with universally accepted principles of Continual Professional Development (CPD) and have been structured to meet the criteria of personal development plans. CPD certification means that the content and structure of the courses have been independently assessed and approved for multi-disciplinary and industry-wide continuing personal and professional development purposes.</p>","requirement":"A Yoga Mat\r\nWillingness to apply Yogic knowledge into regular practice","price":"1500","discount_price":"500","day":null,"video":null,"url":"https://www.youtube.com/watch?v=VaoV1PrYft4","featured":"1","slug":"internationally-accredited-diploma-in-yoga-training","status":"1","preview_image":"yoga.jpg","video_url":null,"preview_type":"url","type":"1","duration":null,"duration_type":"m","last_active":null,"instructor_revenue":null,"created_at":"2020-01-22T11:22:23.000000Z","updated_at":"2022-03-29T06:48:32.000000Z","involvement_request":"0","refund_policy_id":null,"level_tags":"trending","assignment_enable":"1","appointment_enable":"1","certificate_enable":"1","course_tags":["test"],"reject_txt":"<p>Rejected</p>","drip_enable":"0","institude_id":"2","country":null,"other_cats":null,"deleted_at":null}]
+
+/// id : 4
+/// user_id : "2"
+/// category_id : "6"
+/// subcategory_id : "16"
+/// childcategory_id : "16"
+/// language_id : "1"
+/// title : "Internationally Accredited Diploma in Yoga Training"
+/// short_detail : "Start a New Career in Yoga with this Yoga Course for Beginners/Intermediates"
+/// detail : "<p>Now earn your INTERNATIONALLY ACCREDITED DIPLOMA IN YOGA TRAINING accredited by CPD Certification Service, which is an independent body that ensures qualifications are in line with the most current professional standards. This means this course comply with universally accepted principles of Continual Professional Development (CPD) and have been structured to meet the criteria of personal development plans. CPD certification means that the content and structure of the courses have been independently assessed and approved for multi-disciplinary and industry-wide continuing personal and professional development purposes.</p>"
+/// requirement : "A Yoga Mat\r\nWillingness to apply Yogic knowledge into regular practice"
+/// price : "1500"
+/// discount_price : "500"
+/// day : null
+/// video : null
+/// url : "https://www.youtube.com/watch?v=VaoV1PrYft4"
+/// featured : "1"
+/// slug : "internationally-accredited-diploma-in-yoga-training"
+/// status : "1"
+/// preview_image : "yoga.jpg"
+/// video_url : null
+/// preview_type : "url"
+/// type : "1"
+/// duration : null
+/// duration_type : "m"
+/// last_active : null
+/// instructor_revenue : null
+/// created_at : "2020-01-22T11:22:23.000000Z"
+/// updated_at : "2022-03-29T06:48:32.000000Z"
+/// involvement_request : "0"
+/// refund_policy_id : null
+/// level_tags : "trending"
+/// assignment_enable : "1"
+/// appointment_enable : "1"
+/// certificate_enable : "1"
+/// course_tags : ["test"]
+/// reject_txt : "<p>Rejected</p>"
+/// drip_enable : "0"
+/// institude_id : "2"
+/// country : null
+/// other_cats : null
+/// deleted_at : null

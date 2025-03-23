@@ -1,4 +1,6 @@
-import 'courses_model.dart';
+import 'package:kloncept/model/course.dart';
+
+
 
 class WishListModal {
   int? id;
@@ -6,7 +8,7 @@ class WishListModal {
   String? courseId;
   String? createdAt;
   String? updatedAt;
-  CoursesModel? course;
+  Course? course;
 
   WishListModal(this.id, this.userId, this.courseId, this.createdAt,
       this.updatedAt, this.course);

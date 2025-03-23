@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kloncept/model/courses_model.dart';
 
 // User Profile Model
 class DummyUserProfileModel {
@@ -24,6 +25,8 @@ class DummyRecentCourseModel {
 }
 
 // Updated DummyCourse class with all required parameters
+// File: lib/model/dummy/dummy_model.dart
+// File: lib/model/dummy/dummy_model.dart
 class DummyCourse {
   final int? id;
   final int? userId;
@@ -54,11 +57,9 @@ class DummyCourse {
   final String? include;
   final String? whatlearns;
   final double? review;
-  
-  // Original fields from DummyCourse
   final String description;
   final String imageUrl;
-  final dynamic categoryName; // Could be String or List depending on implementation
+  final dynamic categoryName;
   final bool isFeatured;
   final bool isEnrolled;
   final String instructorName;
@@ -68,37 +69,35 @@ class DummyCourse {
   final int totalLessons;
 
   DummyCourse({
-     this.id,
-     this.userId,
-     this.categoryId,
-     this.subcategoryId,
-     this.childcategoryId,
-     this.languageId,
-     this.title,
-     this.shortDetail,
-     this.detail,
-     this.requirement,
-     this.price,
-     this.discountPrice,
-     this.day,
-     this.video,
-     this.url,
-     this.featured,
-     this.slug,
-     this.status,
-     this.previewImage,
-     this.videoUrl,
-     this.previewType,
-     this.type,
-     this.duration,
-     this.lastActive,
-     this.createdAt,
-     this.updatedAt,
-     this.include,
-     this.whatlearns,
-     this.review,
-    
-    // Original DummyCourse fields
+    this.id,
+    this.userId,
+    this.categoryId,
+    this.subcategoryId,
+    this.childcategoryId,
+    this.languageId,
+    this.title,
+    this.shortDetail,
+    this.detail,
+    this.requirement,
+    this.price,
+    this.discountPrice,
+    this.day,
+    this.video,
+    this.url,
+    this.featured,
+    this.slug,
+    this.status,
+    this.previewImage,
+    this.videoUrl,
+    this.previewType,
+    this.type,
+    this.duration,
+    this.lastActive,
+    this.createdAt,
+    this.updatedAt,
+    this.include,
+    this.whatlearns,
+    this.review,
     required this.description,
     required this.imageUrl,
     required this.categoryName,
@@ -110,42 +109,52 @@ class DummyCourse {
     required this.ratingCount,
     required this.totalLessons,
   });
-}
-// class DummyCourse {
-//   final int id;
-//   final String title;
-//   final String description;
-//   final String imageUrl;
-//   final String categoryName;
-//   final double price;
-//   final double discountPrice;
-//   final bool isFeatured;
-//   final bool isEnrolled;
-//   final String instructorName;
-//   final String instructorImage;
-//   final double rating;
-//   final int ratingCount;
-//   final int totalLessons;
-//   final String duration;
 
-//   DummyCourse({
-//     required this.id,
-//     required this.title,
-//     required this.description,
-//     required this.imageUrl,
-//     required this.categoryName,
-//     required this.price,
-//     required this.discountPrice,
-//     required this.isFeatured,
-//     required this.isEnrolled,
-//     required this.instructorName,
-//     required this.instructorImage,
-//     required this.rating,
-//     required this.ratingCount,
-//     required this.totalLessons,
-//     required this.duration,
-//   });
-// }
+  factory DummyCourse.fromJson(Map<String, dynamic> json) {
+    return DummyCourse(
+      id: json['id'],
+      userId: json['user_id'],
+      categoryId: json['category_id'],
+      subcategoryId: json['subcategory_id'],
+      childcategoryId: json['childcategory_id'],
+      languageId: json['language_id'],
+      title: json['title'],
+      shortDetail: json['short_detail'],
+      detail: json['detail'],
+      requirement: json['requirement'],
+      price: json['price'],
+      discountPrice: json['discount_price'],
+      day: json['day'],
+      video: json['video'],
+      url: json['url'],
+      featured: json['featured'],
+      slug: json['slug'],
+      status: json['status'],
+      previewImage: json['preview_image'],
+      videoUrl: json['video_url'],
+      previewType: json['preview_type'],
+      type: json['type'],
+      duration: json['duration'],
+      lastActive: json['last_active'],
+      createdAt: json['created_at'],
+      updatedAt: json['updated_at'],
+      include: json['include'],
+      whatlearns: json['whatlearns'],
+      review: json['review'],
+      description: json['description'],
+      imageUrl: json['image_url'],
+      categoryName: json['category_name'],
+      isFeatured: json['is_featured'],
+      isEnrolled: json['is_enrolled'],
+      instructorName: json['instructor_name'],
+      instructorImage: json['instructor_image'],
+      rating: json['rating'],
+      ratingCount: json['rating_count'],
+      totalLessons: json['total_lessons'],
+    );
+  }
+}
+
 
 // Bundle Course Model
 class DummyBundleCourse {
@@ -373,7 +382,7 @@ class DummyCartItem {
 
 // Define a dummy cart model to simulate the MyCart model
 class DummyMyCart {
-  final List<DummyCartItem>? cart;
+  final List<DummyCartItem>? cart;  
 
   DummyMyCart({this.cart});
 }
