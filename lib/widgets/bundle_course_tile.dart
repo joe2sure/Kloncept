@@ -11,12 +11,12 @@ import '../common/theme.dart' as T;
 import 'package:provider/provider.dart';
 
 class BundleCourseItem extends StatelessWidget {
-  final DummyCourse dummyBundleCoursesDetail; // Change to DummyBundleCourse
+  final DummyBundleCourse dummyBundleCoursesDetail; // Changed from DummyCourse to DummyBundleCourse
 
   BundleCourseItem(this.dummyBundleCoursesDetail);
 
   Widget showImage() {
-    return dummyBundleCoursesDetail.imageUrl == null // Use imageUrl from DummyBundleCourse
+    return dummyBundleCoursesDetail.imageUrl == null
         ? Container(
             decoration: BoxDecoration(
             borderRadius: BorderRadius.only(
@@ -29,7 +29,7 @@ class BundleCourseItem extends StatelessWidget {
             ),
           ))
         : CachedNetworkImage(
-            imageUrl: dummyBundleCoursesDetail.imageUrl!, // Use imageUrl from DummyBundleCourse
+            imageUrl: dummyBundleCoursesDetail.imageUrl!,
             imageBuilder: (context, imageProvider) => Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
@@ -116,7 +116,7 @@ class BundleCourseItem extends StatelessWidget {
                             (dummyBundleCoursesDetail.discountPrice != null &&
                                     !purchased)
                                 ? Text(
-                                    "${currencySymbol(selectedCurrency)} ${dummyBundleCoursesDetail.discountPrice}", // Use discountPrice from DummyBundleCourse
+                                    "${currencySymbol(selectedCurrency)} ${dummyBundleCoursesDetail.discountPrice}",
                                     style: TextStyle(
                                         color: mode.txtcolor,
                                         fontSize: 18.0,
@@ -125,7 +125,7 @@ class BundleCourseItem extends StatelessWidget {
                                 : (dummyBundleCoursesDetail.price != null &&
                                         !purchased)
                                     ? Text(
-                                        "${currencySymbol(selectedCurrency)} ${dummyBundleCoursesDetail.price}", // Use price from DummyBundleCourse
+                                        "${currencySymbol(selectedCurrency)} ${dummyBundleCoursesDetail.price}",
                                         style: TextStyle(
                                             color: mode.txtcolor,
                                             fontSize: 18.0,
@@ -146,7 +146,7 @@ class BundleCourseItem extends StatelessWidget {
                           ? (dummyBundleCoursesDetail.discountPrice != null &&
                                   !purchased)
                               ? Text(
-                                  "${currencySymbol(selectedCurrency)} ${dummyBundleCoursesDetail.price}", // Use price from DummyBundleCourse
+                                  "${currencySymbol(selectedCurrency)} ${dummyBundleCoursesDetail.price}",
                                   style: TextStyle(
                                       decoration: dummyBundleCoursesDetail
                                                   .discountPrice !=
@@ -175,7 +175,7 @@ class BundleCourseItem extends StatelessWidget {
                         Align(
                           alignment: Alignment.topLeft,
                           child: Text(
-                            dummyBundleCoursesDetail.title, // Use title from DummyBundleCourse
+                            dummyBundleCoursesDetail.title,
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
@@ -188,7 +188,7 @@ class BundleCourseItem extends StatelessWidget {
                           height: 10.0,
                         ),
                         Text(
-                          dummyBundleCoursesDetail.description, // Use description from DummyBundleCourse
+                          dummyBundleCoursesDetail.description,
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
@@ -215,10 +215,11 @@ class BundleCourseItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool purchased = false; // Update logic for purchased if needed
-    String? category = dummyBundleCoursesDetail.categoryName; // Use categoryName from DummyBundleCourse
+    String? category = dummyBundleCoursesDetail.instructorName;
+    //  String? category = dummyBundleCoursesDetail.categoryName;
 
-dynamic currency =
-    Provider.of<DummyCurrenciesProvider>(context).currencies.first.symbol;
+    dynamic currency =
+        Provider.of<DummyCurrenciesProvider>(context).currencies.first.symbol;
     T.Theme mode = Provider.of<T.Theme>(context);
     return tileDetails(context, mode, category, currency, purchased);
   }

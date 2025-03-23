@@ -2,7 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:kloncept/model/dummy/dummy_compare_course_model.dart';
 
-import 'package:kloncept/model/dummy/dummy_model.dart';
+// Keep this import but use a prefix to avoid conflicts
+import 'package:kloncept/model/dummy/dummy_model.dart' show DummyCourse;
+
 
 class DummyCompareCourseProvider with ChangeNotifier {
   DummyCompareCourseModel? _compareCourseModel;
@@ -54,7 +56,7 @@ class DummyCompareCourseProvider with ChangeNotifier {
             updatedAt: DateTime.now().subtract(Duration(days: index)).toString(),
             include: "What's included in Course ${index + 1}",
             whatlearns: "What you'll learn in Course ${index + 1}",
-            review: 4.0 + (index % 3) * 0.5,
+            mainReview: 4.0 + (index % 3) * 0.5,
             description: "Description for Course ${index + 1}",
             imageUrl:
                 "https://via.placeholder.com/300x200?text=Course+${index + 1}",
@@ -116,7 +118,7 @@ class DummyCompareCourseProvider with ChangeNotifier {
           updatedAt: DateTime.now().toString(),
           include: "What's included in New Course",
           whatlearns: "What you'll learn in New Course",
-          review: 4.5,
+          mainReview: 4.5,
           description: "Description for New Course",
           imageUrl: "https://via.placeholder.com/300x200?text=New+Course",
           categoryName: "Category 1",

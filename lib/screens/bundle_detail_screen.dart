@@ -308,7 +308,7 @@ class _BundleDetailScreenState extends State<BundleDetailScreen> {
     
     // Get currency from DummyCurrenciesProvider instead of HomeDataProvider
     // This fixes the error: "The getter 'currency' isn't defined for the type 'CurrencyModel'"
-    String currency = "USD"; // Default value
+    String? currency = "USD"; // Default value
     
     // First try to get from DummyHomeDataProvider
     var dummyHomeData = Provider.of<DummyHomeDataProvider>(context);

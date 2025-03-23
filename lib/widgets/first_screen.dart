@@ -377,7 +377,7 @@ class ScreenState extends State<Screen> with TickerProviderStateMixin {
     double p = courseDetail.discountPrice == "null" ||
             courseDetail.discountPrice == null
         ? 0
-        : double.parse(courseDetail.discountPrice);
+        : double.parse(courseDetail.discountPrice as String);
     dynamic dur = courseDetail.duration;
     if (p >= det.minprice &&
         p <= det.maxprice &&

@@ -8,11 +8,15 @@ class CoursesProvider with ChangeNotifier {
   List<Course> _courses = [];
   List<BundleCourses> _bundleCourses = [];
   List<int> _bundlePurchasedListIds = [];
+    List<DummyCourse> _studyingList = [];
+  List<int> _purchasedCourseIds = [];
 
   // Getters
   List<Course> get allCourses => _courses;
   List<BundleCourses> get bundleCourses => _bundleCourses;
   List<int>? get bundlePurchasedListIds => _bundlePurchasedListIds;
+    List<DummyCourse> get studyingList => _studyingList;
+  List<int> get purchasedCourseIds => _purchasedCourseIds;
 
   // Initialize with dummy data
   void loadDummyCourses(List<DummyCourse> dummyCourses) {

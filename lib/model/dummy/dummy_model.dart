@@ -16,6 +16,9 @@ class DummyUserProfileModel {
   });
 }
 
+// Home model to match what's used in the wallet screen
+
+
 // Course Model
 
 class DummyRecentCourseModel {
@@ -56,7 +59,7 @@ class DummyCourse {
   final String? updatedAt;
   final String? include;
   final String? whatlearns;
-  final double? review;
+  final double? mainReview;
   final String description;
   final String imageUrl;
   final dynamic categoryName;
@@ -67,6 +70,7 @@ class DummyCourse {
   final double rating;
   final int ratingCount;
   final int totalLessons;
+  final List<DummyReview>? review;
 
   DummyCourse({
     this.id,
@@ -98,6 +102,7 @@ class DummyCourse {
     this.include,
     this.whatlearns,
     this.review,
+    this.mainReview,
     required this.description,
     required this.imageUrl,
     required this.categoryName,
@@ -156,6 +161,40 @@ class DummyCourse {
 }
 
 
+class DummyReview {
+  final int id;
+  final int userId;
+  final int courseId;
+  final dynamic learn;
+  final dynamic price;
+  final dynamic value;
+  final String title;
+  final String details;
+  final String status;
+  final String createdAt;
+  final String updatedAt;
+  final String userName;
+  final String userImage;
+
+  DummyReview({
+    required this.id,
+    required this.userId,
+    required this.courseId,
+    required this.learn,
+    required this.price,
+    required this.value,
+    required this.title,
+    required this.details,
+    required this.status,
+    required this.createdAt,
+    required this.updatedAt,
+    required this.userName,
+    required this.userImage,
+  });
+}
+
+
+
 // Bundle Course Model
 class DummyBundleCourse {
   final int id;
@@ -180,23 +219,51 @@ class DummyBundleCourse {
 }
 
 // Category Model
+// class DummyCategory {
+//   final int id;
+//   final String name;
+//   final String imageUrl;
+//   final int courseCount;
+//   final IconData icon;
+//   final Color color;
+
+//   DummyCategory({
+//     required this.id,
+//     required this.name,
+//     required this.imageUrl,
+//     required this.courseCount,
+//     required this.icon,
+//     required this.color,
+//   });
+// }
 class DummyCategory {
   final int id;
-  final String name;
-  final String imageUrl;
-  final int courseCount;
-  final IconData icon;
-  final Color color;
+   final String? name;
+  final String? title;
+  final String? icon;
+  final String? slug;
+  final String? status;
+  final String? createdAt;
+  final String? updatedAt;
+  final bool featured;
+   final String? imageUrl;
+   final int? courseCount;
 
   DummyCategory({
     required this.id,
-    required this.name,
-    required this.imageUrl,
-    required this.courseCount,
-    required this.icon,
-    required this.color,
+    this.name,
+   this.title,
+    this.icon,
+    this.slug,
+    this.status,
+    this.createdAt,
+    this.updatedAt,
+    this.featured = false,
+    this.imageUrl,
+    this.courseCount
   });
 }
+
 
 // Slider Model
 class DummySlider {
@@ -340,20 +407,48 @@ class DummyTransaction {
   });
 }
 
-// Currency Model
+
+
+// // Currency model (updating the existing one)
+// class DummyCurrency {
+//   final int id;
+//   final String name;
+//   final String symbol;
+//   final double rate;
+//   final String? currency;
+
+//   DummyCurrency({
+//     required this.id,
+//     required this.name,
+//     required this.symbol,
+//     required this.rate,
+//     this.currency,
+//   });
+// }
+
+
 class DummyCurrency {
-  final int id;
-  final String name;
-  final String symbol;
-  final double rate;
+  final int? id;
+  final String? name;
+  final String? symbol;
+  final double? rate;
+  final String? code;
+  final String? defaultCurrency;
+  final String? currency;
+  final  String? position;
+  final String? format;
 
   DummyCurrency({
-    required this.id,
-    required this.name,
-    required this.symbol,
-    required this.rate,
+    this.id,
+    this.name,
+    this.symbol,
+    this.rate,
+    this.code,
+    this.defaultCurrency,
+    this.currency, this.position, this.format,
   });
 }
+
 
 // Compare Course Model
 class DummyCompareCourse {

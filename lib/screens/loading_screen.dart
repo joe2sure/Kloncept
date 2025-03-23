@@ -2,9 +2,10 @@
 
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:kloncept/provider/dummy/dummy_provider.dart';
 import 'package:kloncept/screens/sign_in_screen.dart';
 import 'package:provider/provider.dart';
-import 'package:kloncept/provider/home_data_provider.dart';
+
 
 class LoadingScreen extends StatefulWidget {
   @override
@@ -19,10 +20,10 @@ class _LoadingScreenState extends State<LoadingScreen> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
       try {
-        // Fetch home data
-        HomeDataProvider homeData =
-            Provider.of<HomeDataProvider>(context, listen: false);
-        await homeData.getHomeDetails(context);
+        // Fetch dummy home data
+        DummyHomeDataProvider homeData =
+            Provider.of<DummyHomeDataProvider>(context, listen: false);
+        await homeData.loadDummyHomeData(); // Simulate fetching home data
 
         // Set visibility to true
         setState(() {
@@ -59,7 +60,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
       body: Center(
         child: _visible
             ? CircularProgressIndicator() // Show loading indicator
-            : SignInScreen(),
+            : SignInScreen(), // Fallback to SignInScreen if something goes wrong
       ),
     );
   }

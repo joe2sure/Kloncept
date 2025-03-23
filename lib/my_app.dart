@@ -146,7 +146,7 @@ class MyApp extends StatelessWidget {
             '/downloads': (context) => DownloadsScreen(),
             '/currency': (context) => CurrencyScreen(),
             '/compare': (context) => CompareCourseScreen(),
-            '/wallet': (context) => WalletScreen(),
+            '/wallet': (context) => WalletScreenWithDummy(),
           },
         ),
       ),

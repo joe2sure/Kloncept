@@ -241,7 +241,8 @@ class FeaturedListItem extends StatelessWidget {
                         Align(
                           alignment: Alignment.topLeft,
                           child: Text(
-                            courseDetail!.title, // Use title from DummyCourse
+                            'courseDetail!.title,',
+                            // courseDetail!.title, // Use title from DummyCourse
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(

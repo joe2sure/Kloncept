@@ -140,7 +140,8 @@ class APIData {
   static const String trustedImages = domainLink + "images/trusted/";
   static const String loginImageUri = domainLink + "images/login/";
   static const String userImage = domainLink + "images/user_img/";
-  static const String courseImages = domainLink + "images/course/";
+  // static const String courseImages = domainLink + "images/course/";
+  static const String courseImages = 'https://via.placeholder.com/300x200?text=';
   static const String bundleImages = domainLink + "images/bundle/";
   static const String sliderImages = domainLink + "images/slider/";
   static const String aboutUsImages = domainLink + "images/about/";

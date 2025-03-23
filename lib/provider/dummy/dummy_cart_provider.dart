@@ -247,7 +247,7 @@ class DummyCartProvider with ChangeNotifier {
         updatedAt: DateTime.now().subtract(Duration(days: index)).toString(),
         include: "What's included in Course ${index + 1}",
         whatlearns: "What you'll learn in Course ${index + 1}",
-        review: 4.0 + (index % 3) * 0.5,
+        mainReview: 4.0 + (index % 3) * 0.5,
         description: "Description for Course ${index + 1}",
         imageUrl: "https://via.placeholder.com/300x200?text=Course+${index + 1}",
         categoryName: "Category ${index % 4 + 1}",

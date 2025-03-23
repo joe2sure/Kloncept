@@ -1,3 +1,58 @@
+// import 'package:kloncept/model/dummy/dummy_model.dart';
+
+// class Review {
+//   final int? id;
+//   final int? userId;
+//   final int? courseId;
+//   final dynamic learn;
+//   final dynamic price;
+//   final dynamic value;
+//   final String? title;
+//   final String? details;
+//   final String? status;
+//   final String? createdAt;
+//   final String? updatedAt;
+//   final String? userName;
+//   final String? userImage;
+
+//   Review({
+//     this.id,
+//     this.userId,
+//     this.courseId,
+//     this.learn,
+//     this.price,
+//     this.value,
+//     this.title,
+//     this.details,
+//     this.status,
+//     this.createdAt,
+//     this.updatedAt,
+//     this.userName,
+//     this.userImage,
+//   });
+
+//   // Factory method to create a Review from a DummyReview
+//   factory Review.fromDummyReview(DummyReview dummyReview) {
+//     return Review(
+//       id: dummyReview.id,
+//       userId: dummyReview.userId,
+//       courseId: dummyReview.courseId,
+//       learn: dummyReview.learn,
+//       price: dummyReview.price,
+//       value: dummyReview.value,
+//       title: dummyReview.title,
+//       details: dummyReview.details,
+//       status: dummyReview.status,
+//       createdAt: dummyReview.createdAt,
+//       updatedAt: dummyReview.updatedAt,
+//       userName: dummyReview.userName,
+//       userImage: dummyReview.userImage,
+//     );
+//   }
+// }
+
+
+
 class Review {
   Review({
     this.id,

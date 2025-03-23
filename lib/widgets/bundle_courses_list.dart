@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 // ignore: must_be_immutable
 class BundleCoursesList extends StatelessWidget {
   bool _visible;
-  final List<DummyCourse> dummyBundleCourses;
+  final List<DummyBundleCourse> dummyBundleCourses; // Changed from DummyCourse to DummyBundleCourse
 
   BundleCoursesList(this.dummyBundleCourses, this._visible);
 
@@ -53,7 +53,7 @@ class BundleCoursesList extends StatelessWidget {
                 shrinkWrap: true,
                 physics: ClampingScrollPhysics(),
                 itemBuilder: (context, idx) =>
-                    BundleCourseItem(dummyBundleCourses[idx]), // Pass DummyBundleCourse
+                    BundleCourseItem(dummyBundleCourses[idx] as DummyCourse),
                 scrollDirection: Axis.horizontal,
                 itemCount: dummyBundleCourses.length,
               )
@@ -62,7 +62,6 @@ class BundleCoursesList extends StatelessWidget {
     );
   }
 }
-
 
 // import 'package:shimmer/shimmer.dart';
 // import '../Widgets/bundle_course_tile.dart';

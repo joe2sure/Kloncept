@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:kloncept/provider/dummy/dummy_provider.dart';
 import 'package:kloncept/provider/recent_course_provider.dart';
 import '../Widgets/utils.dart';
 import '../common/apidata.dart';
@@ -200,7 +201,7 @@ class _NewCoursesListState extends State<NewCoursesList> {
   @override
   Widget build(BuildContext context) {
     var newCourses =
-        Provider.of<RecentCourseProvider>(context).recentCourseList;
+        Provider.of<DummyRecentCourseProvider>(context).recentCourseList;
     T.Theme mode = Provider.of<T.Theme>(context);
     return SliverToBoxAdapter(
       child: Container(

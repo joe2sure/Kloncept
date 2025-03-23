@@ -1,6 +1,7 @@
 // File: lib/provider/dummy_providers.dart
 import 'package:flutter/material.dart';
 import 'package:kloncept/model/dummy/dummy_model.dart';
+import 'package:kloncept/model/dummy/dummy_payment_gateway_model.dart' show DummyHomeModel;
 
 // Visibility Provider - Controls loading states
 class DummyVisibleProvider with ChangeNotifier {
@@ -89,6 +90,8 @@ class DummyHomeDataProvider with ChangeNotifier {
   List<DummyTrustedCompany> _trustedList = [];
   List<DummyZoomMeeting> _zoomMeetingList = [];
   DummyCurrency? _currencies;
+    DummyHomeModel? _homeModel;
+     List<DummyCategory> _categories = [];
 
   List<DummySlider> get sliderList => _sliderList;
   List<DummyFactSlider> get sliderFactList => _sliderFactList;
@@ -224,7 +227,7 @@ class DummyRecentCourseProvider with ChangeNotifier {
         updatedAt: DateTime.now().subtract(Duration(days: index)).toString(),
         include: "What's included in Recent Course ${index + 1}",
         whatlearns: "What you'll learn in Recent Course ${index + 1}",
-        review: 4.0 + (index % 3) * 0.5,
+        mainReview: 4.0 + (index % 3) * 0.5,
         // Additional fields already in DummyCourse
         description: "Description for Recent Course ${index + 1}",
         imageUrl:

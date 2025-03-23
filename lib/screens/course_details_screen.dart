@@ -663,8 +663,8 @@ class _CourseDetailScreenState extends State<CourseDetailScreen>
       String currency,
       double progress,
       List<Course> relatedCourses) {
-    var recentCoursesList =
-        Provider.of<RecentCourseProvider>(context).recentCourseList;
+    // var recentCoursesList =
+    //     Provider.of<RecentCourseProvider>(context).recentCourseList;
 
     return FutureBuilder(
       future: detail,
@@ -800,14 +800,14 @@ class _CourseDetailScreenState extends State<CourseDetailScreen>
                                       Orientation.landscape
                                   ? 1.5
                                   : 2.5),
-                          child: ListView.builder(
-                            padding: EdgeInsets.only(
-                                left: 18.0, bottom: 24.0, top: 5.0),
-                            itemBuilder: (context, idx) =>
-                                CourseListItem(recentCoursesList[idx], true),
-                            scrollDirection: Axis.horizontal,
-                            itemCount: recentCoursesList!.length,
-                          ),
+                          // child: ListView.builder(
+                          //   padding: EdgeInsets.only(
+                          //       left: 18.0, bottom: 24.0, top: 5.0),
+                          //   itemBuilder: (context, idx) =>
+                          //       CourseListItem(recentCoursesList[idx], true),
+                          //   scrollDirection: Axis.horizontal,
+                          //   itemCount: recentCoursesList!.length,
+                          // ),
                         ),
                       ),
                 SliverToBoxAdapter(
