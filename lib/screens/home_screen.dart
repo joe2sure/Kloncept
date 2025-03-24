@@ -472,6 +472,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+
 Future<void> getHomePageData() async {
   try {
     setState(() {
@@ -479,32 +480,76 @@ Future<void> getHomePageData() async {
       _errorMessage = null;
     });
 
+    // Ensure the visibility provider is available
     final visiblePro = Provider.of<DummyVisibleProvider>(context, listen: false);
     visiblePro.toggleVisible(false);
     
-    // Get all providers first
-    final coursesProvider = Provider.of<DummyCoursesProvider>(context, listen: false);
-    final homeDataProvider = Provider.of<DummyHomeDataProvider>(context, listen: false);
-    final recentCourseProvider = Provider.of<DummyRecentCourseProvider>(context, listen: false);
-    final bundleCourseProvider = Provider.of<DummyBundleCourseProvider>(context, listen: false);
-    final userProfile = Provider.of<DummyUserProfile>(context, listen: false);
-    final instituteProvider = Provider.of<DummyInstituteProvider>(context, listen: false);
-    final compareCourseProvider = Provider.of<DummyCompareCourseProvider>(context, listen: false);
-    final walletDetailsProvider = Provider.of<DummyWalletDetailsProvider>(context, listen: false);
-    final currenciesProvider = Provider.of<DummyCurrenciesProvider>(context, listen: false);
+    // Wrap individual provider accesses in try-catch blocks to isolate failures
+    try {
+      final coursesProvider = Provider.of<DummyCoursesProvider>(context, listen: false);
+      coursesProvider.loadDummyCourses();
+    } catch (e) {
+      print("Error loading course provider: $e");
+      throw Exception("Failed to access courses provider");
+    }
+    
+    try {
+      final homeDataProvider = Provider.of<DummyHomeDataProvider>(context, listen: false);
+      homeDataProvider.loadDummyHomeData();
+    } catch (e) {
+      print("Error loading home data provider: $e");
+    }
+    
+    try {
+      final recentCourseProvider = Provider.of<DummyRecentCourseProvider>(context, listen: false);
+      recentCourseProvider.loadRecentCourses();
+    } catch (e) {
+      print("Error loading recent course provider: $e");
+    }
+    
+    try {
+      final bundleCourseProvider = Provider.of<DummyBundleCourseProvider>(context, listen: false);
+      bundleCourseProvider.loadDummyBundles();
+    } catch (e) {
+      print("Error loading bundle course provider: $e");
+    }
+    
+    try {
+      final userProfile = Provider.of<DummyUserProfile>(context, listen: false);
+      userProfile.loadDummyProfile();
+    } catch (e) {
+      print("Error loading user profile provider: $e");
+    }
+    
+    try {
+      final instituteProvider = Provider.of<DummyInstituteProvider>(context, listen: false);
+      instituteProvider.loadDummyInstitutes();
+    } catch (e) {
+      print("Error loading institute provider: $e");
+    }
+    
+    try {
+      final compareCourseProvider = Provider.of<DummyCompareCourseProvider>(context, listen: false);
+      compareCourseProvider.loadDummyData();
+    } catch (e) {
+      print("Error loading compare course provider: $e");
+    }
+    
+    try {
+      final walletDetailsProvider = Provider.of<DummyWalletDetailsProvider>(context, listen: false);
+      walletDetailsProvider.loadDummyData();
+    } catch (e) {
+      print("Error loading wallet details provider: $e");
+    }
+    
+    try {
+      final currenciesProvider = Provider.of<DummyCurrenciesProvider>(context, listen: false);
+      currenciesProvider.loadDummyData();
+    } catch (e) {
+      print("Error loading currencies provider: $e");
+    }
 
-    // Load data sequentially
-    coursesProvider.loadDummyCourses();
-    homeDataProvider.loadDummyHomeData();
-    recentCourseProvider.loadRecentCourses();
-    bundleCourseProvider.loadDummyBundles();
-    userProfile.loadDummyProfile();
-    instituteProvider.loadDummyInstitutes();
-    compareCourseProvider.loadDummyData();
-    walletDetailsProvider.loadDummyData();
-    currenciesProvider.loadDummyData();
-
-    // Show UI after data is loaded
+    // Show UI after data is loaded (or partially loaded)
     Timer(Duration(milliseconds: 1000), () {
       visiblePro.toggleVisible(true);
       setState(() {
@@ -520,34 +565,50 @@ Future<void> getHomePageData() async {
   }
 }
 
-  @override
-  Widget build(BuildContext context) {
-    if (_isLoading) {
-      return Scaffold(
-        body: Center(
-          child: CircularProgressIndicator(),
-        ),
-      );
-    }
+@override
+Widget build(BuildContext context) {
+  if (_isLoading) {
+    return Scaffold(
+      body: Center(
+        child: CircularProgressIndicator(),
+      ),
+    );
+  }
 
-    if (_errorMessage != null) {
-      return Scaffold(
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(_errorMessage!),
-              SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: getHomePageData,
-                child: Text("Retry"),
+  if (_errorMessage != null) {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.error_outline,
+              size: 60,
+              color: Colors.red,
+            ),
+            SizedBox(height: 20),
+            Text(
+              _errorMessage!,
+              style: TextStyle(fontSize: 18),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: getHomePageData,
+              child: Text("Retry"),
+              style: ElevatedButton.styleFrom(
+                iconColor: Color(0xffF44A4A),
+                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
-      );
-    }
+      ),
+    );
+  }
 
+  // Use try-catch to handle any provider errors during widget building
+  try {
     return Consumer4<T.Theme, DummyUserProfile, DummyCoursesProvider, DummyBundleCourseProvider>(
       builder: (context, mode, user, course, bundleCourseProvider, _) {
         final bundleCourses = bundleCourseProvider.bundleCourses;
@@ -563,7 +624,133 @@ Future<void> getHomePageData() async {
         );
       },
     );
+  } catch (e) {
+    // If provider errors occur during build, show the error screen
+    print("Error in build method: $e");
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.error_outline,
+              size: 60,
+              color: Colors.red,
+            ),
+            SizedBox(height: 20),
+            Text(
+              "Failed to load data. Please try again.",
+              style: TextStyle(fontSize: 18),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: getHomePageData,
+              child: Text("Retry"),
+              style: ElevatedButton.styleFrom(
+                iconColor: Color(0xffF44A4A),
+                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
+}
+
+// Future<void> getHomePageData() async {
+//   try {
+//     setState(() {
+//       _isLoading = true;
+//       _errorMessage = null;
+//     });
+
+//     final visiblePro = Provider.of<DummyVisibleProvider>(context, listen: false);
+//     visiblePro.toggleVisible(false);
+    
+//     // Get all providers first
+//     final coursesProvider = Provider.of<DummyCoursesProvider>(context, listen: false);
+//     final homeDataProvider = Provider.of<DummyHomeDataProvider>(context, listen: false);
+//     final recentCourseProvider = Provider.of<DummyRecentCourseProvider>(context, listen: false);
+//     final bundleCourseProvider = Provider.of<DummyBundleCourseProvider>(context, listen: false);
+//     final userProfile = Provider.of<DummyUserProfile>(context, listen: false);
+//     final instituteProvider = Provider.of<DummyInstituteProvider>(context, listen: false);
+//     final compareCourseProvider = Provider.of<DummyCompareCourseProvider>(context, listen: false);
+//     final walletDetailsProvider = Provider.of<DummyWalletDetailsProvider>(context, listen: false);
+//     final currenciesProvider = Provider.of<DummyCurrenciesProvider>(context, listen: false);
+
+//     // Load data sequentially
+//     coursesProvider.loadDummyCourses();
+//     homeDataProvider.loadDummyHomeData();
+//     recentCourseProvider.loadRecentCourses();
+//     bundleCourseProvider.loadDummyBundles();
+//     userProfile.loadDummyProfile();
+//     instituteProvider.loadDummyInstitutes();
+//     compareCourseProvider.loadDummyData();
+//     walletDetailsProvider.loadDummyData();
+//     currenciesProvider.loadDummyData();
+
+//     // Show UI after data is loaded
+//     Timer(Duration(milliseconds: 1000), () {
+//       visiblePro.toggleVisible(true);
+//       setState(() {
+//         _isLoading = false;
+//       });
+//     });
+//   } catch (e) {
+//     setState(() {
+//       _isLoading = false;
+//       _errorMessage = "Failed to load data. Please try again.";
+//     });
+//     print("Error loading home page data: $e");
+//   }
+// }
+
+  // @override
+  // Widget build(BuildContext context) {
+  //   if (_isLoading) {
+  //     return Scaffold(
+  //       body: Center(
+  //         child: CircularProgressIndicator(),
+  //       ),
+  //     );
+  //   }
+
+  //   if (_errorMessage != null) {
+  //     return Scaffold(
+  //       body: Center(
+  //         child: Column(
+  //           mainAxisAlignment: MainAxisAlignment.center,
+  //           children: [
+  //             Text(_errorMessage!),
+  //             SizedBox(height: 20),
+  //             ElevatedButton(
+  //               onPressed: getHomePageData,
+  //               child: Text("Retry"),
+  //             ),
+  //           ],
+  //         ),
+  //       ),
+  //     );
+  //   }
+
+  //   return Consumer4<T.Theme, DummyUserProfile, DummyCoursesProvider, DummyBundleCourseProvider>(
+  //     builder: (context, mode, user, course, bundleCourseProvider, _) {
+  //       final bundleCourses = bundleCourseProvider.bundleCourses;
+  //       _visible = Provider.of<DummyVisibleProvider>(context).globalVisible;
+
+  //       return RefreshIndicator(
+  //         child: Scaffold(
+  //           key: _scaffoldKey,
+  //           backgroundColor: mode.bgcolor,
+  //           body: scaffoldView(user, course, mode, bundleCourses),
+  //         ),
+  //         onRefresh: getHomePageData,
+  //       );
+  //     },
+  //   );
+  // }
 }
 
 final Shader linearGradient = LinearGradient(

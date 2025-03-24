@@ -16,7 +16,7 @@ import 'package:kloncept/provider/dummy/dummy_courses_provider.dart';
 import 'package:kloncept/provider/dummy/dummy_currencies_provider.dart';
 import 'package:kloncept/provider/dummy/dummy_home_data_provider.dart';
 import 'package:kloncept/provider/dummy/dummy_payment_provider.dart';
-import 'package:kloncept/provider/dummy/dummy_provider.dart' show DummyHomeDataProvider, DummyUserProfile, DummyVisibleProvider;
+import 'package:kloncept/provider/dummy/dummy_provider.dart' show DummyBundleCourseProvider, DummyHomeDataProvider, DummyInstituteProvider, DummyRecentCourseProvider, DummyUserProfile, DummyVisibleProvider;
 import 'package:kloncept/provider/dummy/dummy_watchlist_provider.dart';
 import 'package:kloncept/provider/manual_payment_provider.dart';
 import 'package:kloncept/provider/terms_policy_provider.dart';
@@ -86,29 +86,34 @@ class MyApp extends StatelessWidget {
 
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(
-            create: (_) => UserDetailsProvider()), // Fetch User Details
-        ChangeNotifierProvider(create: (_) => T.Theme()), // Theme Data
-        ChangeNotifierProvider(create: (_) => UserProfile()),
-        ChangeNotifierProvider(create: (_) => WishListProvider()),
-        ChangeNotifierProvider(create: (_) => CoursesProvider()),
-         ChangeNotifierProvider(create: (_) => DummyUserProfile()),
+        ChangeNotifierProvider(create: (_) => UserDetailsProvider()),
+        ChangeNotifierProvider(create: (_) => T.Theme()),
+        ChangeNotifierProvider(create: (_) => DummyUserProfile()),
         ChangeNotifierProvider(create: (_) => DummyCoursesProvider()),
         ChangeNotifierProvider(create: (_) => DummyCompareCourseProvider()),
-        ChangeNotifierProvider(create: (_) => CartProducts()),
-        ChangeNotifierProvider(create: (_) => FilterDetailsProvider()),
-        // ChangeNotifierProvider(create: (_) => BundleCourseProvider()),
+        ChangeNotifierProvider(create: (_) => DummyRecentCourseProvider()),
+        // Add the missing provider
+        ChangeNotifierProvider(create: (_) => DummyBundleCourseProvider()),
         ChangeNotifierProvider(create: (_) => HomeDataProvider()),
         ChangeNotifierProvider(create: (_) => DummyHomeDataExtraProvider()),
         ChangeNotifierProvider(create: (_) => DummyHomeDataProvider()),
+        ChangeNotifierProvider(create: (_) => UserProfile()),
+        ChangeNotifierProvider(create: (_) => WishListProvider()),
+        ChangeNotifierProvider(create: (_) => CoursesProvider()),
+        ChangeNotifierProvider(create: (_) => CartProducts()),
+        ChangeNotifierProvider(create: (_) => FilterDetailsProvider()),
+        // Uncomment this line if needed:
+        // ChangeNotifierProvider(create: (_) => BundleCourseProvider()),
         ChangeNotifierProvider(create: (_) => Visible()),
         ChangeNotifierProvider(create: (_) => DummyVisibleProvider()),
+        // Uncomment this line if needed:
         // ChangeNotifierProvider(create: (_) => RecentCourseProvider()),
         ChangeNotifierProvider(create: (_) => PaymentAPIProvider()),
         ChangeNotifierProvider(create: (_) => DummyPaymentAPIProvider()),
         ChangeNotifierProvider(create: (_) => ContentProvider()),
         ChangeNotifierProvider(create: (_) => CourseDetailsProvider()),
         ChangeNotifierProvider(create: (_) => BlogProvider()),
+        // Uncomment this line if needed:
         // ChangeNotifierProvider(create: (_) => CartProvider()),
         ChangeNotifierProvider(create: (_) => DummyCartProvider()),
         ChangeNotifierProvider(create: (_) => LanguageProvider()),
@@ -119,10 +124,53 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => InstituteProvider()),
         ChangeNotifierProvider(create: (_) => InstituteDetailsProvider()),
         ChangeNotifierProvider(create: (_) => CompareCourseProvider()),
+        // Uncomment this line if needed:
         // ChangeNotifierProvider(create: (_) => WalletDetailsProvider()),
         ChangeNotifierProvider(create: (_) => DummyWalletDetailsProvider()),
         ChangeNotifierProvider(create: (_) => CurrenciesProvider()),
         ChangeNotifierProvider(create: (_) => DummyCurrenciesProvider()),
+        // Add DummyInstituteProvider which is being accessed in HomeScreen
+        ChangeNotifierProvider(create: (_) => DummyInstituteProvider()),
+
+        // ChangeNotifierProvider(
+        //     create: (_) => UserDetailsProvider()), // Fetch User Details
+        // ChangeNotifierProvider(create: (_) => T.Theme()), // Theme Data
+        //  ChangeNotifierProvider(create: (_) => DummyUserProfile()),
+        // ChangeNotifierProvider(create: (_) => DummyCoursesProvider()),
+        // ChangeNotifierProvider(create: (_) => DummyCompareCourseProvider()),
+        //     ChangeNotifierProvider(create: (_) => DummyRecentCourseProvider()),
+        //     ChangeNotifierProvider(create: (_) => DummyBundleCourseProvider()),
+        // ChangeNotifierProvider(create: (_) => HomeDataProvider()),
+        // ChangeNotifierProvider(create: (_) => DummyHomeDataExtraProvider()),
+        // ChangeNotifierProvider(create: (_) => DummyHomeDataProvider()),
+        // ChangeNotifierProvider(create: (_) => UserProfile()),
+        // ChangeNotifierProvider(create: (_) => WishListProvider()),
+        // ChangeNotifierProvider(create: (_) => CoursesProvider()),
+        // ChangeNotifierProvider(create: (_) => CartProducts()),
+        // ChangeNotifierProvider(create: (_) => FilterDetailsProvider()),
+        // // ChangeNotifierProvider(create: (_) => BundleCourseProvider()),
+        // ChangeNotifierProvider(create: (_) => Visible()),
+        // ChangeNotifierProvider(create: (_) => DummyVisibleProvider()),
+        // // ChangeNotifierProvider(create: (_) => RecentCourseProvider()),
+        // ChangeNotifierProvider(create: (_) => PaymentAPIProvider()),
+        // ChangeNotifierProvider(create: (_) => DummyPaymentAPIProvider()),
+        // ChangeNotifierProvider(create: (_) => ContentProvider()),
+        // ChangeNotifierProvider(create: (_) => CourseDetailsProvider()),
+        // ChangeNotifierProvider(create: (_) => BlogProvider()),
+        // // ChangeNotifierProvider(create: (_) => CartProvider()),
+        // ChangeNotifierProvider(create: (_) => DummyCartProvider()),
+        // ChangeNotifierProvider(create: (_) => LanguageProvider()),
+        // ChangeNotifierProvider(create: (_) => TermsPolicyProvider()),
+        // ChangeNotifierProvider(create: (_) => WatchlistProvider()),
+        // ChangeNotifierProvider(create: (_) => DummyWatchlistProvider()),
+        // ChangeNotifierProvider(create: (_) => ManualPaymentProvider()),
+        // ChangeNotifierProvider(create: (_) => InstituteProvider()),
+        // ChangeNotifierProvider(create: (_) => InstituteDetailsProvider()),
+        // ChangeNotifierProvider(create: (_) => CompareCourseProvider()),
+        // // ChangeNotifierProvider(create: (_) => WalletDetailsProvider()),
+        // ChangeNotifierProvider(create: (_) => DummyWalletDetailsProvider()),
+        // ChangeNotifierProvider(create: (_) => CurrenciesProvider()),
+        // ChangeNotifierProvider(create: (_) => DummyCurrenciesProvider()),
       ],
       child: LocalizationProvider(
         state: LocalizationProvider.of(context).state,
