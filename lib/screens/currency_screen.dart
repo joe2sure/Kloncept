@@ -30,8 +30,8 @@ class _CurrencyScreenState extends State<CurrencyScreen> {
     super.initState();
 
     // Initialize providers with dummy data if not already loaded
-    DummyHomeDataProvider homeDataProvider =
-        Provider.of<DummyHomeDataProvider>(context, listen: false);
+    DummyHomeDataExtraProvider homeDataProvider =
+        Provider.of<DummyHomeDataExtraProvider>(context, listen: false);
     if (!homeDataProvider.dataLoaded) {
       homeDataProvider.fetchHomeData();
     }
@@ -142,8 +142,8 @@ class _CurrencyScreenState extends State<CurrencyScreen> {
                         isLoading = true;
                       });
                       
-                      DummyHomeDataProvider homeDataProvider =
-                          Provider.of<DummyHomeDataProvider>(context, listen: false);
+                      DummyHomeDataExtraProvider homeDataProvider =
+                          Provider.of<DummyHomeDataExtraProvider>(context, listen: false);
                       
                       try {
                         // Use the dummy provider's method to get currency rates

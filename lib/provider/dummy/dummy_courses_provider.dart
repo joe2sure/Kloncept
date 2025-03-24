@@ -4,7 +4,7 @@ import 'package:kloncept/model/course.dart';
 import 'package:kloncept/model/bundle_courses_model.dart';
 import 'package:kloncept/model/dummy/dummy_model.dart';
 
-class CoursesProvider with ChangeNotifier {
+class DummyCoursesProvider with ChangeNotifier {
   List<Course> _courses = [];
   List<BundleCourses> _bundleCourses = [];
   List<int> _bundlePurchasedListIds = [];

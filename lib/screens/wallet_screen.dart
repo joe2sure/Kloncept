@@ -24,7 +24,7 @@ class _WalletScreenWithDummyState extends State<WalletScreenWithDummy> {
     
     // Initialize providers with dummy data
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      final homeProvider = Provider.of<DummyHomeDataProvider>(context, listen: false);
+      final homeProvider = Provider.of<DummyHomeDataExtraProvider>(context, listen: false);
       if (homeProvider.homeModel == null) {
         homeProvider.fetchHomeData();
       }
@@ -36,7 +36,7 @@ class _WalletScreenWithDummyState extends State<WalletScreenWithDummy> {
     });
     
     // Set currency from the home data provider
-    currency = Provider.of<DummyHomeDataProvider>(context, listen: false).homeModel?.currency?.currency ?? "USD";
+    currency = Provider.of<DummyHomeDataExtraProvider>(context, listen: false).homeModel?.currency?.currency ?? "USD";
   }
 
   String? currency = "USD";

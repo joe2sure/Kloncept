@@ -29,7 +29,7 @@ class WalletPayment extends StatefulWidget {
 
 class _WalletPaymentState extends State<WalletPayment> {
   void loadData() async {
-    homeDataProvider = Provider.of<DummyHomeDataProvider>(context, listen: false); // Changed to DummyHomeDataProvider
+    homeDataProvider = Provider.of<DummyHomeDataExtraProvider>(context, listen: false); // Changed to DummyHomeDataProvider
     walletDetailsProvider =
         Provider.of<DummyWalletDetailsProvider>(context, listen: false); // Changed to DummyWalletDetailsProvider
     
@@ -52,7 +52,7 @@ class _WalletPaymentState extends State<WalletPayment> {
   var paymentResponse, createdDate, createdTime;
   bool isShowing = true;
   bool isBack = false;
-  late DummyHomeDataProvider homeDataProvider; // Changed to DummyHomeDataProvider
+  late DummyHomeDataExtraProvider homeDataProvider; // Changed to DummyHomeDataProvider
   late DummyWalletDetailsProvider walletDetailsProvider; // Changed to DummyWalletDetailsProvider
   var scaffoldKey = GlobalKey<ScaffoldState>();
   late double amount;

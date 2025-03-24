@@ -37,7 +37,7 @@ class Currency {
   });
 }
 
-class DummyHomeDataProvider with ChangeNotifier {
+class DummyHomeDataExtraProvider with ChangeNotifier {
   HomeModel? homeModel;
   bool dataLoaded = false;
   

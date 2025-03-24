@@ -53,7 +53,7 @@ class BundleCoursesList extends StatelessWidget {
                 shrinkWrap: true,
                 physics: ClampingScrollPhysics(),
                 itemBuilder: (context, idx) =>
-                    BundleCourseItem(dummyBundleCourses[idx] as DummyCourse),
+                    BundleCourseItem(dummyBundleCourses[idx] as DummyBundleCourse),
                 scrollDirection: Axis.horizontal,
                 itemCount: dummyBundleCourses.length,
               )

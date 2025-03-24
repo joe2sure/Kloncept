@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 
-// Import widgets and screens (keeping the same imports)
+// Import widgets and screens
 import 'package:kloncept/Widgets/zoom_meeting_list.dart';
 import 'package:kloncept/widgets/institute_image_swiper.dart';
 import 'fact_slider.dart';
@@ -22,24 +22,25 @@ import '../Widgets/testimonial_list.dart';
 import '../Widgets/trusted_list.dart';
 import '../common/theme.dart' as T;
 
-// Import our new models and providers
-
-
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   late bool _visible;
+  bool _isLoading = true;
+  String? _errorMessage;
 
   @override
   void initState() {
     super.initState();
-    _visible = Provider.of<DummyVisibleProvider>(context, listen: false).globalVisible;
-    // Load dummy data when screen initializes
-    getHomePageData();
+    _visible = false;
+    // Delay provider access until after first frame
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      getHomePageData();
+    });
   }
 
   Widget welcomeText(String? name, String? imageUrl, BuildContext context) {
@@ -181,8 +182,6 @@ class _HomeScreenState extends State<HomeScreen> {
           );
   }
 
-  List<String> list = List.generate(10, (index) => "Text $index");
-
   Widget searchBar(BuildContext context) {
     return _visible == true
         ? SliverToBoxAdapter(
@@ -223,12 +222,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     onTap: () {
-                      // Search functionality would go here
+                      // Search functionality
                     },
                   ),
                   InkWell(
                     onTap: () {
-                      // Search functionality would go here
+                      // Search functionality
                     },
                     hoverColor: Colors.red,
                     child: Container(
@@ -303,6 +302,7 @@ class _HomeScreenState extends State<HomeScreen> {
     var sliderList = Provider.of<DummyHomeDataProvider>(context).sliderList;
     var newCourses =
         Provider.of<DummyRecentCourseProvider>(context).recentCourseList;
+        
     return CustomScrollView(
       slivers: [
         SliverToBoxAdapter(
@@ -358,7 +358,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
         HeadingTitle(translate("FEATURED_CATEGORIES"), _visible),
         FeaturedCategoryList(_visible),
-        //Featured Courses
+        
         featuredCoursesList.length == 0
             ? SliverToBoxAdapter(
                 child: SizedBox.shrink(),
@@ -429,7 +429,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
 
-        //companies
         trustedList.length == 0
             ? SliverToBoxAdapter(
                 child: SizedBox.shrink(),
@@ -473,70 +472,96 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Future<Null> getHomePageData() async {
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
-      DummyVisibleProvider visiblePro = Provider.of<DummyVisibleProvider>(context, listen: false);
-      Timer(Duration(milliseconds: 10), () {
-        visiblePro.toggleVisible(false);
-      });
-      
-      // Load all providers with dummy data
-      DummyCoursesProvider coursesProvider =
-          Provider.of<DummyCoursesProvider>(context, listen: false);
-      DummyHomeDataProvider homeDataProvider =
-          Provider.of<DummyHomeDataProvider>(context, listen: false);
-      DummyRecentCourseProvider recentCourseProvider =
-          Provider.of<DummyRecentCourseProvider>(context, listen: false);
-      DummyBundleCourseProvider bundleCourseProvider =
-          Provider.of<DummyBundleCourseProvider>(context, listen: false);
-      DummyUserProfile userProfile =
-          Provider.of<DummyUserProfile>(context, listen: false);
-      DummyInstituteProvider instituteProvider =
-          Provider.of<DummyInstituteProvider>(context, listen: false);
-      DummyCompareCourseProvider compareCourseProvider =
-          Provider.of<DummyCompareCourseProvider>(context, listen: false);
-      DummyWalletDetailsProvider walletDetailsProvider =
-          Provider.of<DummyWalletDetailsProvider>(context, listen: false);
-      DummyCurrenciesProvider currenciesProvider =
-          Provider.of<DummyCurrenciesProvider>(context, listen: false);
+Future<void> getHomePageData() async {
+  try {
+    setState(() {
+      _isLoading = true;
+      _errorMessage = null;
+    });
 
-      // Load all dummy data
-      coursesProvider.loadDummyCourses();
-      homeDataProvider.loadDummyHomeData();
-      recentCourseProvider.loadRecentCourses();
-      bundleCourseProvider.loadDummyBundles();
-      userProfile.loadDummyProfile();
-      instituteProvider.loadDummyInstitutes();
-      compareCourseProvider.loadDummyData();
-      walletDetailsProvider.loadDummyData();
-      currenciesProvider.loadDummyData();
+    final visiblePro = Provider.of<DummyVisibleProvider>(context, listen: false);
+    visiblePro.toggleVisible(false);
+    
+    // Get all providers first
+    final coursesProvider = Provider.of<DummyCoursesProvider>(context, listen: false);
+    final homeDataProvider = Provider.of<DummyHomeDataProvider>(context, listen: false);
+    final recentCourseProvider = Provider.of<DummyRecentCourseProvider>(context, listen: false);
+    final bundleCourseProvider = Provider.of<DummyBundleCourseProvider>(context, listen: false);
+    final userProfile = Provider.of<DummyUserProfile>(context, listen: false);
+    final instituteProvider = Provider.of<DummyInstituteProvider>(context, listen: false);
+    final compareCourseProvider = Provider.of<DummyCompareCourseProvider>(context, listen: false);
+    final walletDetailsProvider = Provider.of<DummyWalletDetailsProvider>(context, listen: false);
+    final currenciesProvider = Provider.of<DummyCurrenciesProvider>(context, listen: false);
 
-      // Show UI after a short delay
-      Timer(Duration(milliseconds: 1000), () {
-        visiblePro.toggleVisible(true);
+    // Load data sequentially
+    coursesProvider.loadDummyCourses();
+    homeDataProvider.loadDummyHomeData();
+    recentCourseProvider.loadRecentCourses();
+    bundleCourseProvider.loadDummyBundles();
+    userProfile.loadDummyProfile();
+    instituteProvider.loadDummyInstitutes();
+    compareCourseProvider.loadDummyData();
+    walletDetailsProvider.loadDummyData();
+    currenciesProvider.loadDummyData();
+
+    // Show UI after data is loaded
+    Timer(Duration(milliseconds: 1000), () {
+      visiblePro.toggleVisible(true);
+      setState(() {
+        _isLoading = false;
       });
     });
-    return null;
+  } catch (e) {
+    setState(() {
+      _isLoading = false;
+      _errorMessage = "Failed to load data. Please try again.";
+    });
+    print("Error loading home page data: $e");
   }
+}
 
   @override
   Widget build(BuildContext context) {
-    T.Theme mode = Provider.of<T.Theme>(context, listen: false);
-    DummyUserProfile user = Provider.of<DummyUserProfile>(context, listen: false);
-    DummyCoursesProvider course =
-        Provider.of<DummyCoursesProvider>(context, listen: false);
-    List<DummyBundleCourse>? bundleCourses =
-        Provider.of<DummyBundleCourseProvider>(context, listen: false).bundleCourses;
-    
-    _visible = Provider.of<DummyVisibleProvider>(context).globalVisible;
+    if (_isLoading) {
+      return Scaffold(
+        body: Center(
+          child: CircularProgressIndicator(),
+        ),
+      );
+    }
 
-    return RefreshIndicator(
-      child: Scaffold(
-        key: _scaffoldKey,
-        backgroundColor: mode.bgcolor,
-        body: scaffoldView(user, course, mode, bundleCourses),
-      ),
-      onRefresh: getHomePageData,
+    if (_errorMessage != null) {
+      return Scaffold(
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(_errorMessage!),
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: getHomePageData,
+                child: Text("Retry"),
+              ),
+            ],
+          ),
+        ),
+      );
+    }
+
+    return Consumer4<T.Theme, DummyUserProfile, DummyCoursesProvider, DummyBundleCourseProvider>(
+      builder: (context, mode, user, course, bundleCourseProvider, _) {
+        final bundleCourses = bundleCourseProvider.bundleCourses;
+        _visible = Provider.of<DummyVisibleProvider>(context).globalVisible;
+
+        return RefreshIndicator(
+          child: Scaffold(
+            key: _scaffoldKey,
+            backgroundColor: mode.bgcolor,
+            body: scaffoldView(user, course, mode, bundleCourses),
+          ),
+          onRefresh: getHomePageData,
+        );
+      },
     );
   }
 }
