@@ -132,45 +132,6 @@ class MyApp extends StatelessWidget {
         // Add DummyInstituteProvider which is being accessed in HomeScreen
         ChangeNotifierProvider(create: (_) => DummyInstituteProvider()),
 
-        // ChangeNotifierProvider(
-        //     create: (_) => UserDetailsProvider()), // Fetch User Details
-        // ChangeNotifierProvider(create: (_) => T.Theme()), // Theme Data
-        //  ChangeNotifierProvider(create: (_) => DummyUserProfile()),
-        // ChangeNotifierProvider(create: (_) => DummyCoursesProvider()),
-        // ChangeNotifierProvider(create: (_) => DummyCompareCourseProvider()),
-        //     ChangeNotifierProvider(create: (_) => DummyRecentCourseProvider()),
-        //     ChangeNotifierProvider(create: (_) => DummyBundleCourseProvider()),
-        // ChangeNotifierProvider(create: (_) => HomeDataProvider()),
-        // ChangeNotifierProvider(create: (_) => DummyHomeDataExtraProvider()),
-        // ChangeNotifierProvider(create: (_) => DummyHomeDataProvider()),
-        // ChangeNotifierProvider(create: (_) => UserProfile()),
-        // ChangeNotifierProvider(create: (_) => WishListProvider()),
-        // ChangeNotifierProvider(create: (_) => CoursesProvider()),
-        // ChangeNotifierProvider(create: (_) => CartProducts()),
-        // ChangeNotifierProvider(create: (_) => FilterDetailsProvider()),
-        // // ChangeNotifierProvider(create: (_) => BundleCourseProvider()),
-        // ChangeNotifierProvider(create: (_) => Visible()),
-        // ChangeNotifierProvider(create: (_) => DummyVisibleProvider()),
-        // // ChangeNotifierProvider(create: (_) => RecentCourseProvider()),
-        // ChangeNotifierProvider(create: (_) => PaymentAPIProvider()),
-        // ChangeNotifierProvider(create: (_) => DummyPaymentAPIProvider()),
-        // ChangeNotifierProvider(create: (_) => ContentProvider()),
-        // ChangeNotifierProvider(create: (_) => CourseDetailsProvider()),
-        // ChangeNotifierProvider(create: (_) => BlogProvider()),
-        // // ChangeNotifierProvider(create: (_) => CartProvider()),
-        // ChangeNotifierProvider(create: (_) => DummyCartProvider()),
-        // ChangeNotifierProvider(create: (_) => LanguageProvider()),
-        // ChangeNotifierProvider(create: (_) => TermsPolicyProvider()),
-        // ChangeNotifierProvider(create: (_) => WatchlistProvider()),
-        // ChangeNotifierProvider(create: (_) => DummyWatchlistProvider()),
-        // ChangeNotifierProvider(create: (_) => ManualPaymentProvider()),
-        // ChangeNotifierProvider(create: (_) => InstituteProvider()),
-        // ChangeNotifierProvider(create: (_) => InstituteDetailsProvider()),
-        // ChangeNotifierProvider(create: (_) => CompareCourseProvider()),
-        // // ChangeNotifierProvider(create: (_) => WalletDetailsProvider()),
-        // ChangeNotifierProvider(create: (_) => DummyWalletDetailsProvider()),
-        // ChangeNotifierProvider(create: (_) => CurrenciesProvider()),
-        // ChangeNotifierProvider(create: (_) => DummyCurrenciesProvider()),
       ],
       child: LocalizationProvider(
         state: LocalizationProvider.of(context).state,
@@ -223,6 +184,46 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+        // ChangeNotifierProvider(
+        //     create: (_) => UserDetailsProvider()), // Fetch User Details
+        // ChangeNotifierProvider(create: (_) => T.Theme()), // Theme Data
+        //  ChangeNotifierProvider(create: (_) => DummyUserProfile()),
+        // ChangeNotifierProvider(create: (_) => DummyCoursesProvider()),
+        // ChangeNotifierProvider(create: (_) => DummyCompareCourseProvider()),
+        //     ChangeNotifierProvider(create: (_) => DummyRecentCourseProvider()),
+        //     ChangeNotifierProvider(create: (_) => DummyBundleCourseProvider()),
+        // ChangeNotifierProvider(create: (_) => HomeDataProvider()),
+        // ChangeNotifierProvider(create: (_) => DummyHomeDataExtraProvider()),
+        // ChangeNotifierProvider(create: (_) => DummyHomeDataProvider()),
+        // ChangeNotifierProvider(create: (_) => UserProfile()),
+        // ChangeNotifierProvider(create: (_) => WishListProvider()),
+        // ChangeNotifierProvider(create: (_) => CoursesProvider()),
+        // ChangeNotifierProvider(create: (_) => CartProducts()),
+        // ChangeNotifierProvider(create: (_) => FilterDetailsProvider()),
+        // // ChangeNotifierProvider(create: (_) => BundleCourseProvider()),
+        // ChangeNotifierProvider(create: (_) => Visible()),
+        // ChangeNotifierProvider(create: (_) => DummyVisibleProvider()),
+        // // ChangeNotifierProvider(create: (_) => RecentCourseProvider()),
+        // ChangeNotifierProvider(create: (_) => PaymentAPIProvider()),
+        // ChangeNotifierProvider(create: (_) => DummyPaymentAPIProvider()),
+        // ChangeNotifierProvider(create: (_) => ContentProvider()),
+        // ChangeNotifierProvider(create: (_) => CourseDetailsProvider()),
+        // ChangeNotifierProvider(create: (_) => BlogProvider()),
+        // // ChangeNotifierProvider(create: (_) => CartProvider()),
+        // ChangeNotifierProvider(create: (_) => DummyCartProvider()),
+        // ChangeNotifierProvider(create: (_) => LanguageProvider()),
+        // ChangeNotifierProvider(create: (_) => TermsPolicyProvider()),
+        // ChangeNotifierProvider(create: (_) => WatchlistProvider()),
+        // ChangeNotifierProvider(create: (_) => DummyWatchlistProvider()),
+        // ChangeNotifierProvider(create: (_) => ManualPaymentProvider()),
+        // ChangeNotifierProvider(create: (_) => InstituteProvider()),
+        // ChangeNotifierProvider(create: (_) => InstituteDetailsProvider()),
+        // ChangeNotifierProvider(create: (_) => CompareCourseProvider()),
+        // // ChangeNotifierProvider(create: (_) => WalletDetailsProvider()),
+        // ChangeNotifierProvider(create: (_) => DummyWalletDetailsProvider()),
+        // ChangeNotifierProvider(create: (_) => CurrenciesProvider()),
+        // ChangeNotifierProvider(create: (_) => DummyCurrenciesProvider()),
 
 
 

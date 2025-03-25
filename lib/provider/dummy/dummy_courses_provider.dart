@@ -10,6 +10,7 @@ class DummyCoursesProvider with ChangeNotifier {
   List<int> _bundlePurchasedListIds = [];
     List<DummyCourse> _studyingList = [];
   List<int> _purchasedCourseIds = [];
+  List<DummyCourse> _allDummyCourses = [];
 
   // Getters
   List<Course> get allCourses => _courses;
@@ -17,6 +18,7 @@ class DummyCoursesProvider with ChangeNotifier {
   List<int>? get bundlePurchasedListIds => _bundlePurchasedListIds;
     List<DummyCourse> get studyingList => _studyingList;
   List<int> get purchasedCourseIds => _purchasedCourseIds;
+  List<DummyCourse> get allDummyCourses => _allDummyCourses;
 
   // Initialize with dummy data
   void loadDummyCourses(List<DummyCourse> dummyCourses) {
@@ -103,5 +105,47 @@ class DummyCoursesProvider with ChangeNotifier {
       }
     }
     return result;
+  }
+
+
+  void loadDummyExtraCourses() {
+    // Create dummy courses
+    _allDummyCourses = List.generate(
+      15,
+      (index) => DummyCourse(
+        id: index + 1,
+        title: "Course ${index + 1}: Complete Flutter Development",
+        description: "Learn to build beautiful mobile apps with Flutter",
+        imageUrl:
+            "https://via.placeholder.com/300x200?text=Course+${index + 1}",
+        categoryName: [
+          "Flutter",
+          "React Native",
+          "iOS Development",
+          "Android Development"
+        ][index % 4],
+        price: 49.99 + (index * 10),
+        discountPrice: 39.99 + (index * 5),
+        isFeatured: index % 3 == 0,
+        isEnrolled: index % 5 == 0,
+        instructorName:
+            "Professor ${index % 4 == 0 ? 'Smith' : index % 3 == 0 ? 'Johnson' : index % 2 == 0 ? 'Williams' : 'Brown'}",
+        instructorImage:
+            "https://via.placeholder.com/100?text=Instructor+${index + 1}",
+        rating: 3.5 + (index % 3) * 0.5,
+        ratingCount: 10 + index * 5,
+        totalLessons: 10 + index * 2,
+        duration: "${5 + index} hours",
+      ),
+    );
+
+    // Create dummy enrolled courses
+    _studyingList = _allDummyCourses.where((course) => course.isEnrolled).toList();
+
+    notifyListeners();
+  }
+
+  List<DummyCourse> getFeaturedCourses() {
+    return _allDummyCourses.where((course) => course.isFeatured).toList();
   }
 }

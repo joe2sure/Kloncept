@@ -3,6 +3,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:kloncept/model/dummy/dummy_model.dart';
 import 'package:kloncept/provider/dummy/dummy_provider.dart';
+import 'package:kloncept/provider/dummy/dummy_courses_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:flutter_translate/flutter_translate.dart';
@@ -487,7 +488,7 @@ Future<void> getHomePageData() async {
     // Wrap individual provider accesses in try-catch blocks to isolate failures
     try {
       final coursesProvider = Provider.of<DummyCoursesProvider>(context, listen: false);
-      coursesProvider.loadDummyCourses();
+      coursesProvider.loadDummyExtraCourses();
     } catch (e) {
       print("Error loading course provider: $e");
       throw Exception("Failed to access courses provider");
@@ -659,6 +660,21 @@ Widget build(BuildContext context) {
   }
 }
 
+
+}
+
+final Shader linearGradient = LinearGradient(
+  colors: <Color>[
+    Color(0xff790055),
+    Color(0xffF81D46),
+    Color(0xffF81D46),
+    Color(0xffFA4E62)
+  ],
+).createShader(Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
+
+
+
+
 // Future<void> getHomePageData() async {
 //   try {
 //     setState(() {
@@ -751,18 +767,6 @@ Widget build(BuildContext context) {
   //     },
   //   );
   // }
-}
-
-final Shader linearGradient = LinearGradient(
-  colors: <Color>[
-    Color(0xff790055),
-    Color(0xffF81D46),
-    Color(0xffF81D46),
-    Color(0xffFA4E62)
-  ],
-).createShader(Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
-
-
 
 
 // =============== start of original home screen  ===============

@@ -4,6 +4,7 @@ import 'package:kloncept/model/dummy/dummy_model.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 import 'package:kloncept/provider/dummy/dummy_cart_provider.dart';
 import 'package:kloncept/provider/dummy/dummy_provider.dart';
+import 'package:kloncept/provider/dummy/dummy_courses_provider.dart';
 import 'package:kloncept/provider/dummy/dummy_watchlist_provider.dart';
 import 'package:kloncept/services/internetStatus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -77,7 +78,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
 
     try {
       // Call void methods directly, and keep async methods in Future.wait
-      coursesProvider.loadDummyCourses();
+      coursesProvider.loadDummyExtraCourses();
       homeDataProvider.loadDummyHomeData();
       bundleCourseProvider.loadDummyBundles();
       userProfile.loadDummyProfile();
