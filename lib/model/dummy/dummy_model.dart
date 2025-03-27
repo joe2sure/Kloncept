@@ -16,9 +16,6 @@ class DummyUserProfileModel {
   });
 }
 
-// Home model to match what's used in the wallet screen
-
-
 // Course Model
 
 class DummyRecentCourseModel {
@@ -28,8 +25,6 @@ class DummyRecentCourseModel {
 }
 
 // Updated DummyCourse class with all required parameters
-// File: lib/model/dummy/dummy_model.dart
-// File: lib/model/dummy/dummy_model.dart
 class DummyCourse {
   final int? id;
   final int? userId;
@@ -160,7 +155,6 @@ class DummyCourse {
   }
 }
 
-
 class DummyReview {
   final int id;
   final int userId;
@@ -193,8 +187,6 @@ class DummyReview {
   });
 }
 
-
-
 // Bundle Course Model
 class DummyBundleCourse {
   final int id;
@@ -217,7 +209,6 @@ class DummyBundleCourse {
     required this.instructorName,
   });
 }
-
 
 class DummyCategory {
   final int id;
@@ -247,7 +238,6 @@ class DummyCategory {
   });
 }
 
-
 // Slider Model
 class DummySlider {
   final int id;
@@ -264,7 +254,6 @@ class DummySlider {
     required this.buttonText,
   });
 }
-
 // Fact Slider Model
 class DummyFactSlider {
   final int id;
@@ -279,7 +268,6 @@ class DummyFactSlider {
     required this.description,
   });
 }
-
 // Testimonial Model
 class DummyTestimonial {
   final int id;
@@ -298,7 +286,6 @@ class DummyTestimonial {
     required this.rating,
   });
 }
-
 // Trusted Company Model
 class DummyTrustedCompany {
   final int id;
@@ -311,7 +298,6 @@ class DummyTrustedCompany {
     required this.imageUrl,
   });
 }
-
 // Zoom Meeting Model
 class DummyZoomMeeting {
   final int id;
@@ -336,7 +322,6 @@ class DummyZoomMeeting {
     required this.imageUrl,
   });
 }
-
 // Institute Model
 class DummyInstitute {
   final int id;
@@ -355,13 +340,11 @@ class DummyInstitute {
     required this.email,
   });
 }
-
 class DummyInstituteModel {
   final List<DummyInstitute> institutes;
 
   DummyInstituteModel({required this.institutes});
 }
-
 // Wallet Details Model
 class DummyWalletDetail {
   final double balance;
@@ -372,7 +355,6 @@ class DummyWalletDetail {
     required this.transactions,
   });
 }
-
 // Transaction Model
 class DummyTransaction {
   final int id;
@@ -389,7 +371,6 @@ class DummyTransaction {
     required this.description,
   });
 }
-
 
 class DummyCurrency {
   final int? id;
@@ -412,16 +393,12 @@ class DummyCurrency {
     this.currency, this.position, this.format,
   });
 }
-
-
 // Compare Course Model
 class DummyCompareCourse {
   final List<DummyCourse> courses;
 
   DummyCompareCourse({required this.courses});
 }
-
-
 // Define a dummy cart item model to simulate the cart items in MyCart model
 class DummyCartItem {
   final int? id;
@@ -438,7 +415,6 @@ class DummyCartItem {
     this.updatedAt,
   });
 }
-
 // Define a dummy cart model to simulate the MyCart model
 class DummyMyCart {
   final List<DummyCartItem>? cart;  

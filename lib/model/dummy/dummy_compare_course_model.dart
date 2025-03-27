@@ -1,5 +1,3 @@
-
-
 import 'package:kloncept/model/dummy/dummy_model.dart';
 
 class DummyCompareCourseModel {

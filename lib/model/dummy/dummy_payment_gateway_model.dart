@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:kloncept/model/dummy/dummy_model.dart';
 import 'package:kloncept/screens/payment_gateway.dart';
 
-
 // PaymentGatewayModel (already exists but needs to be recreated for completeness)
 class PaymentGatewayModel {
   final int id;
@@ -32,7 +31,6 @@ class DummyPaymentApi {
     this.paystackPublicKey,
   });
 }
-
 // Dummy Settings model for payment settings
 class DummySettings {
   final String? stripeEnable;
@@ -61,7 +59,6 @@ class DummySettings {
     this.currency,
   });
 }
-
 // Dummy Bank Details model
 class DummyBankDetails {
   final int? bankEnable;
@@ -93,7 +90,6 @@ class DummyUpi {
 
   DummyUpi({this.status, this.name, this.upiId});
 }
-
 // Dummy Wallet model
 class DummyWalletModel {
   final DummyWallet? wallet;
@@ -107,14 +103,6 @@ class DummyWallet {
 
   DummyWallet({this.balance, this.currency});
 }
-
-// DummyHomeModel (enhancing the existing one)
-// class DummyHomeModel {
-//   final DummySettings? settings;
-//   final DummyCurrency? currency;
-
-//   DummyHomeModel({this.settings, this.currency});
-// }
 
 class DummyHomeModel {
   final List<DummySlider>? sliders;
@@ -180,3 +168,11 @@ class DummyUserProfileModel {
   });
 }
 
+
+// DummyHomeModel (enhancing the existing one)
+// class DummyHomeModel {
+//   final DummySettings? settings;
+//   final DummyCurrency? currency;
+
+//   DummyHomeModel({this.settings, this.currency});
+// }

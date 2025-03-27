@@ -1,5 +1,4 @@
 // my_app.dart modification
-
 import 'package:kloncept/Screens/blog_list_screen.dart';
 import 'package:kloncept/Screens/terms_policy.dart';
 import 'package:kloncept/localization/language_screen.dart';
@@ -20,7 +19,6 @@ import 'package:kloncept/provider/dummy/dummy_provider.dart' show DummyBundleCou
 import 'package:kloncept/provider/dummy/dummy_watchlist_provider.dart';
 import 'package:kloncept/provider/manual_payment_provider.dart';
 import 'package:kloncept/provider/terms_policy_provider.dart';
-import 'package:kloncept/provider/walletDetailsProvider.dart';
 import 'package:kloncept/provider/watchlist_provider.dart';
 import 'package:kloncept/screens/compare_course_screen.dart';
 import 'package:kloncept/screens/currency_screen.dart';
@@ -30,10 +28,12 @@ import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 import 'gateways/donate.dart';
+import 'package:kloncept/provider/walletDetailsProvider.dart';
 import 'provider/cart_provider.dart';
+import 'provider/bundle_course.dart';
+import 'provider/recent_course_provider.dart';
 import 'provider/content_provider.dart';
 import 'provider/course_details_provider.dart';
-import 'provider/recent_course_provider.dart';
 import 'Screens/faq_screen.dart';
 import 'Screens/instructor_faq_screen.dart';
 import 'Screens/about_us_screen.dart';
@@ -55,7 +55,6 @@ import 'Screens/notifications_screen.dart';
 import 'Screens/purchase_history_screen.dart';
 import 'Screens/sign_up_screen.dart';
 import 'Screens/sub_category_screen.dart';
-import 'provider/bundle_course.dart';
 import 'provider/cart_pro_api.dart';
 import 'provider/filter_pro.dart';
 import 'provider/home_data_provider.dart';

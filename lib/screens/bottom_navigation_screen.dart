@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:kloncept/localization/language_provider.dart';
-import 'package:kloncept/model/dummy/dummy_model.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 import 'package:kloncept/provider/dummy/dummy_cart_provider.dart';
 import 'package:kloncept/provider/dummy/dummy_provider.dart';
@@ -23,6 +22,8 @@ import 'package:provider/provider.dart';
 import 'all_category_screen.dart';
 import 'home_screen.dart';
 import '../services/oneSignal.dart';
+
+// import 'package:kloncept/model/dummy/dummy_model.dart';
 
 class MyBottomNavigationBar extends StatefulWidget {
   MyBottomNavigationBar({this.pageInd});
@@ -50,94 +51,100 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
     });
   }
 
-  getHomePageData() async {
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
-      // Replace with dummy providers
-      DummyCoursesProvider coursesProvider =
-          Provider.of<DummyCoursesProvider>(context, listen: false);
-      DummyHomeDataProvider homeDataProvider =
-          Provider.of<DummyHomeDataProvider>(context, listen: false);
-      DummyRecentCourseProvider recentCourseProvider =
-          Provider.of<DummyRecentCourseProvider>(context, listen: false);
-      DummyBundleCourseProvider bundleCourseProvider =
-          Provider.of<DummyBundleCourseProvider>(context, listen: false);
-      DummyUserProfile userProfile =
-          Provider.of<DummyUserProfile>(context, listen: false);
-      DummyVisibleProvider visiblePro = Provider.of<DummyVisibleProvider>(context, listen: false);
-      DummyInstituteProvider instituteProvider =
-          Provider.of<DummyInstituteProvider>(context, listen: false);
-      DummyCompareCourseProvider compareCourseProvider =
-          Provider.of<DummyCompareCourseProvider>(context, listen: false);
-      DummyWalletDetailsProvider walletDetailsProvider =
-          Provider.of<DummyWalletDetailsProvider>(context, listen: false);
-      DummyCurrenciesProvider currenciesProvider =
-          Provider.of<DummyCurrenciesProvider>(context, listen: false);
-      DummyCartProvider cartProvider =
-          Provider.of<DummyCartProvider>(context, listen: false);
 
+// In bottom_navigation_screen.dart, modify getHomePageData():
+Future<void> getHomePageData() async {
+  try {
+    // First load all providers that don't return values
+    Provider.of<DummyCoursesProvider>(context, listen: false).loadDummyExtraCourses();
+    Provider.of<DummyHomeDataProvider>(context, listen: false).loadDummyHomeData();
+    Provider.of<DummyBundleCourseProvider>(context, listen: false).loadDummyBundles();
+    Provider.of<DummyUserProfile>(context, listen: false).loadDummyProfile();
+    Provider.of<DummyInstituteProvider>(context, listen: false).loadDummyInstitutes();
+    Provider.of<DummyCompareCourseProvider>(context, listen: false).loadDummyData();
+    Provider.of<DummyWalletDetailsProvider>(context, listen: false).loadDummyData();
+    Provider.of<DummyCurrenciesProvider>(context, listen: false).loadDummyData();
 
-    try {
-      // Call void methods directly, and keep async methods in Future.wait
-      coursesProvider.loadDummyExtraCourses();
-      homeDataProvider.loadDummyHomeData();
-      bundleCourseProvider.loadDummyBundles();
-      userProfile.loadDummyProfile();
-      instituteProvider.loadDummyInstitutes();
-      compareCourseProvider.loadDummyData();
-      walletDetailsProvider.loadDummyData();
-      currenciesProvider.loadDummyData();
-      
-      // Only use Future.wait for methods that actually return Futures
-      await Future.wait([
-        recentCourseProvider.fetchRecentCourse(context),
-        cartProvider.fetchCart(context),
-      ]);
-    } catch (e) {
-      print("Exception : $e");
-    }
-
-      // try {
-      //   await Future.wait([
-      //     // Load dummy data instead of fetching from API
-      //     Future.value(coursesProvider.loadDummyCourses()),
-      //     Future.value(homeDataProvider.loadDummyHomeData()),
-      //     recentCourseProvider.fetchRecentCourse(context),
-      //     Future.value(bundleCourseProvider.loadDummyBundles()),
-      //     Future.value(userProfile.loadDummyProfile()),
-      //     Future.value(instituteProvider.loadDummyInstitutes()),
-      //     Future.value(compareCourseProvider.loadDummyData()),
-      //     Future.value(walletDetailsProvider.loadDummyData()),
-      //     Future.value(currenciesProvider.loadDummyData()),
-      //     cartProvider.fetchCart(context),
-      //   ]);
-      // } catch (e) {
-      //   print("Exception : $e");
-      // }
-
-      // No need to call getHomeDetails again as we've already loaded the data
-      initPlatformState();
-
-      // Using the dummy watchlist provider
-      await Provider.of<DummyWatchlistProvider>(context, listen: false)
-          .removeFromWatchList();
-
-      SharedPreferences sharedPreferences =
-          await SharedPreferences.getInstance();
-
-      if (sharedPreferences.containsKey("giftUserId")) {
-        await sharedPreferences.remove("giftUserId");
-        await sharedPreferences.remove("giftCourseId");
-      }
-
-      if (sharedPreferences.containsKey("topUpWallet")) {
-        await sharedPreferences.remove("topUpWallet");
-      }
-
-      Timer(Duration(milliseconds: 100), () {
-        visiblePro.toggleVisible(true);
-      });
-    });
+    // Then await the async operations
+    await Future.wait([
+      Provider.of<DummyRecentCourseProvider>(context, listen: false).fetchRecentCourse(context),
+      Provider.of<DummyCartProvider>(context, listen: false).fetchCart(context),
+    ]);
+  } catch (e) {
+    print("Error loading providers: $e");
   }
+}
+
+  // getHomePageData() async {
+  //   WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
+  //     // Replace with dummy providers
+  //     DummyCoursesProvider coursesProvider =
+  //         Provider.of<DummyCoursesProvider>(context, listen: false);
+  //     DummyHomeDataProvider homeDataProvider =
+  //         Provider.of<DummyHomeDataProvider>(context, listen: false);
+  //     DummyRecentCourseProvider recentCourseProvider =
+  //         Provider.of<DummyRecentCourseProvider>(context, listen: false);
+  //     DummyBundleCourseProvider bundleCourseProvider =
+  //         Provider.of<DummyBundleCourseProvider>(context, listen: false);
+  //     DummyUserProfile userProfile =
+  //         Provider.of<DummyUserProfile>(context, listen: false);
+  //     DummyVisibleProvider visiblePro = Provider.of<DummyVisibleProvider>(context, listen: false);
+  //     DummyInstituteProvider instituteProvider =
+  //         Provider.of<DummyInstituteProvider>(context, listen: false);
+  //     DummyCompareCourseProvider compareCourseProvider =
+  //         Provider.of<DummyCompareCourseProvider>(context, listen: false);
+  //     DummyWalletDetailsProvider walletDetailsProvider =
+  //         Provider.of<DummyWalletDetailsProvider>(context, listen: false);
+  //     DummyCurrenciesProvider currenciesProvider =
+  //         Provider.of<DummyCurrenciesProvider>(context, listen: false);
+  //     DummyCartProvider cartProvider =
+  //         Provider.of<DummyCartProvider>(context, listen: false);
+
+
+  //   try {
+  //     // Call void methods directly, and keep async methods in Future.wait
+  //     coursesProvider.loadDummyExtraCourses();
+  //     homeDataProvider.loadDummyHomeData();
+  //     bundleCourseProvider.loadDummyBundles();
+  //     userProfile.loadDummyProfile();
+  //     instituteProvider.loadDummyInstitutes();
+  //     compareCourseProvider.loadDummyData();
+  //     walletDetailsProvider.loadDummyData();
+  //     currenciesProvider.loadDummyData();
+      
+  //     // Only use Future.wait for methods that actually return Futures
+  //     await Future.wait([
+  //       recentCourseProvider.fetchRecentCourse(context),
+  //       cartProvider.fetchCart(context),
+  //     ]);
+  //   } catch (e) {
+  //     print("Exception : $e");
+  //   }
+
+  //     // No need to call getHomeDetails again as we've already loaded the data
+  //     initPlatformState();
+
+  //     // Using the dummy watchlist provider
+  //     await Provider.of<DummyWatchlistProvider>(context, listen: false)
+  //         .removeFromWatchList();
+
+  //     SharedPreferences sharedPreferences =
+  //         await SharedPreferences.getInstance();
+
+  //     if (sharedPreferences.containsKey("giftUserId")) {
+  //       await sharedPreferences.remove("giftUserId");
+  //       await sharedPreferences.remove("giftCourseId");
+  //     }
+
+  //     if (sharedPreferences.containsKey("topUpWallet")) {
+  //       await sharedPreferences.remove("topUpWallet");
+  //     }
+
+  //     Timer(Duration(milliseconds: 100), () {
+  //       visiblePro.toggleVisible(true);
+  //     });
+  //   });
+  // }
 
   LanguageProvider? languageProvider;
 
@@ -344,6 +351,24 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
   }
 }
 
+
+      // try {
+      //   await Future.wait([
+      //     // Load dummy data instead of fetching from API
+      //     Future.value(coursesProvider.loadDummyCourses()),
+      //     Future.value(homeDataProvider.loadDummyHomeData()),
+      //     recentCourseProvider.fetchRecentCourse(context),
+      //     Future.value(bundleCourseProvider.loadDummyBundles()),
+      //     Future.value(userProfile.loadDummyProfile()),
+      //     Future.value(instituteProvider.loadDummyInstitutes()),
+      //     Future.value(compareCourseProvider.loadDummyData()),
+      //     Future.value(walletDetailsProvider.loadDummyData()),
+      //     Future.value(currenciesProvider.loadDummyData()),
+      //     cartProvider.fetchCart(context),
+      //   ]);
+      // } catch (e) {
+      //   print("Exception : $e");
+      // }
 
 
 

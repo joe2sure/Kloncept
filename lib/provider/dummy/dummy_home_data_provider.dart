@@ -1,7 +1,7 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
 
-// Simplified HomeModel with just the necessary properties for the currency screen
+
 class HomeModel {
   Currency? currency;
   

@@ -133,43 +133,67 @@ class ImageSwiper extends StatelessWidget {
   Widget showSlider(Orientation orientation, HomeDataProvider slider) {
     return SliverToBoxAdapter(
       child: Container(
-        // height: 250,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15.0),
-          boxShadow: [
-            BoxShadow(
-              color: Color(0x1c2464).withOpacity(0.30),
-              blurRadius: 25.0,
-              offset: Offset(0.0, 20.0),
-              spreadRadius: -25.0,
-            )
-          ],
-        ),
-        child: CarouselSlider(
-          options: CarouselOptions(
-            autoPlay: true,
-            autoPlayInterval: Duration(seconds: 10),
-            enlargeCenterPage: true,
-            aspectRatio: 16 / 9,
-            viewportFraction: 1.0,
-            onPageChanged: (index, reason) {
-              // Add any additional logic here for page change events
-            },
+          // height: 250,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15.0),
+            boxShadow: [
+              BoxShadow(
+                color: Color(0x1c2464).withOpacity(0.30),
+                blurRadius: 25.0,
+                offset: Offset(0.0, 20.0),
+                spreadRadius: -25.0,
+              )
+            ],
           ),
-          items: slider.sliderList!.map((item) {
-            return Padding(
-              padding:
-                  EdgeInsets.only(bottom: 15.0, top: 5.0, left: 15, right: 15),
-              child: Stack(
-                children: [
-                  // showImage(orientation, item.image),
-                  // detailsOnImage(item.heading, item.subHeading),
-                ],
-              ),
-            );
-          }).toList(),
-        ),
-      ),
+          child: // In image_swiper.dart, modify CarouselSlider usage:
+              CarouselSlider(
+            options: CarouselOptions(
+              autoPlay: true,
+              autoPlayInterval: Duration(seconds: 3),
+              enlargeCenterPage: true,
+              viewportFraction: 1.0,
+              onPageChanged: (index, reason) {
+                // Handle page change
+              },
+            ),
+            items: (slider.sliderList ?? []).map((item) {
+              return Padding(
+                padding: EdgeInsets.only(
+                    bottom: 15.0, top: 5.0, left: 15, right: 15),
+                child: Stack(
+                  children: [
+                    showImage(orientation, item.image),
+                    detailsOnImage(item.heading, item.subHeading),
+                  ],
+                ),
+              );
+            }).toList(),
+          )
+          // child: CarouselSlider(
+          //   options: CarouselOptions(
+          //     autoPlay: true,
+          //     autoPlayInterval: Duration(seconds: 10),
+          //     enlargeCenterPage: true,
+          //     aspectRatio: 16 / 9,
+          //     viewportFraction: 1.0,
+          //     onPageChanged: (index, reason) {
+          //       // Add any additional logic here for page change events
+          //     },
+          //   ),
+          //   items: slider.sliderList!.map((item) {
+          //     return Padding(
+          //       padding:
+          //           EdgeInsets.only(bottom: 15.0, top: 5.0, left: 15, right: 15),
+          //       child: Stack(
+          //         children: [
+          //           // showImage(orientation, item.image),
+          //           // detailsOnImage(item.heading, item.subHeading),
+          //         ],
+          //       ),
+          //     );
+          //   }).toList(),
+          // ),
+          ),
     );
   }
 

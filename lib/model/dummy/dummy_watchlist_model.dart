@@ -1,5 +1,3 @@
-// File: lib/model/dummy/dummy_watchlist_model.dart
-
 class DummyWatchlistModel {
   List<DummyWatchlist>? _watchlist;
 
@@ -26,7 +24,6 @@ class DummyWatchlistModel {
     return map;
   }
 }
-
 class DummyWatchlist {
   int? _id;
   String? _userId;

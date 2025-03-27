@@ -1,4 +1,3 @@
-// File: lib/provider/courses_provider.dart
 import 'package:flutter/material.dart';
 import 'package:kloncept/model/course.dart';
 import 'package:kloncept/model/bundle_courses_model.dart';
@@ -11,6 +10,7 @@ class DummyCoursesProvider with ChangeNotifier {
     List<DummyCourse> _studyingList = [];
   List<int> _purchasedCourseIds = [];
   List<DummyCourse> _allDummyCourses = [];
+
 
   // Getters
   List<Course> get allCourses => _courses;

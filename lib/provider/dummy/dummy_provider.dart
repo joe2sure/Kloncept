@@ -1,8 +1,6 @@
-// File: lib/provider/dummy_providers.dart
 import 'package:flutter/material.dart';
 import 'package:kloncept/model/dummy/dummy_model.dart';
 import 'package:kloncept/model/dummy/dummy_payment_gateway_model.dart' show DummyHomeModel;
-import 'package:kloncept/model/payment_gateway_model.dart';
 
 // Visibility Provider - Controls loading states
 class DummyVisibleProvider with ChangeNotifier {
@@ -30,59 +28,6 @@ class DummyUserProfile with ChangeNotifier {
     notifyListeners();
   }
 }
-
-// Courses Provider
-// class DummyCoursesProvider with ChangeNotifier {
-//   List<DummyCourse> _allCourses = [];
-//   List<DummyCourse> _studyingList = [];
-
-//   List<DummyCourse> get allCourses => _allCourses;
-//   List<DummyCourse> get studyingList => _studyingList;
-
-//   void loadDummyCourses() {
-//     // Create dummy courses
-//     _allCourses = List.generate(
-//       15,
-//       (index) => DummyCourse(
-//         id: index + 1,
-//         title: "Course ${index + 1}: Complete Flutter Development",
-//         description: "Learn to build beautiful mobile apps with Flutter",
-//         imageUrl:
-//             "https://via.placeholder.com/300x200?text=Course+${index + 1}",
-//         categoryName: [
-//           "Flutter",
-//           "React Native",
-//           "iOS Development",
-//           "Android Development"
-//         ][index % 4],
-//         price: 49.99 + (index * 10),
-//         discountPrice: 39.99 + (index * 5),
-//         isFeatured: index % 3 == 0,
-//         isEnrolled: index % 5 == 0,
-//         instructorName:
-//             "Professor ${index % 4 == 0 ? 'Smith' : index % 3 == 0 ? 'Johnson' : index % 2 == 0 ? 'Williams' : 'Brown'}",
-//         instructorImage:
-//             "https://via.placeholder.com/100?text=Instructor+${index + 1}",
-//         rating: 3.5 + (index % 3) * 0.5,
-//         ratingCount: 10 + index * 5,
-//         totalLessons: 10 + index * 2,
-//         duration: "${5 + index} hours",
-//       ),
-//     );
-
-//     // Create dummy enrolled courses
-//     _studyingList = _allCourses.where((course) => course.isEnrolled).toList();
-
-//     notifyListeners();
-//   }
-
-//   List<DummyCourse> getFeaturedCourses() {
-//     return _allCourses.where((course) => course.isFeatured).toList();
-//   }
-// }
-
-// Home Data Provider
-// File: lib/provider/dummy_providers.dart
 
 class DummyHomeDataProvider with ChangeNotifier {
   bool dataLoaded = false;
@@ -188,17 +133,6 @@ class DummyHomeDataProvider with ChangeNotifier {
         position: 'left',
         format: '1,0.00',
       ),
-      // paymentGateways: List.generate(
-      //   5,
-      //   (index) => RealPaymentGatewayModel(
-      //     id: index + 1,
-      //     name: ["Wallet", "PayPal", "Stripe", "Bank Transfer", "Apple Pay"][index],
-      //     image: "https://via.placeholder.com/100?text=Payment+${index + 1}",
-      //     description: "Payment gateway ${index + 1} description",
-      //     isActive: true,
-      //     detail: "Details for payment gateway ${index + 1}",
-      //   ),
-      // ),
     );
 
         dataLoaded = true;
@@ -433,3 +367,70 @@ class DummyCurrenciesProvider with ChangeNotifier {
     notifyListeners();
   }
 }
+
+
+      // paymentGateways: List.generate(
+      //   5,
+      //   (index) => RealPaymentGatewayModel(
+      //     id: index + 1,
+      //     name: ["Wallet", "PayPal", "Stripe", "Bank Transfer", "Apple Pay"][index],
+      //     image: "https://via.placeholder.com/100?text=Payment+${index + 1}",
+      //     description: "Payment gateway ${index + 1} description",
+      //     isActive: true,
+      //     detail: "Details for payment gateway ${index + 1}",
+      //   ),
+      // ),
+
+
+// Courses Provider
+// class DummyCoursesProvider with ChangeNotifier {
+//   List<DummyCourse> _allCourses = [];
+//   List<DummyCourse> _studyingList = [];
+
+//   List<DummyCourse> get allCourses => _allCourses;
+//   List<DummyCourse> get studyingList => _studyingList;
+
+//   void loadDummyCourses() {
+//     // Create dummy courses
+//     _allCourses = List.generate(
+//       15,
+//       (index) => DummyCourse(
+//         id: index + 1,
+//         title: "Course ${index + 1}: Complete Flutter Development",
+//         description: "Learn to build beautiful mobile apps with Flutter",
+//         imageUrl:
+//             "https://via.placeholder.com/300x200?text=Course+${index + 1}",
+//         categoryName: [
+//           "Flutter",
+//           "React Native",
+//           "iOS Development",
+//           "Android Development"
+//         ][index % 4],
+//         price: 49.99 + (index * 10),
+//         discountPrice: 39.99 + (index * 5),
+//         isFeatured: index % 3 == 0,
+//         isEnrolled: index % 5 == 0,
+//         instructorName:
+//             "Professor ${index % 4 == 0 ? 'Smith' : index % 3 == 0 ? 'Johnson' : index % 2 == 0 ? 'Williams' : 'Brown'}",
+//         instructorImage:
+//             "https://via.placeholder.com/100?text=Instructor+${index + 1}",
+//         rating: 3.5 + (index % 3) * 0.5,
+//         ratingCount: 10 + index * 5,
+//         totalLessons: 10 + index * 2,
+//         duration: "${5 + index} hours",
+//       ),
+//     );
+
+//     // Create dummy enrolled courses
+//     _studyingList = _allCourses.where((course) => course.isEnrolled).toList();
+
+//     notifyListeners();
+//   }
+
+//   List<DummyCourse> getFeaturedCourses() {
+//     return _allCourses.where((course) => course.isFeatured).toList();
+//   }
+// }
+
+// Home Data Provider
+// File: lib/provider/dummy_providers.dart
