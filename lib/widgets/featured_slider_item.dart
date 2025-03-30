@@ -1,55 +1,16 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:kloncept/common/global.dart';
-import 'package:kloncept/localization/language_provider.dart';
-import 'package:flutter_translate/flutter_translate.dart';
-import 'package:kloncept/model/review.dart';
-import 'package:kloncept/provider/dummy/dummy_provider.dart';
-import '../Widgets/rating_star.dart';
-import '../Widgets/utils.dart';
-import '../common/apidata.dart';
-import '../model/dummy/dummy_model.dart'; // Import DummyCourse
-import '../provider/courses_provider.dart';
-import '../provider/home_data_provider.dart';
 import 'package:flutter/material.dart';
+import '../model/dummy/dummy_model.dart';
 import '../common/theme.dart' as T;
 import 'package:provider/provider.dart';
 
-// ignore: must_be_immutable
-class FeaturedListItem extends StatelessWidget {
-  DummyCourse? courseDetail; // Change to DummyCourse
+class FeaturedSliderItem extends StatelessWidget {
+  final DummySlider slider;
 
-  FeaturedListItem(this.courseDetail);
-
-  int checkDatatype(dynamic x) {
-    if (x is int)
-      return 0;
-    else
-      return 1;
-  }
-
-  String getRating(List<Review>? data) {
-    double ans = 0.0;
-    bool calcAsInt = true;
-    if (data!.length > 0)
-      calcAsInt = checkDatatype(data[0].learn) == 0 ? true : false;
-
-    data.forEach((element) {
-      if (!calcAsInt)
-        ans += (int.tryParse(element.price)! +
-                    int.parse(element.value) +
-                    int.parse(element.learn))
-                .toDouble() /
-            3.0;
-      else {
-        ans += (element.price + element.value + element.learn) / 3.0;
-      }
-    });
-    if (ans == 0.0) return 0.toString();
-    return (ans / data.length).toStringAsPrecision(2);
-  }
+  FeaturedSliderItem(this.slider);
 
   Widget showImage() {
-    return courseDetail!.imageUrl == null // Use imageUrl from DummyCourse
+    return slider.imageUrl == null
         ? Container(
             decoration: BoxDecoration(
             borderRadius: BorderRadius.only(
@@ -62,7 +23,7 @@ class FeaturedListItem extends StatelessWidget {
             ),
           ))
         : CachedNetworkImage(
-            imageUrl: courseDetail!.imageUrl!, // Use imageUrl from DummyCourse
+            imageUrl: slider.imageUrl,
             imageBuilder: (context, imageProvider) => Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
@@ -101,188 +62,53 @@ class FeaturedListItem extends StatelessWidget {
           );
   }
 
-  Widget itemDetails(BuildContext context, String? category, String? currency,
-      String? rating, T.Theme mode, bool isPurchased) {
+  Widget itemDetails(BuildContext context, T.Theme mode) {
     return Material(
       borderRadius: BorderRadius.circular(10.0),
       child: InkWell(
         borderRadius: BorderRadius.circular(10.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Container(
               height: 100,
               child: showImage(),
             ),
             Expanded(
-              flex: 1,
               child: Container(
                 padding: EdgeInsets.all(15.0),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // if (courseDetail!.isFeatured) // Use isFeatured from DummyCourse
-                    if (courseDetail != null && courseDetail!.isFeatured != null && courseDetail!.isFeatured!) 
-                      Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Flexible(
-                                child: Text(
-                                  "$category",
-                                  overflow: TextOverflow.ellipsis,
-                                  maxLines: 1,
-                                  style: TextStyle(
-                                    fontSize: 18.0,
-                                    fontWeight: FontWeight.w700,
-                                    foreground: Paint()
-                                      ..shader = linearGradient,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text(
-                                translate("Free_"),
-                                maxLines: 1,
-                                style: TextStyle(
-                                    color: mode.txtcolor,
-                                    fontSize: 18.0,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ],
-                          ),
-                        ],
-                      )
-                    else
-                      Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Flexible(
-                                child: Text(
-                                  "$category",
-                                  overflow: TextOverflow.ellipsis,
-                                  maxLines: 1,
-                                  style: TextStyle(
-                                    fontSize: 18.0,
-                                    fontWeight: FontWeight.w700,
-                                    foreground: Paint()
-                                      ..shader = linearGradient,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Column(
-                                children: [
-                                  courseDetail!.discountPrice == null
-                                      ? SizedBox(
-                                          height: 10,
-                                        )
-                                      : isPurchased
-                                          ? SizedBox(
-                                              height: 10,
-                                            )
-                                          : Text(
-                                              "${currencySymbol(selectedCurrency)} ${courseDetail!.discountPrice}", // Use discountPrice from DummyCourse
-                                              maxLines: 2,
-                                              style: TextStyle(
-                                                  color: mode.txtcolor,
-                                                  fontSize: 18.0,
-                                                  fontWeight: FontWeight.bold),
-                                            ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          Align(
-                            alignment: Alignment.topRight,
-                            child: courseDetail!.price == null
-                                ? SizedBox(
-                                    height: 10,
-                                  )
-                                : isPurchased
-                                    ? SizedBox(
-                                        height: 10,
-                                      )
-                                    : Text(
-                                        "${currencySymbol(selectedCurrency)} ${courseDetail!.price}", // Use price from DummyCourse
-                                        style: TextStyle(
-                                            decoration:
-                                                courseDetail!.discountPrice !=
-                                                        null
-                                                    ? TextDecoration.lineThrough
-                                                    : null,
-                                            fontSize:
-                                                courseDetail!.discountPrice !=
-                                                        null
-                                                    ? 12.0
-                                                    : 18.0,
-                                            color:
-                                                courseDetail!.discountPrice !=
-                                                        null
-                                                    ? Colors.grey
-                                                    : mode.txtcolor,
-                                            fontWeight:
-                                                courseDetail!.discountPrice !=
-                                                        null
-                                                    ? null
-                                                    : FontWeight.bold),
-                                      ),
-                          ),
-                        ],
+                    Text(
+                      slider.heading,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                          color: mode.titleTextColor,
+                          fontWeight: FontWeight.w700,
+                          fontSize: 20),
+                    ),
+                    SizedBox(height: 8.0),
+                    Text(
+                      slider.subHeading,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                          color: mode.shortTextColor,
+                          fontSize: 18.0,
+                          fontWeight: FontWeight.w600),
+                    ),
+                    SizedBox(height: 8.0),
+                    TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        slider.buttonText,
+                        style: TextStyle(color: Colors.white),
                       ),
-                    Column(
-                      children: [
-                        Align(
-                          alignment: Alignment.topLeft,
-                          child: Text(
-                            courseDetail?.title ?? "",
-                            // courseDetail!.title, // Use title from DummyCourse
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                                color: mode.titleTextColor,
-                                fontWeight: FontWeight.w700,
-                                fontSize: 20),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10.0,
-                        ),
-                        Text(
-                          // courseDetail!.description, // Use description from DummyCourse
-                          courseDetail?.description ?? "",
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                              color: mode.shortTextColor,
-                              fontSize: 18.0,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        SizedBox(
-                          height: 30.0,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              translate("by_admin"),
-                              style:
-                                  TextStyle(fontSize: 14.0, color: Colors.grey),
-                            ),
-                            StarRating(
-                              rating: courseDetail!.rating, // Use rating from DummyCourse
-                              size: 16.0,
-                            )
-                          ],
-                        ),
-                      ],
+                      style: TextButton.styleFrom(
+                        backgroundColor: Colors.blue,
+                      ),
                     ),
                   ],
                 ),
@@ -291,30 +117,15 @@ class FeaturedListItem extends StatelessWidget {
           ],
         ),
         onTap: () {
-          // Navigate to course details (update as needed)
-          Navigator.of(context).pushNamed("/courseDetails",
-              arguments: courseDetail);
+          // Handle slider item tap
         },
       ),
     );
   }
 
-  LanguageProvider? languageProvider;
-
   @override
   Widget build(BuildContext context) {
-dynamic currency =
-    Provider.of<DummyCurrenciesProvider>(context).currencies.first.symbol;
-    String category = courseDetail!.categoryName; // Use categoryName from DummyCourse
-
     T.Theme mode = Provider.of<T.Theme>(context);
-    // bool isPurchased = courseDetail!.isEnrolled; // Use isEnrolled from DummyCourse
-    bool isPurchased = courseDetail?.isEnrolled ?? false;
-
-    String? rating = courseDetail!.rating.toString(); // Use rating from DummyCourse
-
-    languageProvider = Provider.of<LanguageProvider>(context, listen: false);
-
     return Container(
       margin: EdgeInsets.fromLTRB(0, 0.0, 18.0, 0.0),
       width: MediaQuery.of(context).orientation == Orientation.landscape
@@ -331,14 +142,10 @@ dynamic currency =
               spreadRadius: -15.0)
         ],
       ),
-      child: itemDetails(context, category, currency, rating, mode, isPurchased),
+      child: itemDetails(context, mode),
     );
   }
 }
-
-final Shader linearGradient = LinearGradient(
-  colors: <Color>[Color(0xff790055), Color(0xffF81D46), Color(0xffFA4E62)],
-).createShader(Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
 
 
 

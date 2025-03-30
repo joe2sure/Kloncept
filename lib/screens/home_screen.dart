@@ -179,13 +179,10 @@ class _HomeScreenState extends State<HomeScreen> {
               child: _buildHeadingTitle("Featured Categories"),
             ),
             FeaturedCoursesList(
-              _createFeaturedCourses().cast<DummySlider>(),
+              // _createFeaturedCourses(),
+               homeProvider.sliderList, 
               homeProvider.dataLoaded,
             ),
-            // FeaturedCoursesList(
-            //   homeProvider.sliderList.where((c) => c.isFeatured).toList(),
-            //   homeProvider.dataLoaded,
-            // ),
 
             // Bundle Courses Section
             SliverToBoxAdapter(
