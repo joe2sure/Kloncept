@@ -179,7 +179,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: _buildHeadingTitle("Featured Categories"),
             ),
             FeaturedCoursesList(
-              _createFeaturedCourses(),
+              _createFeaturedCourses().cast<DummySlider>(),
               homeProvider.dataLoaded,
             ),
             // FeaturedCoursesList(

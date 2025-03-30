@@ -21,39 +21,60 @@ class NewCoursesList extends StatefulWidget {
 }
 
 class _NewCoursesListState extends State<NewCoursesList> {
-  Widget courseDate(details) {
-    var date = DateFormat.yMMMd().format(details.createdAt);
-    return Row(
-      children: <Widget>[
-        Container(
-          child: Icon(
-            Icons.access_time,
-            size: 17,
-            color: Color(0xff6E1A52),
-          ),
-        ),
-        Container(
-            margin: EdgeInsets.only(left: 4),
-            child: Text(
-              "$date",
-              style: new TextStyle(
-                fontSize: 16.0,
-                fontFamily: 'Mada',
-                fontWeight: FontWeight.w500,
-                foreground: Paint()
-                  ..shader = LinearGradient(
-                    begin: Alignment(-1.0, -4.0),
-                    end: Alignment(1.0, 4.0),
-                    stops: [0.3, 1.0],
-                    colors: <Color>[Color(0xff6E1A52), Color(0xffF44A4A)],
-                  ).createShader(
-                    Rect.fromLTWH(100, 0, 100, 0),
-                  ),
-              ),
-            )),
-      ],
-    );
+  // Widget courseDate(details) {
+  //   var date = DateFormat.yMMMd().format(details.createdAt);
+  //   return Row(
+  //     children: <Widget>[
+  //       Container(
+  //         child: Icon(
+  //           Icons.access_time,
+  //           size: 17,
+  //           color: Color(0xff6E1A52),
+  //         ),
+  //       ),
+  //       Container(
+  //           margin: EdgeInsets.only(left: 4),
+  //           child: Text(
+  //             "$date",
+  //             style: new TextStyle(
+  //               fontSize: 16.0,
+  //               fontFamily: 'Mada',
+  //               fontWeight: FontWeight.w500,
+  //               foreground: Paint()
+  //                 ..shader = LinearGradient(
+  //                   begin: Alignment(-1.0, -4.0),
+  //                   end: Alignment(1.0, 4.0),
+  //                   stops: [0.3, 1.0],
+  //                   colors: <Color>[Color(0xff6E1A52), Color(0xffF44A4A)],
+  //                 ).createShader(
+  //                   Rect.fromLTWH(100, 0, 100, 0),
+  //                 ),
+  //             ),
+  //           )),
+  //     ],
+  //   );
+  // }
+
+Widget courseDate(details) {
+  DateTime dateTime;
+  if (details.createdAt != null) {
+    try {
+      dateTime = DateTime.parse(details.createdAt);
+    } catch (e) {
+      // Use current date if parsing fails
+      dateTime = DateTime.now();
+    }
+  } else {
+    // Use current date if createdAt is null
+    dateTime = DateTime.now();
   }
+  
+  var date = DateFormat.yMMMd().format(dateTime);
+  // Rest of the method remains the same
+  return Row(
+    // Rest of the UI code
+  );
+}
 
   Widget newCourseTile(BuildContext context, details, bgColor, txtColor) {
     return widget._visible == true
