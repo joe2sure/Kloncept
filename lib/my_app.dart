@@ -10,10 +10,10 @@ import 'package:kloncept/provider/compareCourseProvider.dart';
 import 'package:kloncept/provider/currenciesProvider.dart';
 import 'package:kloncept/provider/dummy/dummy_compare_course_provider.dart';
 import 'package:kloncept/provider/dummy/dummy_courses_provider.dart';
-import 'package:kloncept/provider/dummy/dummy_currencies_provider.dart';
+// import 'package:kloncept/provider/dummy/dummy_currencies_provider.dart';
 import 'package:kloncept/provider/dummy/dummy_home_data_provider.dart';
 import 'package:kloncept/provider/dummy/dummy_payment_provider.dart';
-import 'package:kloncept/provider/dummy/dummy_provider.dart' show DummyBundleCourseProvider, DummyHomeDataProvider, DummyInstituteProvider, DummyRecentCourseProvider, DummyUserProfile, DummyVisibleProvider;
+import 'package:kloncept/provider/dummy/dummy_provider.dart' show DummyBundleCourseProvider, DummyHomeDataProvider, DummyInstituteProvider, DummyRecentCourseProvider, DummyUserProfile, DummyVisibleProvider, DummyCurrenciesProvider;
 import 'package:kloncept/provider/manual_payment_provider.dart';
 import 'package:kloncept/provider/terms_policy_provider.dart';
 import 'package:kloncept/provider/watchlist_provider.dart';
@@ -25,12 +25,6 @@ import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 import 'gateways/donate.dart';
-import 'package:kloncept/provider/dummy/dummy_watchlist_provider.dart';
-import 'package:kloncept/provider/dummy/dummy_cart_provider.dart';
-import 'package:kloncept/provider/walletDetailsProvider.dart';
-import 'provider/cart_provider.dart';
-import 'provider/bundle_course.dart';
-import 'provider/recent_course_provider.dart';
 import 'provider/content_provider.dart';
 import 'provider/course_details_provider.dart';
 import 'Screens/faq_screen.dart';
@@ -89,17 +83,12 @@ class HomeScreenLoadingController with ChangeNotifier {
   }
 }
 
-
 // ignore: must_be_immutable
 class MyApp extends StatelessWidget {
   String? token;
   FirebaseAnalyticsObserver? observer;
   MyApp(this.token, this.observer);
   // This widget is the root of your application.
-
-  // static FirebaseAnalytics analytics = FirebaseAnalytics.instance;
-  // static FirebaseAnalyticsObserver observer =
-  //     FirebaseAnalyticsObserver(analytics: analytics);
 
   @override
   Widget build(BuildContext context) {
@@ -183,7 +172,7 @@ class MyApp extends StatelessWidget {
         
         ChangeNotifierProvider(create: (context) {
           final provider = DummyCurrenciesProvider();
-          provider.fetchData().then((_) {
+          provider.fetchDummyCurrenciesData().then((_) {
             Provider.of<HomeScreenLoadingController>(context, listen: false).providerLoaded();
           });
           return provider;

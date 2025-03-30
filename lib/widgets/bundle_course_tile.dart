@@ -1,17 +1,14 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:kloncept/common/global.dart';
-import 'package:flutter_translate/flutter_translate.dart';
-import 'package:kloncept/provider/dummy/dummy_provider.dart';
-import '../common/apidata.dart';
-import '../model/dummy/dummy_model.dart'; // Import DummyBundleCourse
-import '../provider/courses_provider.dart';
-import '../provider/home_data_provider.dart';
 import 'package:flutter/material.dart';
-import '../common/theme.dart' as T;
+import 'package:flutter_translate/flutter_translate.dart';
+import 'package:kloncept/common/global.dart';
+import 'package:kloncept/common/theme.dart' as T;
+import 'package:kloncept/model/dummy/dummy_model.dart';
+import 'package:kloncept/provider/dummy/dummy_provider.dart';
 import 'package:provider/provider.dart';
 
 class BundleCourseItem extends StatelessWidget {
-  final DummyBundleCourse dummyBundleCoursesDetail; // Changed from DummyCourse to DummyBundleCourse
+  final DummyBundleCourse dummyBundleCoursesDetail;
 
   BundleCourseItem(this.dummyBundleCoursesDetail);
 
@@ -19,15 +16,16 @@ class BundleCourseItem extends StatelessWidget {
     return dummyBundleCoursesDetail.imageUrl == null
         ? Container(
             decoration: BoxDecoration(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(15.0),
-              topRight: Radius.circular(15.0),
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(15.0),
+                topRight: Radius.circular(15.0),
+              ),
+              image: DecorationImage(
+                image: AssetImage("assets/placeholder/bundle_place_holder.png"),
+                fit: BoxFit.cover,
+              ),
             ),
-            image: DecorationImage(
-              image: AssetImage("assets/placeholder/bundle_place_holder.png"),
-              fit: BoxFit.cover,
-            ),
-          ))
+          )
         : CachedNetworkImage(
             imageUrl: dummyBundleCoursesDetail.imageUrl!,
             imageBuilder: (context, imageProvider) => Container(
@@ -43,16 +41,17 @@ class BundleCourseItem extends StatelessWidget {
               ),
             ),
             placeholder: (context, url) => Container(
-                decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(15.0),
-                topRight: Radius.circular(15.0),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(15.0),
+                  topRight: Radius.circular(15.0),
+                ),
+                image: DecorationImage(
+                  image: AssetImage("assets/placeholder/bundle_place_holder.png"),
+                  fit: BoxFit.cover,
+                ),
               ),
-              image: DecorationImage(
-                image: AssetImage("assets/placeholder/bundle_place_holder.png"),
-                fit: BoxFit.cover,
-              ),
-            )),
+            ),
             errorWidget: (context, url, error) => Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
@@ -68,8 +67,13 @@ class BundleCourseItem extends StatelessWidget {
           );
   }
 
-  Widget tileDetails(BuildContext context, T.Theme mode, String? category,
-      String? currency, bool purchased) {
+  Widget tileDetails(
+    BuildContext context,
+    T.Theme mode,
+    String? category,
+    String? currencySymbol,
+    bool purchased,
+  ) {
     return Container(
       margin: EdgeInsets.fromLTRB(0, 0.0, 18.0, 0.0),
       width: MediaQuery.of(context).orientation == Orientation.landscape
@@ -78,10 +82,11 @@ class BundleCourseItem extends StatelessWidget {
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
-              color: Color(0x1c2464).withOpacity(0.30),
-              blurRadius: 15.0,
-              offset: Offset(-13.0, 20.5),
-              spreadRadius: -15.0)
+            color: Color(0x1c2464).withOpacity(0.30),
+            blurRadius: 15.0,
+            offset: Offset(-13.0, 20.5),
+            spreadRadius: -15.0,
+          ),
         ],
       ),
       child: Material(
@@ -101,9 +106,9 @@ class BundleCourseItem extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        category != "null"
+                        category != null
                             ? Text(
-                                category.toString(),
+                                category,
                                 style: TextStyle(
                                   fontSize: 18.0,
                                   fontWeight: FontWeight.bold,
@@ -116,26 +121,31 @@ class BundleCourseItem extends StatelessWidget {
                             (dummyBundleCoursesDetail.discountPrice != null &&
                                     !purchased)
                                 ? Text(
-                                    "${currencySymbol(selectedCurrency)} ${dummyBundleCoursesDetail.discountPrice}",
+                                    "$currencySymbol ${dummyBundleCoursesDetail.discountPrice}",
                                     style: TextStyle(
-                                        color: mode.txtcolor,
-                                        fontSize: 18.0,
-                                        fontWeight: FontWeight.bold),
+                                      color: mode.txtcolor,
+                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   )
                                 : (dummyBundleCoursesDetail.price != null &&
                                         !purchased)
                                     ? Text(
-                                        "${currencySymbol(selectedCurrency)} ${dummyBundleCoursesDetail.price}",
+                                        "$currencySymbol ${dummyBundleCoursesDetail.price}",
                                         style: TextStyle(
-                                            color: mode.txtcolor,
-                                            fontSize: 18.0,
-                                            fontWeight: FontWeight.bold),
+                                          color: mode.txtcolor,
+                                          fontSize: 18.0,
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                       )
-                                    : Text(translate("Free_"),
+                                    : Text(
+                                        translate("Free_"),
                                         style: TextStyle(
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 18.0,
-                                            color: Colors.red))
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 18.0,
+                                          color: Colors.red,
+                                        ),
+                                      ),
                           ],
                         ),
                       ],
@@ -146,30 +156,33 @@ class BundleCourseItem extends StatelessWidget {
                           ? (dummyBundleCoursesDetail.discountPrice != null &&
                                   !purchased)
                               ? Text(
-                                  "${currencySymbol(selectedCurrency)} ${dummyBundleCoursesDetail.price}",
+                                  "$currencySymbol ${dummyBundleCoursesDetail.price}",
                                   style: TextStyle(
-                                      decoration: dummyBundleCoursesDetail
-                                                  .discountPrice !=
-                                              null
-                                          ? TextDecoration.lineThrough
-                                          : null,
-                                      fontSize: dummyBundleCoursesDetail
-                                                  .discountPrice !=
-                                              null
-                                          ? 12.0
-                                          : 18.0,
-                                      color: dummyBundleCoursesDetail.discountPrice !=
-                                              null
-                                          ? Colors.grey
-                                          : mode.txtcolor,
-                                      fontWeight: dummyBundleCoursesDetail
-                                                  .discountPrice !=
-                                              null
-                                          ? null
-                                          : FontWeight.bold),
+                                    decoration: dummyBundleCoursesDetail
+                                                .discountPrice !=
+                                            null
+                                        ? TextDecoration.lineThrough
+                                        : null,
+                                    fontSize: dummyBundleCoursesDetail
+                                                .discountPrice !=
+                                            null
+                                        ? 12.0
+                                        : 18.0,
+                                    color: dummyBundleCoursesDetail
+                                                .discountPrice !=
+                                            null
+                                        ? Colors.grey
+                                        : mode.txtcolor,
+                                    fontWeight: dummyBundleCoursesDetail
+                                                .discountPrice !=
+                                            null
+                                        ? null
+                                        : FontWeight.bold,
+                                  ),
                                 )
                               : SizedBox.shrink()
-                          : SizedBox.shrink()),
+                          : SizedBox.shrink(),
+                    ),
                     Column(
                       children: [
                         Align(
@@ -179,33 +192,35 @@ class BundleCourseItem extends StatelessWidget {
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
-                                color: mode.txtcolor,
-                                fontWeight: FontWeight.w700,
-                                fontSize: 20),
+                              color: mode.txtcolor,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 20,
+                            ),
                           ),
                         ),
-                        SizedBox(
-                          height: 10.0,
-                        ),
+                        SizedBox(height: 10.0),
                         Text(
                           dummyBundleCoursesDetail.description,
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
-                              fontSize: 18,
-                              color: mode.shortTextColor,
-                              fontWeight: FontWeight.w600),
+                            fontSize: 18,
+                            color: mode.shortTextColor,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ],
                     ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
           onTap: () {
-            Navigator.of(context).pushNamed("/bundleCourseDetail",
-                arguments: dummyBundleCoursesDetail);
+            Navigator.of(context).pushNamed(
+              "/bundleCourseDetail",
+              arguments: dummyBundleCoursesDetail,
+            );
           },
         ),
       ),
@@ -214,19 +229,38 @@ class BundleCourseItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool purchased = false; // Update logic for purchased if needed
+    bool purchased = false;
     String? category = dummyBundleCoursesDetail.instructorName;
-    //  String? category = dummyBundleCoursesDetail.categoryName;
 
-    dynamic currency =
-        Provider.of<DummyCurrenciesProvider>(context).currencies.first.symbol;
+    // Safe currency access with fallback
+    String? currencySymbol;
+    try {
+      final currenciesProvider = Provider.of<DummyCurrenciesProvider>(context, listen: false);
+      currencySymbol = currenciesProvider.currencies.isNotEmpty
+          ? currenciesProvider.currencies.first.symbol
+          : '\$'; // Fallback to dollar sign
+    } catch (e) {
+      currencySymbol = '\$'; // Fallback if provider isn't available
+      debugPrint('Error accessing DummyCurrenciesProvider: $e');
+    }
+
     T.Theme mode = Provider.of<T.Theme>(context);
-    return tileDetails(context, mode, category, currency, purchased);
+    return tileDetails(
+      context,
+      mode,
+      category,
+      currencySymbol,
+      purchased,
+    );
   }
 }
 
 final Shader linearGradient = LinearGradient(
-  colors: <Color>[Color(0xff790055), Color(0xffF81D46), Color(0xffFA4E62)],
+  colors: <Color>[
+    Color(0xff790055),
+    Color(0xffF81D46),
+    Color(0xffFA4E62),
+  ],
 ).createShader(Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
 
 

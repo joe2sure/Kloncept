@@ -38,7 +38,6 @@ void main() async {
   runApp(LocalizedApp(delegate, MyApp(authToken, observer)));
 }
 
-//Solutions For : HandshakeException: Handshake error in client (CERTIFICATE_VERIFY_FAILED: certificate has expired)
 
 class MyHttpOverrides extends HttpOverrides {
   @override
@@ -49,3 +48,4 @@ class MyHttpOverrides extends HttpOverrides {
       };
   }
 }
+//Solutions For : HandshakeException: Handshake error in client (CERTIFICATE_VERIFY_FAILED: certificate has expired)

@@ -44,6 +44,8 @@ class _HomeScreenState extends State<HomeScreen> {
           .loadDummyInstitutes();
       Provider.of<DummyBundleCourseProvider>(context, listen: false)
           .loadDummyBundles();
+      Provider.of<DummyCurrenciesProvider>(context, listen: false)
+          .fetchDummyCurrenciesData();
     });
   }
 
@@ -180,7 +182,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             FeaturedCoursesList(
               // _createFeaturedCourses(),
-               homeProvider.sliderList, 
+              homeProvider.sliderList,
               homeProvider.dataLoaded,
             ),
 
@@ -188,9 +190,18 @@ class _HomeScreenState extends State<HomeScreen> {
             SliverToBoxAdapter(
               child: _buildHeadingTitle("Course Bundles"),
             ),
-            BundleCoursesList(
-              bundleProvider.bundleCourses,
-              homeProvider.dataLoaded,
+            // BundleCoursesList(
+            //   bundleProvider.bundleCourses,
+            //   homeProvider.dataLoaded,
+            // ),
+            // In home_screen.dart, modify the Bundle Courses Section:
+            Consumer<DummyCurrenciesProvider>(
+              builder: (context, currenciesProvider, child) {
+                return BundleCoursesList(
+                  bundleProvider.bundleCourses,
+                  homeProvider.dataLoaded,
+                );
+              },
             ),
 
             // Institutes Section
