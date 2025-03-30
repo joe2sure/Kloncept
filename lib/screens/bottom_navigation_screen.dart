@@ -3,10 +3,7 @@ import 'package:kloncept/localization/language_provider.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 import 'package:kloncept/provider/dummy/dummy_cart_provider.dart';
 import 'package:kloncept/provider/dummy/dummy_provider.dart';
-// import 'package:kloncept/provider/dummy/dummy_courses_provider.dart';
-import 'package:kloncept/provider/dummy/dummy_watchlist_provider.dart';
 import 'package:kloncept/services/internetStatus.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import '../common/facebook_ads.dart';
 
 import 'cart_screen.dart';
@@ -21,9 +18,12 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'all_category_screen.dart';
 import 'home_screen.dart';
-import '../services/oneSignal.dart';
 
 // import 'package:kloncept/model/dummy/dummy_model.dart';
+// import 'package:kloncept/provider/dummy/dummy_courses_provider.dart';
+// import 'package:kloncept/provider/dummy/dummy_watchlist_provider.dart';
+// import 'package:shared_preferences/shared_preferences.dart';
+// import '../services/oneSignal.dart';
 
 class MyBottomNavigationBar extends StatefulWidget {
   MyBottomNavigationBar({this.pageInd});
