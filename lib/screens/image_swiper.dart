@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:kloncept/provider/dummy/dummy_provider.dart';
 import '../common/apidata.dart';
 import '../provider/home_data_provider.dart';
 import 'package:flutter/material.dart';
@@ -130,7 +131,7 @@ class ImageSwiper extends StatelessWidget {
     );
   }
 
-  Widget showSlider(Orientation orientation, HomeDataProvider slider) {
+  Widget showSlider(Orientation orientation, DummyHomeDataProvider slider) {
     return SliverToBoxAdapter(
       child: Container(
           // height: 250,
@@ -162,7 +163,7 @@ class ImageSwiper extends StatelessWidget {
                     bottom: 15.0, top: 5.0, left: 15, right: 15),
                 child: Stack(
                   children: [
-                    showImage(orientation, item.image),
+                    showImage(orientation, item.imageUrl),
                     detailsOnImage(item.heading, item.subHeading),
                   ],
                 ),
@@ -197,12 +198,24 @@ class ImageSwiper extends StatelessWidget {
     );
   }
 
-  @override
-  Widget build(BuildContext context) {
-    var slider = Provider.of<HomeDataProvider>(context);
-    Orientation orientation = MediaQuery.of(context).orientation;
-    return _visible == true
-        ? showSlider(orientation, slider)
-        : showShimmer(context);
-  }
+  // Modify the build method to handle dummy data
+@override
+Widget build(BuildContext context) {
+  var slider = Provider.of<DummyHomeDataProvider>(context); // Changed to DummyHomeDataProvider
+  Orientation orientation = MediaQuery.of(context).orientation;
+  
+  // Show shimmer if data isn't loaded yet
+  return slider.dataLoaded 
+      ? showSlider(orientation, slider)
+      : showShimmer(context);
+}
+
+  // @override
+  // Widget build(BuildContext context) {
+  //   var slider = Provider.of<HomeDataProvider>(context);
+  //   Orientation orientation = MediaQuery.of(context).orientation;
+  //   return _visible == true
+  //       ? showSlider(orientation, slider)
+  //       : showShimmer(context);
+  // }
 }

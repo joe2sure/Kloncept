@@ -3,7 +3,7 @@ import 'package:kloncept/localization/language_provider.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 import 'package:kloncept/provider/dummy/dummy_cart_provider.dart';
 import 'package:kloncept/provider/dummy/dummy_provider.dart';
-import 'package:kloncept/provider/dummy/dummy_courses_provider.dart';
+// import 'package:kloncept/provider/dummy/dummy_courses_provider.dart';
 import 'package:kloncept/provider/dummy/dummy_watchlist_provider.dart';
 import 'package:kloncept/services/internetStatus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -62,12 +62,12 @@ Future<void> getHomePageData() async {
     Provider.of<DummyUserProfile>(context, listen: false).loadDummyProfile();
     Provider.of<DummyInstituteProvider>(context, listen: false).loadDummyInstitutes();
     Provider.of<DummyCompareCourseProvider>(context, listen: false).loadDummyData();
-    Provider.of<DummyWalletDetailsProvider>(context, listen: false).loadDummyData();
-    Provider.of<DummyCurrenciesProvider>(context, listen: false).loadDummyData();
+    Provider.of<DummyWalletDetailsProvider>(context, listen: false).fetchWalletDetails();
+    Provider.of<DummyCurrenciesProvider>(context, listen: false).fetchDummyCurrenciesData();
 
     // Then await the async operations
     await Future.wait([
-      Provider.of<DummyRecentCourseProvider>(context, listen: false).fetchRecentCourse(context),
+      Provider.of<DummyRecentCourseProvider>(context, listen: false).loadRecentCourses(),
       Provider.of<DummyCartProvider>(context, listen: false).fetchCart(context),
     ]);
   } catch (e) {

@@ -121,7 +121,8 @@ class FeaturedListItem extends StatelessWidget {
                 padding: EdgeInsets.all(15.0),
                 child: Column(
                   children: [
-                    if (courseDetail!.isFeatured) // Use isFeatured from DummyCourse
+                    // if (courseDetail!.isFeatured) // Use isFeatured from DummyCourse
+                    if (courseDetail != null && courseDetail!.isFeatured != null && courseDetail!.isFeatured!) 
                       Column(
                         children: [
                           Row(
@@ -241,7 +242,7 @@ class FeaturedListItem extends StatelessWidget {
                         Align(
                           alignment: Alignment.topLeft,
                           child: Text(
-                            'courseDetail!.title,',
+                            courseDetail?.title ?? "",
                             // courseDetail!.title, // Use title from DummyCourse
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
@@ -255,7 +256,8 @@ class FeaturedListItem extends StatelessWidget {
                           height: 10.0,
                         ),
                         Text(
-                          courseDetail!.description, // Use description from DummyCourse
+                          // courseDetail!.description, // Use description from DummyCourse
+                          courseDetail?.description ?? "",
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
@@ -306,7 +308,8 @@ dynamic currency =
     String category = courseDetail!.categoryName; // Use categoryName from DummyCourse
 
     T.Theme mode = Provider.of<T.Theme>(context);
-    bool isPurchased = courseDetail!.isEnrolled; // Use isEnrolled from DummyCourse
+    // bool isPurchased = courseDetail!.isEnrolled; // Use isEnrolled from DummyCourse
+    bool isPurchased = courseDetail?.isEnrolled ?? false;
 
     String? rating = courseDetail!.rating.toString(); // Use rating from DummyCourse
 

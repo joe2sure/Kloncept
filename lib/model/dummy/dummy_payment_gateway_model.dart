@@ -1,5 +1,3 @@
-// File: lib/model/dummy/payment_models.dart
-import 'package:flutter/material.dart';
 import 'package:kloncept/model/dummy/dummy_model.dart';
 import 'package:kloncept/screens/payment_gateway.dart';
 
@@ -12,7 +10,6 @@ class PaymentGatewayModel {
 
   PaymentGatewayModel(this.id, this.name, this.walletImage, this.status);
 }
-
 // Dummy Payment API model
 class DummyPaymentApi {
   final DummySettings? settings;
@@ -75,14 +72,12 @@ class DummyBankDetails {
     this.swift,
   });
 }
-
 // Dummy UPI Details model
 class DummyUpiDetailsModel {
   final DummyUpi? upi;
 
   DummyUpiDetailsModel({this.upi});
 }
-
 class DummyUpi {
   final String? status;
   final String? name;
@@ -96,7 +91,6 @@ class DummyWalletModel {
 
   DummyWalletModel({this.wallet});
 }
-
 class DummyWallet {
   final double? balance;
   final String? currency;
@@ -125,14 +119,12 @@ class DummyHomeModel {
     this.paymentGateways,
   });
 }
-
 // Dummy Manual Payment model
 class DummyManualPaymentModel {
   final List<DummyManualPayment>? manualPayment;
 
   DummyManualPaymentModel({this.manualPayment});
 }
-
 class DummyManualPayment {
   final int id;
   final String name;
@@ -146,7 +138,6 @@ class DummyManualPayment {
     required this.description,
   });
 }
-
 // Dummy User Profile Model (enhancing the existing one)
 class DummyUserProfileModel {
   final String firstName;

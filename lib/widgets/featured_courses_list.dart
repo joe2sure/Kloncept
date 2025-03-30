@@ -5,9 +5,11 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class FeaturedCoursesList extends StatefulWidget {
-  final List<DummyCourse> coursesList; // Change to DummyCourse
+  // final List<DummyCourse> coursesList; // Change to DummyCourse
+   final List<DummySlider> sliderList;
   final bool _visible;
-  FeaturedCoursesList(this.coursesList, this._visible);
+  FeaturedCoursesList(this.sliderList, this._visible);
+  // FeaturedCoursesList(this.coursesList, this._visible);
   @override
   _FeaturedCoursesListState createState() => _FeaturedCoursesListState();
 }
@@ -45,26 +47,59 @@ class _FeaturedCoursesListState extends State<FeaturedCoursesList> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    // featured course list on home page
-    List<DummyCourse> featuredCoursesList = widget.coursesList; // Change to DummyCourse
-    return SliverToBoxAdapter(
-      child: widget._visible == true
-          ? Container(
-              height: 350,
-              child: ListView.builder(
-                shrinkWrap: true,
-                physics: ClampingScrollPhysics(),
-                padding: EdgeInsets.only(left: 18.0, bottom: 24.0, top: 5.0),
-                itemBuilder: (context, idx) =>
-                    FeaturedListItem(featuredCoursesList[idx]), // Pass DummyCourse
-                scrollDirection: Axis.horizontal,
-                itemCount: featuredCoursesList.length,
-              ),
-            )
-          : showShimmer(context),
-    );
-  }
+Widget build(BuildContext context) {
+  // featured course list on home page
+  List<DummySlider> featuredSliderList = widget.sliderList;
+  return SliverToBoxAdapter(
+    child: widget._visible == true
+        ? Container(
+            height: 350,
+            child: ListView.builder(
+              shrinkWrap: true,
+              physics: ClampingScrollPhysics(),
+              padding: EdgeInsets.only(left: 18.0, bottom: 24.0, top: 5.0),
+              itemBuilder: (context, idx) =>
+                  FeaturedListItem(
+                    DummyCourse(
+                      id: featuredSliderList[idx].id,
+                      title: featuredSliderList[idx].heading,
+                      description: featuredSliderList[idx].subHeading,
+                      imageUrl: featuredSliderList[idx].imageUrl,
+                      price: 0.0,
+                      discountPrice: null,
+                      categoryName: "Featured",
+                      rating: 5.0,
+                      isEnrolled: false,
+                      isFeatured: true,
+                    )
+                  ),
+              scrollDirection: Axis.horizontal,
+              itemCount: featuredSliderList.length,
+            ),
+          )
+        : showShimmer(context),
+  );
+}
+  // Widget build(BuildContext context) {
+  //   // featured course list on home page
+  //   List<DummyCourse> featuredCoursesList = widget.coursesList; // Change to DummyCourse
+  //   return SliverToBoxAdapter(
+  //     child: widget._visible == true
+  //         ? Container(
+  //             height: 350,
+  //             child: ListView.builder(
+  //               shrinkWrap: true,
+  //               physics: ClampingScrollPhysics(),
+  //               padding: EdgeInsets.only(left: 18.0, bottom: 24.0, top: 5.0),
+  //               itemBuilder: (context, idx) =>
+  //                   FeaturedListItem(featuredCoursesList[idx]), // Pass DummyCourse
+  //               scrollDirection: Axis.horizontal,
+  //               itemCount: featuredCoursesList.length,
+  //             ),
+  //           )
+  //         : showShimmer(context),
+  //   );
+  // }
 }
 
 

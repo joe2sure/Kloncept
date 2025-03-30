@@ -1,4 +1,3 @@
-// my_app.dart modification
 import 'package:kloncept/Screens/blog_list_screen.dart';
 import 'package:kloncept/Screens/terms_policy.dart';
 import 'package:kloncept/localization/language_screen.dart';
@@ -9,14 +8,12 @@ import 'package:kloncept/localization/language_provider.dart';
 import 'package:kloncept/provider/InstituteProvider.dart';
 import 'package:kloncept/provider/compareCourseProvider.dart';
 import 'package:kloncept/provider/currenciesProvider.dart';
-import 'package:kloncept/provider/dummy/dummy_cart_provider.dart';
 import 'package:kloncept/provider/dummy/dummy_compare_course_provider.dart';
 import 'package:kloncept/provider/dummy/dummy_courses_provider.dart';
 import 'package:kloncept/provider/dummy/dummy_currencies_provider.dart';
 import 'package:kloncept/provider/dummy/dummy_home_data_provider.dart';
 import 'package:kloncept/provider/dummy/dummy_payment_provider.dart';
 import 'package:kloncept/provider/dummy/dummy_provider.dart' show DummyBundleCourseProvider, DummyHomeDataProvider, DummyInstituteProvider, DummyRecentCourseProvider, DummyUserProfile, DummyVisibleProvider;
-import 'package:kloncept/provider/dummy/dummy_watchlist_provider.dart';
 import 'package:kloncept/provider/manual_payment_provider.dart';
 import 'package:kloncept/provider/terms_policy_provider.dart';
 import 'package:kloncept/provider/watchlist_provider.dart';
@@ -28,6 +25,8 @@ import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 import 'gateways/donate.dart';
+import 'package:kloncept/provider/dummy/dummy_watchlist_provider.dart';
+import 'package:kloncept/provider/dummy/dummy_cart_provider.dart';
 import 'package:kloncept/provider/walletDetailsProvider.dart';
 import 'provider/cart_provider.dart';
 import 'provider/bundle_course.dart';
@@ -68,6 +67,29 @@ import 'provider/user_details_provider.dart';
 import 'common/theme.dart' as T;
 import 'provider/user_profile.dart';
 
+class HomeScreenLoadingController with ChangeNotifier {
+  bool _isLoading = true;
+  int _loadedProviders = 0;
+  final int totalProviders = 11; // Adjust based on number of providers
+  
+  bool get isLoading => _isLoading;
+  
+  void providerLoaded() {
+    _loadedProviders++;
+    if (_loadedProviders >= totalProviders) {
+      _isLoading = false;
+      notifyListeners();
+    }
+  }
+
+  void reset() {
+    _isLoading = true;
+    _loadedProviders = 0;
+    notifyListeners();
+  }
+}
+
+
 // ignore: must_be_immutable
 class MyApp extends StatelessWidget {
   String? token;
@@ -85,17 +107,13 @@ class MyApp extends StatelessWidget {
 
     return MultiProvider(
       providers: [
+        ChangeNotifierProvider(create: (_) => HomeScreenLoadingController()),
         ChangeNotifierProvider(create: (_) => UserDetailsProvider()),
         ChangeNotifierProvider(create: (_) => T.Theme()),
-        ChangeNotifierProvider(create: (_) => DummyUserProfile()),
-        ChangeNotifierProvider(create: (_) => DummyCoursesProvider()),
-        ChangeNotifierProvider(create: (_) => DummyCompareCourseProvider()),
-        ChangeNotifierProvider(create: (_) => DummyRecentCourseProvider()),
         // Add the missing provider
-        ChangeNotifierProvider(create: (_) => DummyBundleCourseProvider()),
+
         ChangeNotifierProvider(create: (_) => HomeDataProvider()),
-        ChangeNotifierProvider(create: (_) => DummyHomeDataExtraProvider()),
-        ChangeNotifierProvider(create: (_) => DummyHomeDataProvider()),
+
         ChangeNotifierProvider(create: (_) => UserProfile()),
         ChangeNotifierProvider(create: (_) => WishListProvider()),
         ChangeNotifierProvider(create: (_) => CoursesProvider()),
@@ -104,32 +122,116 @@ class MyApp extends StatelessWidget {
         // Uncomment this line if needed:
         // ChangeNotifierProvider(create: (_) => BundleCourseProvider()),
         ChangeNotifierProvider(create: (_) => Visible()),
-        ChangeNotifierProvider(create: (_) => DummyVisibleProvider()),
+        
         // Uncomment this line if needed:
         // ChangeNotifierProvider(create: (_) => RecentCourseProvider()),
         ChangeNotifierProvider(create: (_) => PaymentAPIProvider()),
-        ChangeNotifierProvider(create: (_) => DummyPaymentAPIProvider()),
+
         ChangeNotifierProvider(create: (_) => ContentProvider()),
         ChangeNotifierProvider(create: (_) => CourseDetailsProvider()),
         ChangeNotifierProvider(create: (_) => BlogProvider()),
         // Uncomment this line if needed:
         // ChangeNotifierProvider(create: (_) => CartProvider()),
-        ChangeNotifierProvider(create: (_) => DummyCartProvider()),
+
         ChangeNotifierProvider(create: (_) => LanguageProvider()),
         ChangeNotifierProvider(create: (_) => TermsPolicyProvider()),
         ChangeNotifierProvider(create: (_) => WatchlistProvider()),
-        ChangeNotifierProvider(create: (_) => DummyWatchlistProvider()),
         ChangeNotifierProvider(create: (_) => ManualPaymentProvider()),
         ChangeNotifierProvider(create: (_) => InstituteProvider()),
         ChangeNotifierProvider(create: (_) => InstituteDetailsProvider()),
         ChangeNotifierProvider(create: (_) => CompareCourseProvider()),
-        // Uncomment this line if needed:
-        // ChangeNotifierProvider(create: (_) => WalletDetailsProvider()),
-        ChangeNotifierProvider(create: (_) => DummyWalletDetailsProvider()),
         ChangeNotifierProvider(create: (_) => CurrenciesProvider()),
-        ChangeNotifierProvider(create: (_) => DummyCurrenciesProvider()),
-        // Add DummyInstituteProvider which is being accessed in HomeScreen
-        ChangeNotifierProvider(create: (_) => DummyInstituteProvider()),
+        
+        // Dummy Providers
+        ChangeNotifierProvider(create: (context) {
+          final provider = DummyHomeDataProvider();
+          provider.loadDummyHomeData().then((_) {
+            Provider.of<HomeScreenLoadingController>(context, listen: false).providerLoaded();
+          });
+          return provider;
+        }),
+        
+        ChangeNotifierProvider(create: (context) {
+          final provider = DummyRecentCourseProvider();
+          provider.loadRecentCourses();
+          Provider.of<HomeScreenLoadingController>(context, listen: false).providerLoaded();
+          return provider;
+        }),
+        
+        ChangeNotifierProvider(create: (context) {
+          final provider = DummyInstituteProvider();
+          provider.loadDummyInstitutes();
+          Provider.of<HomeScreenLoadingController>(context, listen: false).providerLoaded();
+          return provider;
+        }),
+        
+        ChangeNotifierProvider(create: (context) {
+          final provider = DummyCompareCourseProvider();
+          provider.loadDummyData().then((_) {
+            Provider.of<HomeScreenLoadingController>(context, listen: false).providerLoaded();
+          });
+          return provider;
+        }),
+        
+        ChangeNotifierProvider(create: (context) {
+          final provider = DummyWalletDetailsProvider();
+          provider.fetchWalletDetails().then((_) {
+            Provider.of<HomeScreenLoadingController>(context, listen: false).providerLoaded();
+          });
+          return provider;
+        }),
+        
+        ChangeNotifierProvider(create: (context) {
+          final provider = DummyCurrenciesProvider();
+          provider.fetchData().then((_) {
+            Provider.of<HomeScreenLoadingController>(context, listen: false).providerLoaded();
+          });
+          return provider;
+        }),
+        
+        ChangeNotifierProvider(create: (context) {
+          final provider = DummyCoursesProvider();
+          provider.loadDummyExtraCourses();
+          Provider.of<HomeScreenLoadingController>(context, listen: false).providerLoaded();
+          return provider;
+        }),
+        
+        ChangeNotifierProvider(create: (context) {
+          final provider = DummyBundleCourseProvider();
+          provider.loadDummyBundles();
+          Provider.of<HomeScreenLoadingController>(context, listen: false).providerLoaded();
+          return provider;
+        }),
+
+        ChangeNotifierProvider(create: (context) {
+          final provider = DummyUserProfile();
+          provider.loadDummyProfile();
+          Provider.of<HomeScreenLoadingController>(context, listen: false).providerLoaded();
+          return provider;
+        }),
+
+        ChangeNotifierProvider(create: (context) {
+          final provider = DummyPaymentAPIProvider();
+          provider.fetchPaymentAPI(context);
+          Provider.of<HomeScreenLoadingController>(context, listen: false).providerLoaded();
+          return provider;
+        }),
+
+        ChangeNotifierProvider(create: (context) {
+          final provider = DummyVisibleProvider();
+          provider.toggleVisible(true);
+          Provider.of<HomeScreenLoadingController>(context, listen: false).providerLoaded();
+          return provider;
+        }),
+
+        ChangeNotifierProvider(create: (context) {
+          final provider = DummyHomeDataExtraProvider();
+          provider.fetchHomeData();
+          Provider.of<HomeScreenLoadingController>(context, listen: false).providerLoaded();
+          return provider;
+        }),
+
+
 
       ],
       child: LocalizationProvider(
@@ -183,6 +285,27 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
+        // Uncomment this line if needed:
+
+        // ChangeNotifierProvider(create: (_) => DummyUserProfile()),
+        // ChangeNotifierProvider(create: (_) => DummyCoursesProvider()), 7
+        // ChangeNotifierProvider(create: (_) => DummyCompareCourseProvider()), 4
+        // ChangeNotifierProvider(create: (_) => DummyRecentCourseProvider()), 2
+        // ChangeNotifierProvider(create: (_) => DummyPaymentAPIProvider()),
+        // ChangeNotifierProvider(create: (_) => DummyHomeDataExtraProvider()),
+        // ChangeNotifierProvider(create: (_) => DummyHomeDataProvider()), 1
+        // ChangeNotifierProvider(create: (_) => DummyVisibleProvider()),
+        // ChangeNotifierProvider(create: (_) => DummyBundleCourseProvider()), 8
+        // // ChangeNotifierProvider(create: (_) => WalletDetailsProvider()),
+        // ChangeNotifierProvider(create: (_) => DummyWalletDetailsProvider()), 5
+        // ChangeNotifierProvider(create: (_) => DummyCurrenciesProvider()), 6
+        // // Add DummyInstituteProvider which is being accessed in HomeScreen
+        // ChangeNotifierProvider(create: (_) => DummyInstituteProvider()), 3
+
+
+
 
         // ChangeNotifierProvider(
         //     create: (_) => UserDetailsProvider()), // Fetch User Details

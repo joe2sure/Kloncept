@@ -55,16 +55,16 @@ class DummyCourse {
   final String? include;
   final String? whatlearns;
   final double? mainReview;
-  final String description;
-  final String imageUrl;
+  final String? description;
+  final String? imageUrl;
   final dynamic categoryName;
-  final bool isFeatured;
-  final bool isEnrolled;
-  final String instructorName;
-  final String instructorImage;
-  final double rating;
-  final int ratingCount;
-  final int totalLessons;
+  final bool? isFeatured;
+  final bool? isEnrolled;
+  final String? instructorName;
+  final String? instructorImage;
+  final double? rating;
+  final int? ratingCount;
+  final int? totalLessons;
   final List<DummyReview>? review;
 
   DummyCourse({
@@ -98,16 +98,16 @@ class DummyCourse {
     this.whatlearns,
     this.review,
     this.mainReview,
-    required this.description,
-    required this.imageUrl,
-    required this.categoryName,
-    required this.isFeatured,
-    required this.isEnrolled,
-    required this.instructorName,
-    required this.instructorImage,
-    required this.rating,
-    required this.ratingCount,
-    required this.totalLessons,
+    this.description,
+    this.imageUrl,
+    this.categoryName,
+    this.isFeatured,
+    this.isEnrolled,
+    this.instructorName,
+    this.instructorImage,
+    this.rating,
+    this.ratingCount,
+    this.totalLessons,
   });
 
   factory DummyCourse.fromJson(Map<String, dynamic> json) {

@@ -140,12 +140,12 @@ class DummyCoursesProvider with ChangeNotifier {
     );
 
     // Create dummy enrolled courses
-    _studyingList = _allDummyCourses.where((course) => course.isEnrolled).toList();
+    // _studyingList = _allDummyCourses.where((course) => course.isEnrolled).toList();
 
     notifyListeners();
   }
 
-  List<DummyCourse> getFeaturedCourses() {
-    return _allDummyCourses.where((course) => course.isFeatured).toList();
-  }
+  // List<DummyCourse> getFeaturedCourses() {
+  //   return _allDummyCourses.where((course) => course.isFeatured).toList();
+  // }
 }
